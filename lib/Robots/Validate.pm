@@ -113,7 +113,7 @@ sub _build_robots {
         {
             name   => "Yandex",
             agent  => qr/Yandex/,
-            domain => qr/\.spider\.yandex\.com$/,
+            domain => qr/\.yandex\.(?:com|ru|net)$/,
         },
     ];
 }
