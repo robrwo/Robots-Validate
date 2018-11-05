@@ -176,7 +176,7 @@ sub validate {
         die $res->errorstring if $self->die_on_error;
     }
 
-    return undef unless $hostname;
+    return unless $hostname;
 
     $args //= {};
     $args->{forward} //= 1;
@@ -189,7 +189,7 @@ sub validate {
     my $reply = $res->search( $hostname, "A" )
         or $self->die_on_error && die $res->errorstring;
 
-    return undef unless $reply;
+    return unless $reply;
 
     if (
         none { $_ eq $ip } (
@@ -198,7 +198,7 @@ sub validate {
         )
         )
     {
-        return undef;
+        return;
     }
 
 
@@ -212,7 +212,7 @@ sub validate {
 
     }
 
-    return undef;
+    return;
 }
 
 1;
