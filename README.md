@@ -75,6 +75,12 @@ You can specify the following `%opts`:
 
     It is optional.
 
+# SEE ALSO
+
+- [Verifying Bingbot](https://www.bing.com/webmaster/help/how-to-verify-bingbot-3905dc26)
+- [Verifying Goodlebot](https://support.google.com/webmasters/answer/80553)
+- [How to check that a robot belongs to Yandex](https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html)
+
 # SOURCE
 
 The development version is on github at [https://github.com/robrwo/Robots-Validate](https://github.com/robrwo/Robots-Validate)

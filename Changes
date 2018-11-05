@@ -6,5 +6,8 @@ Revision history for {{ $dist->name }}:
 
   - Update Yandex verifiction rules.
 
+  [Documentation]
+  - Document robot verifiction in SEE ALSO section.
+
 v0.1.0    2018-11-05 21:29:06+00:00 Europe/London
   - Initial prototype released.

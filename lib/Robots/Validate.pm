@@ -215,4 +215,18 @@ sub validate {
     return;
 }
 
+=head1 SEE ALSO
+
+=over
+
+=item L<Verifying Bingbot|https://www.bing.com/webmaster/help/how-to-verify-bingbot-3905dc26>
+
+=item L<Verifying Goodlebot|https://support.google.com/webmasters/answer/80553>
+
+=item L<How to check that a robot belongs to Yandex|https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html>
+
+=back
+
+=cut
+
 1;
