@@ -4,7 +4,7 @@ Robots::Validate - validate IP addresses are associated with known robots
 
 # VERSION
 
-version v0.1.0
+version v0.1.1
 
 # SYNOPSIS
 
