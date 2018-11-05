@@ -6,7 +6,7 @@ use v5.10;
 
 use Moo 1;
 
-use List::Util qw/ first none /;
+use List::Util 1.33 qw/ first none /;
 use Net::DNS::Resolver;
 use Types::Standard -types;
 

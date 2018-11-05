@@ -1,4 +1,4 @@
-requires "List::Util" => "0";
+requires "List::Util" => "1.33";
 requires "Moo" => "1";
 requires "Net::DNS::Resolver" => "0";
 requires "Types::Standard" => "0";

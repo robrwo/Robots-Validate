@@ -1,6 +1,8 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+  [Bug Fixes]
+  - Specify a minimum version for List::Util.
 
 v0.1.0    2018-11-05 21:29:06+00:00 Europe/London
   - Initial prototype released.
