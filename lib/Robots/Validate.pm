@@ -1,6 +1,6 @@
 package Robots::Validate;
 
-# ABSTRACT: validate IP addresses are associated with known robots
+# ABSTRACT: Validate that IP addresses are associated with known robots
 
 use v5.10;
 

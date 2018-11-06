@@ -1,6 +1,6 @@
 # NAME
 
-Robots::Validate - validate IP addresses are associated with known robots
+Robots::Validate - Validate that IP addresses are associated with known robots
 
 # VERSION
 
