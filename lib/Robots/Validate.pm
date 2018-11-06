@@ -83,10 +83,12 @@ has robots => (
 
 sub _build_robots {
     return [
+
         {
-            name   => 'Google',
-            agent  => qr/\bGoogle(?:bot?)\b/i,
-            domain => qr/\.google(?:bot)?\.com$/,
+            name   => 'Baidu',
+            agent  => qr/\bBaiduspider\b/,
+            domain => qr/\.crawl\.baidu\.com$/,
+
         },
 
         {
@@ -97,10 +99,9 @@ sub _build_robots {
         },
 
         {
-            name   => 'Baidu',
-            agent  => qr/\bBaiduspider\b/,
-            domain => qr/\.crawl\.baidu\.com$/,
-
+            name   => 'Google',
+            agent  => qr/\bGoogle(?:bot?)\b/i,
+            domain => qr/\.google(?:bot)?\.com$/,
         },
 
         {
@@ -115,6 +116,7 @@ sub _build_robots {
             agent  => qr/Yandex/,
             domain => qr/\.yandex\.(?:com|ru|net)$/,
         },
+
     ];
 }
 

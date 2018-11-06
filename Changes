@@ -4,6 +4,9 @@ Revision history for {{ $dist->name }}:
   [Documentation]
   - Fixed typo.
 
+  [Other]
+  - Sorted robots.
+
 v0.1.1    2018-11-05 21:43:45+00:00 Europe/London
   [Bug Fixes]
   - Specify a minimum version for List::Util.
