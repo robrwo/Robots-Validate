@@ -99,9 +99,21 @@ sub _build_robots {
         },
 
         {
+            name   => 'Exabot',
+            agent  => qr/\bExabot\b/i,
+            domain => qr/\.exabot\.com$/,
+        },
+
+        {
             name   => 'Google',
             agent  => qr/\bGoogle(?:bot?)\b/i,
             domain => qr/\.google(?:bot)?\.com$/,
+        },
+
+        {
+            name   => 'Sogou',
+            agent  => qr/\bSogou\b/,
+            domain => qr/\.sogou\.com$/,
         },
 
         {

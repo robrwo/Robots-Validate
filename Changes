@@ -1,6 +1,9 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+  [Enhancements]
+  - Added rules for Exabot, Sogou spiders.
+
   [Documentation]
   - Fixed typo.
 
