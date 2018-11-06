@@ -2,7 +2,7 @@ Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
   [Enhancements]
-  - Added rules for Exabot, Sogou spiders.
+  - Added rules for Embedly, Exabot, LinkedIn, Mojeek, Naver/Yeti, Pinterest, Sogou spiders.
 
   [Documentation]
   - Fixed typo.

@@ -99,6 +99,12 @@ sub _build_robots {
         },
 
         {
+            name   => 'Embedly',
+            agent  => qr/\bEmbedly\b/,
+            domain => qr/\.embed\.ly$/,
+        },
+
+        {
             name   => 'Exabot',
             agent  => qr/\bExabot\b/i,
             domain => qr/\.exabot\.com$/,
@@ -108,6 +114,24 @@ sub _build_robots {
             name   => 'Google',
             agent  => qr/\bGoogle(?:bot?)\b/i,
             domain => qr/\.google(?:bot)?\.com$/,
+        },
+
+        {
+            name   => 'LinkedIn',
+            agent  => qr/\bLinkedInBot\b/,
+            domain => qr/\.linkedin\.com$/,
+        },
+
+        {
+            name   => 'Mojeek',
+            agent  => qr/\bMojeekBot\b/,
+            domain => qr/\.mojeek\.com$/,
+        },
+
+        {
+            name   => 'Pinterest',
+            agent  => qr/\bPinterest\b/,
+            domain => qr/\.pinterest\.com$/,
         },
 
         {
@@ -127,6 +151,12 @@ sub _build_robots {
             name   => "Yandex",
             agent  => qr/Yandex/,
             domain => qr/\.yandex\.(?:com|ru|net)$/,
+        },
+
+        {
+            name   => 'Yeti',
+            agent  => qr/\bnaver\.me\b/,
+            domain => qr/\.naver\.com$/,
         },
 
     ];
@@ -201,7 +231,7 @@ sub validate {
       grep { !$agent || $agent =~ $_->{agent} } @{ $self->robots };
 
     my $reply = $res->search( $hostname, "A" )
-        or $self->die_on_error && die $res->errorstring;
+      or $self->die_on_error && die $res->errorstring;
 
     return unless $reply;
 
@@ -210,11 +240,10 @@ sub validate {
             map  { $_->address }
             grep { $_->can('address') } $reply->answer
         )
-        )
+      )
     {
         return;
     }
-
 
     if ( my $match = first { $hostname =~ $_->{domain} } @matches ) {
 
