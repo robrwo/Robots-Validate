@@ -12,6 +12,8 @@ Revision history for {{ $dist->name }}:
   [Other]
   - Remove unused code.
 
+  - Made query type explicit.
+
 v0.1.2    2018-11-06 20:22:07+00:00 Europe/London
   [Enhancements]
 

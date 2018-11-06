@@ -213,7 +213,7 @@ sub validate {
 
     my $hostname;
 
-    if ( my $reply = $res->query($ip) ) {
+    if ( my $reply = $res->query($ip, 'PTR') ) {
         ($hostname) = map { $_->ptrdname } $reply->answer;
     }
     else {
