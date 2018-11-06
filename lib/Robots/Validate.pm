@@ -117,12 +117,6 @@ sub _build_robots {
         },
 
         {
-            name   => 'Twitter',
-            agent  => qr/\bTwitterbot\b/,
-            domain => qr/\.(?:twttr|twitter)\.com$/,
-        },
-
-        {
             name   => 'Yahoo',
             agent  => qr/yahoo/i,
             domain => qr/\.crawl\.yahoo\.net$/,
