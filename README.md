@@ -4,7 +4,7 @@ Robots::Validate - validate IP addresses are associated with known robots
 
 # VERSION
 
-version v0.1.1
+version v0.1.2
 
 # SYNOPSIS
 
@@ -75,10 +75,20 @@ You can specify the following `%opts`:
 
     It is optional.
 
+# KNOWN ISSUES
+
+## Limitations
+
+The current module can only be used for systems that consistently
+support reverse DNS lookups. This means that it cannot be used to
+validate some robots from
+[Facebook](https://developers.facebook.com/docs/sharing/webmasters/crawler)
+or Twitter.
+
 # SEE ALSO
 
 - [Verifying Bingbot](https://www.bing.com/webmaster/help/how-to-verify-bingbot-3905dc26)
-- [Verifying Goodlebot](https://support.google.com/webmasters/answer/80553)
+- [Verifying Googlebot](https://support.google.com/webmasters/answer/80553)
 - [How to check that a robot belongs to Yandex](https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html)
 
 # SOURCE
