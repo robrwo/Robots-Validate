@@ -229,6 +229,16 @@ sub validate {
     return;
 }
 
+=head1 KNOWN ISSUES
+
+=head2 Limitations
+
+The current module can only be used for systems that consistently
+support reverse DNS lookups. This means that it cannot be used to
+validate some robots from
+L<Facebook|https://developers.facebook.com/docs/sharing/webmasters/crawler>
+or Twitter.
+
 =head1 SEE ALSO
 
 =over

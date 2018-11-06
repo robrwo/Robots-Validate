@@ -7,6 +7,8 @@ Revision history for {{ $dist->name }}:
   [Documentation]
   - Fixed typo.
 
+  - Added note about limitations.
+
   [Other]
   - Sorted robots.
 
