@@ -1,6 +1,8 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+
+v0.1.2    2018-11-06 20:22:07+00:00 Europe/London
   [Enhancements]
   - Added rules for Embedly, Exabot, LinkedIn, Mojeek, Naver/Yeti, Pinterest, Sogou spiders.
 
