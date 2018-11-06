@@ -223,10 +223,8 @@ sub validate {
     return unless $hostname;
 
     $args //= {};
-    $args->{forward} //= 1;
 
     my $agent = $args->{agent};
-
     my @matches =
       grep { !$agent || $agent =~ $_->{agent} } @{ $self->robots };
 
