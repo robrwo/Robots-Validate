@@ -10,6 +10,7 @@ recommends "Type::Tiny::XS" => "0";
 on 'test' => sub {
   requires "File::Spec" => "0";
   requires "Module::Metadata" => "0";
+  requires "Net::DNS::Resolver::Mock" => "0";
   requires "Test::More" => "0";
   requires "Test::Most" => "0";
 };
