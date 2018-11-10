@@ -103,3 +103,4 @@ Robots-Validate-.*/
 Robots-Validate-.*\.tar\.gz
 \.mailmap$
 cpanfile\.snapshot$
+local/
