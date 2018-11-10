@@ -6,6 +6,7 @@ use v5.10;
 
 use Moo 1;
 
+use MooX::Const;
 use List::Util 1.33 qw/ first none /;
 use Net::DNS::Resolver;
 use Types::Standard -types;
@@ -70,7 +71,7 @@ A regular expression for matching against the hostname.
 =cut
 
 has robots => (
-    is  => 'lazy',
+    is  => 'const',
     isa => ArrayRef [
         Dict [
             name   => Str,
@@ -78,6 +79,7 @@ has robots => (
             domain => RegexpRef,
         ]
     ],
+    lazy    => 1,
     builder => 1,
 );
 
