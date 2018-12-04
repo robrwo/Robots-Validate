@@ -1,6 +1,8 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+
+v0.1.4    2018-12-04 10:42:31+00:00 Europe/London
   [Other]
   - Use stricter types for robots attribute.
 
