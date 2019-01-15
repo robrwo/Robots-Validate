@@ -1,6 +1,8 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+  [Enhancements]
+  - Added rule for SeznamBot.
 
 v0.1.5    2018-12-06 17:56:02+00:00 Europe/London
   [Bug Fixes]

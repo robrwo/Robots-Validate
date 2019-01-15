@@ -138,6 +138,12 @@ sub _build_robots {
         },
 
         {
+            name   => 'SeznamBot',
+            agent  => qr/\bSeznam\b/,
+            domain => qr/\.seznam\.cz$/,
+        },
+
+        {
             name   => 'Sogou',
             agent  => qr/\bSogou\b/,
             domain => qr/\.sogou\.com$/,
