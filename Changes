@@ -4,6 +4,9 @@ Revision history for {{ $dist->name }}:
   [Enhancements]
   - Added rule for SeznamBot.
 
+  [Documentation]
+  - Bump copyright year.
+
 v0.1.5    2018-12-06 17:56:02+00:00 Europe/London
   [Bug Fixes]
   - Bumped minimum version of Types::Const to support Regexp refs.
