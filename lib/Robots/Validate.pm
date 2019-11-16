@@ -6,7 +6,7 @@ use v5.10;
 
 use Moo 1;
 
-use MooX::Const;
+use MooX::Const v0.4.0;
 use Types::Const v0.3.6;
 use List::Util 1.33 qw/ first none /;
 use Net::DNS::Resolver;
@@ -81,6 +81,7 @@ has robots => (
         ]
     ],
     lazy    => 1,
+    strict  => 0,
     builder => 1,
 );
 

@@ -4,6 +4,8 @@ Revision history for {{ $dist->name }}:
   [Enhancements]
   - Added rule for SeznamBot.
 
+  - Disable strict const attributes unless running in strict mode.
+
   [Documentation]
   - Bump copyright year.
 

@@ -1,6 +1,6 @@
 requires "List::Util" => "1.33";
 requires "Moo" => "1";
-requires "MooX::Const" => "0";
+requires "MooX::Const" => "v0.4.0";
 requires "Net::DNS::Resolver" => "0";
 requires "Types::Const" => "v0.3.6";
 requires "Types::Standard" => "0";
