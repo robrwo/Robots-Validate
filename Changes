@@ -1,6 +1,8 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+  [Enhancements]
+  - Allow validate to take a Plack environment hash.
 
 v0.1.6    2019-11-16 11:05:30+00:00 Europe/London
   [Enhancements]
