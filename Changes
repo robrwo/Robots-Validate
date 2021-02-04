@@ -4,6 +4,9 @@ Revision history for {{ $dist->name }}:
   [Enhancements]
   - Added rule for Applebot.
 
+  [Documentation]
+  - Update the copyright year.
+
 v0.2.0    2020-10-12 17:50:15+01:00 Europe/London
   [Enhancements]
   - Allow validate to take a Plack environment hash.
