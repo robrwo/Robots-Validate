@@ -133,6 +133,12 @@ sub _build_robots {
         },
 
         {
+            name   => 'IONOS',
+            agent  => qr/\bIonCrawl\b/,
+            domain => qr/\.1and1\.org$/,
+        },
+
+        {
             name   => 'LinkedIn',
             agent  => qr/\bLinkedInBot\b/,
             domain => qr/\.linkedin\.com$/,

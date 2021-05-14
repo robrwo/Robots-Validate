@@ -2,7 +2,7 @@ Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
   [Enhancements]
-  - Added rule for Archivo.pt.
+  - Added rules for Archivo.pt and IONOS.
 
 v0.2.1    2021-02-06 15:24:22+00:00 Europe/London
   [Enhancements]
