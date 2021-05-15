@@ -98,7 +98,7 @@ sub _build_robots {
             name   => 'Arquivo.pt',
             agent  => qr/arquivo-web-crawler/,
             domain => qr/\.arquivo\.pt$/,
-        }
+        },
 
         {
             name   => 'Baidu',
