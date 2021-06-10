@@ -1,6 +1,8 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+  [Enhancements]
+  - Added rules for PetalBot.
 
 v0.2.2    2021-05-15 17:13:12+01:00 Europe/London
   [Enhancements]

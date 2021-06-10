@@ -151,6 +151,12 @@ sub _build_robots {
         },
 
         {
+            name   => 'PetalBot',
+            agent  => qr/\bPetalBot\b/,
+            domain => qr/\.petalsearch\.com$/,
+        },
+
+        {
             name   => 'Pinterest',
             agent  => qr/\bPinterest\b/,
             domain => qr/\.pinterest\.com$/,
