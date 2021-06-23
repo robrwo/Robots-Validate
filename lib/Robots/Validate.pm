@@ -175,6 +175,12 @@ sub _build_robots {
         },
 
         {
+            name   => 'Qwant',
+            agent  => qr/\bQwantify\b/,
+            domain => qr/\.qwant\.com$/,
+        },
+
+        {
             name   => 'SeznamBot',
             agent  => qr/\bSeznam\b/,
             domain => qr/\.seznam\.cz$/,

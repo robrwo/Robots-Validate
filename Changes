@@ -2,7 +2,7 @@ Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
   [Enhancements]
-  - Added rule for Coc Coc bot.
+  - Added rules for Coc Coc bot and Qwant.
 
 v0.2.3    2021-06-10 11:30:13+01:00 Europe/London
   [Enhancements]
