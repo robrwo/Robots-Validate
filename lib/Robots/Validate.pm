@@ -115,6 +115,12 @@ sub _build_robots {
         },
 
         {
+            name   => 'CocCoc',
+            agent  => qr/\bcoccocbot-web\b/,
+            domain => qr/\.coccoc\.com$/,
+        },
+
+        {
             name   => 'Embedly',
             agent  => qr/\bEmbedly\b/,
             domain => qr/\.embed\.ly$/,
