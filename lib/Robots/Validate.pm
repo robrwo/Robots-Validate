@@ -319,6 +319,11 @@ sub validate {
 
 =head1 KNOWN ISSUES
 
+=head2 Undocumented Rules
+
+Many of these rules are not documented, but have been guessed from web
+traffic.
+
 =head2 Limitations
 
 The current module can only be used for systems that consistently

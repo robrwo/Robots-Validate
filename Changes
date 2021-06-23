@@ -4,6 +4,9 @@ Revision history for {{ $dist->name }}:
   [Enhancements]
   - Added rules for Coc Coc bot and Qwant.
 
+  [Documentation]
+  - Add warning about undocumented rules.
+
 v0.2.3    2021-06-10 11:30:13+01:00 Europe/London
   [Enhancements]
   - Added rules for Neevabot and PetalBot.
