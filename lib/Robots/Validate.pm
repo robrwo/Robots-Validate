@@ -139,6 +139,12 @@ sub _build_robots {
         },
 
         {
+            name   => 'InfoTiger',
+            agent  => qr/\bInfoTigerBot\b/,
+            domain => qr/\.infotiger\.com$/,
+        },
+
+        {
             name   => 'IONOS',
             agent  => qr/\bIonCrawl\b/,
             domain => qr/\.1and1\.org$/,
