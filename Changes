@@ -4,6 +4,9 @@ Revision history for {{ $dist->name }}:
   [Enhancements]
   - Added rules for InfoTiger.
 
+  [Toolchain]
+  - Removed MANIFEST.SKIP builder due to issues with prerequisites.
+
 v0.2.4    2021-06-23 17:11:21+01:00 Europe/London
   [Enhancements]
   - Added rules for Coc Coc bot and Qwant.
