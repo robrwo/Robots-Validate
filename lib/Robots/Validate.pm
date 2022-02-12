@@ -17,7 +17,7 @@ use Types::Standard -types;
 
 use namespace::autoclean;
 
-our $VERSION = 'v0.2.5';
+our $VERSION = 'v0.2.6';
 
 =head1 SYNOPSIS
 

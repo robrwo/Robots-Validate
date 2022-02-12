@@ -1,6 +1,8 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+
+v0.2.5    2022-02-12 11:28:35+00:00 Europe/London
   [Enhancements]
   - Added rules for InfoTiger.
 
