@@ -89,6 +89,12 @@ sub _build_robots {
     return [
 
         {
+            name   => 'Amazonbot',
+            agent  => qr/\bAmazonbot\b/,
+            domain => qr/\.amazonaws\.com$/,
+        },
+
+        {
             name   => 'Applebot',
             agent  => qr/\bApplebot\b/,
             domain => qr/\.applebot\.apple\.com$/,
