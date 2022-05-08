@@ -4,6 +4,9 @@ Revision history for {{ $dist->name }}:
   [Enhancements]
   - Added rules for Amazonbot.
 
+  [Documentation]
+  - Fixed encoding of links in README.
+
 v0.2.6    2022-02-12 11:36:55+00:00 Europe/London
   [Documentation]
   - Bump copyright year.
