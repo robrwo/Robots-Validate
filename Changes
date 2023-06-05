@@ -4,6 +4,9 @@ Revision history for {{ $dist->name }}:
   [Enhancements]
   - Updated rules for Amazonbot.
 
+  [Documentation]
+  - Bump copyright year.
+
   [Toolchain]
   - Sign distribution.
 
