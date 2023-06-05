@@ -91,7 +91,7 @@ sub _build_robots {
         {
             name   => 'Amazonbot',
             agent  => qr/\bAmazonbot\b/,
-            domain => qr/\.amazonaws\.com$/,
+            domain => qr/\.crawl\.amazonbot\.amazon$/,
         },
 
         {
