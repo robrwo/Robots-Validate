@@ -4,6 +4,9 @@ Revision history for {{ $dist->name }}:
   [Enhancements]
   - Updated rules for Amazonbot.
 
+  [Toolchain]
+  - Sign distribution.
+
 v0.2.7    2022-05-12 11:12:06-04:00 EST5EDT
   [Enhancements]
   - Added rules for Amazonbot.
