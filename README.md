@@ -70,7 +70,7 @@ You can specify the following `%opts`:
 
 - `agent`
 
-    This is the user-agent string. If it does not match, then the DNS lookkups
+    This is the user-agent string. If it does not match, then the DNS lookups
     will not be performed.
 
     It is optional.
