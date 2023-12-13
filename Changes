@@ -7,6 +7,9 @@ Revision history for {{ $dist->name }}:
   [Documentation]
   - Bump copyright year.
 
+  [Tests]
+  - Switched package used for the release manifest.
+
   [Toolchain]
   - Sign distribution.
 

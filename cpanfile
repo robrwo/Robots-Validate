@@ -31,6 +31,7 @@ on 'configure' => sub {
 on 'develop' => sub {
   requires "Pod::Coverage::TrustPod" => "0";
   requires "Test::CleanNamespaces" => "0.15";
+  requires "Test::DistManifest" => "0";
   requires "Test::EOF" => "0";
   requires "Test::EOL" => "0";
   requires "Test::Kwalitee" => "1.21";
