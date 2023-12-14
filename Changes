@@ -1,6 +1,9 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+  [Other]
+  - Removed Neevabot rule, since the bot seems to have shut down.
+
   [Documentation]
   - Fixed a typo.
 

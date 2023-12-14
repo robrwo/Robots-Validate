@@ -169,12 +169,6 @@ sub _build_robots {
         },
 
         {
-            name   => 'Neevabot',
-            agent  => qr/\bNeevabot\b/,
-            domain => qr/\.neevabot\.com$/,
-        },
-
-        {
             name   => 'PetalBot',
             agent  => qr/\bPetalBot\b/,
             domain => qr/\.petalsearch\.com$/,
