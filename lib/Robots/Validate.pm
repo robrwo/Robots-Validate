@@ -175,6 +175,12 @@ sub _build_robots {
         },
 
         {
+            name   => 'Monsido',
+            agent  => qr{Monsidobot\b}ao,
+            domain => qr{\.monsido\.com$}ao,
+        },
+
+        {
             name   => 'PetalBot',
             agent  => qr/\bPetalBot\b/,
             domain => qr/\.petalsearch\.com$/,

@@ -6,6 +6,8 @@ Revision history for {{ $dist->name }}:
 
   - Added rule for DataProviderBot.
 
+  - Added rule for MonsidoBot.
+
   [Other]
   - Removed Neevabot rule, since the bot seems to have shut down.
 
