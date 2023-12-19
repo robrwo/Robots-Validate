@@ -200,7 +200,7 @@ sub _build_robots {
 
         {
             name   => 'Yahoo',
-            agent  => qr/yahoo/i,
+            agent  => qr/Slurp/,
             domain => qr/\.crawl\.yahoo\.net$/,
 
         },
