@@ -127,6 +127,12 @@ sub _build_robots {
         },
 
         {
+            name   => 'DataProvider',
+            agent  => qr/Dataprovider\.com/,
+            domain => qr/\.dataproviderbot\.com$/,
+        },
+
+        {
             name   => 'Embedly',
             agent  => qr/\bEmbedly\b/,
             domain => qr/\.embed\.ly$/,

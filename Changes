@@ -4,6 +4,8 @@ Revision history for {{ $dist->name }}:
   [Enhancements]
   - Improved the regex for Slurp to work with Inktomi slurp, not just Yahoo slurp.
 
+  - Added rule for DataProviderBot.
+
   [Other]
   - Removed Neevabot rule, since the bot seems to have shut down.
 
