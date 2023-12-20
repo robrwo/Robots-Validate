@@ -8,6 +8,8 @@ Revision history for {{ $dist->name }}:
 
   - Added rule for MonsidoBot.
 
+  - Added rule for Headline ev-crawler.
+
   [Other]
   - Removed Neevabot rule, since the bot seems to have shut down.
 

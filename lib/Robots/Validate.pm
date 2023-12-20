@@ -139,6 +139,12 @@ sub _build_robots {
         },
 
         {
+            name   => 'Headline',
+            agent  => qr/ev-crawler\b/,
+            domain => qr/\.headline\.com$/,
+        },
+
+        {
             name   => 'Exabot',
             agent  => qr/\bExabot\b/i,
             domain => qr/\.exabot\.com$/,
