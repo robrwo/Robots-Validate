@@ -16,6 +16,8 @@ Revision history for {{ $dist->name }}:
   [Documentation]
   - Fixed a typo.
 
+  - Updated copyright year.
+
 v0.2.8    2023-12-13 09:12:44+00:00 Europe/London
   [Enhancements]
   - Updated rules for Amazonbot.
