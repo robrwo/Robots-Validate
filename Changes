@@ -10,6 +10,8 @@ Revision history for {{ $dist->name }}:
 
   - Added rule for Headline ev-crawler.
 
+  - Removed the starting wordbreak from the regexes, which should improve performance.
+
   [Other]
   - Removed Neevabot rule, since the bot seems to have shut down.
 

@@ -90,13 +90,13 @@ sub _build_robots {
 
         {
             name   => 'Amazonbot',
-            agent  => qr/\bAmazonbot\b/,
+            agent  => qr/Amazonbot\b/,
             domain => qr/\.crawl\.amazonbot\.amazon$/,
         },
 
         {
             name   => 'Applebot',
-            agent  => qr/\bApplebot\b/,
+            agent  => qr/Applebot\b/,
             domain => qr/\.applebot\.apple\.com$/,
         },
 
@@ -108,21 +108,21 @@ sub _build_robots {
 
         {
             name   => 'Baidu',
-            agent  => qr/\bBaiduspider\b/,
+            agent  => qr/Baiduspider\b/,
             domain => qr/\.crawl\.baidu\.com$/,
 
         },
 
         {
             name   => 'Bing',
-            agent  => qr/\b(?:Bingbot|MSNBot|AdIdxBot|BingPreview)\b/i,
+            agent  => qr/(?:Bingbot|MSNBot|AdIdxBot|BingPreview)\b/i,
             domain => qr/\.search\.msn\.com$/,
 
         },
 
         {
             name   => 'CocCoc',
-            agent  => qr/\bcoccocbot-web\b/,
+            agent  => qr/coccocbot-web\b/,
             domain => qr/\.coccoc\.com$/,
         },
 
@@ -134,7 +134,7 @@ sub _build_robots {
 
         {
             name   => 'Embedly',
-            agent  => qr/\bEmbedly\b/,
+            agent  => qr/Embedly\b/,
             domain => qr/\.embed\.ly$/,
         },
 
@@ -146,37 +146,37 @@ sub _build_robots {
 
         {
             name   => 'Exabot',
-            agent  => qr/\bExabot\b/i,
+            agent  => qr/Exabot\b/i,
             domain => qr/\.exabot\.com$/,
         },
 
         {
             name   => 'Google',
-            agent  => qr/\bGoogle(?:bot?)\b/i,
+            agent  => qr/Google(?:bot?)\b/i,
             domain => qr/\.google(?:bot)?\.com$/,
         },
 
         {
             name   => 'InfoTiger',
-            agent  => qr/\bInfoTigerBot\b/,
+            agent  => qr/InfoTigerBot\b/,
             domain => qr/\.infotiger\.com$/,
         },
 
         {
             name   => 'IONOS',
-            agent  => qr/\bIonCrawl\b/,
+            agent  => qr/IonCrawl\b/,
             domain => qr/\.1and1\.org$/,
         },
 
         {
             name   => 'LinkedIn',
-            agent  => qr/\bLinkedInBot\b/,
+            agent  => qr/LinkedInBot\b/,
             domain => qr/\.linkedin\.com$/,
         },
 
         {
             name   => 'Mojeek',
-            agent  => qr/\bMojeekBot\b/,
+            agent  => qr/MojeekBot\b/,
             domain => qr/\.mojeek\.com$/,
         },
 
@@ -188,31 +188,31 @@ sub _build_robots {
 
         {
             name   => 'PetalBot',
-            agent  => qr/\bPetalBot\b/,
+            agent  => qr/PetalBot\b/,
             domain => qr/\.petalsearch\.com$/,
         },
 
         {
             name   => 'Pinterest',
-            agent  => qr/\bPinterest\b/,
+            agent  => qr/Pinterest\b/,
             domain => qr/\.pinterest\.com$/,
         },
 
         {
             name   => 'Qwant',
-            agent  => qr/\bQwantify\b/,
+            agent  => qr/Qwantify\b/,
             domain => qr/\.qwant\.com$/,
         },
 
         {
             name   => 'SeznamBot',
-            agent  => qr/\bSeznam\b/,
+            agent  => qr/Seznam\b/,
             domain => qr/\.seznam\.cz$/,
         },
 
         {
             name   => 'Sogou',
-            agent  => qr/\bSogou\b/,
+            agent  => qr/Sogou\b/,
             domain => qr/\.sogou\.com$/,
         },
 
@@ -231,7 +231,7 @@ sub _build_robots {
 
         {
             name   => 'Yeti',
-            agent  => qr/\bnaver\.me\b/,
+            agent  => qr/naver\.me\b/,
             domain => qr/\.naver\.com$/,
         },
 
