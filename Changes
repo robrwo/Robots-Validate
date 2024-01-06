@@ -1,6 +1,9 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+  [Incompatible Changes]
+  - Bumped minimum Perl version to v5.14.
+
   [Enhancements]
   - Improved the regex for Slurp to work with Inktomi slurp, not just Yahoo slurp.
 

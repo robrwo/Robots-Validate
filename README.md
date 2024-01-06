@@ -96,6 +96,12 @@ validate some robots from
 [Facebook](https://developers.facebook.com/docs/sharing/webmasters/crawler)
 or Twitter.
 
+# SUPPORT FOR OLDER PERL VERSIONS
+
+This module requires Perl v5.14 or later.
+
+Future releases may only support Perl versions released in the last ten years.
+
 # SEE ALSO
 
 - [Verifying Bingbot](https://www.bing.com/webmaster/help/how-to-verify-bingbot-3905dc26)

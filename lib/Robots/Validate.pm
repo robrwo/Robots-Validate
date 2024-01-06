@@ -2,7 +2,7 @@ package Robots::Validate;
 
 # ABSTRACT: Validate that IP addresses are associated with known robots
 
-use v5.10;
+use v5.14;
 
 use Moo 1;
 
@@ -355,6 +355,12 @@ support reverse DNS lookups. This means that it cannot be used to
 validate some robots from
 L<Facebook|https://developers.facebook.com/docs/sharing/webmasters/crawler>
 or Twitter.
+
+=head1 SUPPORT FOR OLDER PERL VERSIONS
+
+This module requires Perl v5.14 or later.
+
+Future releases may only support Perl versions released in the last ten years.
 
 =head1 SEE ALSO
 
