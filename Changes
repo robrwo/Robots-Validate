@@ -1,6 +1,8 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+
+v0.2.9    2024-01-06 13:48:11+00:00 Europe/London
   [Incompatible Changes]
   - Bumped minimum Perl version to v5.14.
 
