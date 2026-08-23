@@ -139,6 +139,17 @@ It is required.
 This is a string or array reference of short strings with the domain suffix. e.g. C<.crawl.example.com>,
 or with a regular expression C</\.crawl\.example\.com$/>.
 
+It is important that domain suffixes begin with an initial dot.  For
+cases where an entire domain name should match, use a regular
+expression that anchors the beginning of the string,
+e.g. C</^crawl\.example\.com$/>.
+Otherwise an imposter domain matching the dotless-suffix would be validated, e.g.
+C<imposter-crawl.example.com>.
+
+Also note that the TOML format will require slashes to be escaped, e.g.
+
+    domain = "/\\.google(bot)?\\.com$/"
+
 =item network
 
 This is an optional array reference of CIDR network blocks.
