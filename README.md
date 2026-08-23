@@ -30,6 +30,7 @@ Changes for version v0.3.2 (2026-08-23)
     - Removed duplicate CONTRIBUTOR.
     - Documented why the initial dot for the domain suffix is important.
     - Improved the SECURITY CONSIDERATIONS section.
+    - Updated automation policy to be "human supervised".
 
 See the `Changes` file for more details.
 
