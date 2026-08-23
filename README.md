@@ -20,6 +20,15 @@ if ( my $res = $rs->validate( $ip, $user_agent ) ) {
 
 This module allows one to validate a robot user-agent string against the IP addresses.
 
+# RECENT CHANGES
+
+Changes for version v0.3.1 (2026-08-23)
+
+- Documentation
+    - Fixed error in Changes.
+
+See the `Changes` file for more details.
+
 # REQUIREMENTS
 
 This module lists the following modules as runtime dependencies:
