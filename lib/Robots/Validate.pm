@@ -2,22 +2,39 @@ package Robots::Validate;
 
 # ABSTRACT: Validate that IP addresses are associated with known robots
 
-use v5.14;
+use v5.24;
 
 use Moo 1;
 
-use MooX::Const v0.4.0;
-use List::Util 1.33 qw/ first none /;
+use Algorithm::AhoCorasick::XS;
+use File::ShareDir qw( dist_file );
+use File::Slurper  qw( read_binary );
+use List::Util     qw( all any none );
 use Net::DNS::Resolver;
-use Ref::Util qw/ is_plain_hashref /;
-use Types::Standard -types;
+use Net::IP qw( ip_expand_address ip_is_ipv4 ip_splitprefix );
+use Net::Patricia;
+use Ref::Util qw( is_plain_arrayref is_plain_hashref is_regexpref );
+use Sub::Util 1.40 qw( set_subname );
+use Syntax::Keyword::Try qw( try );
+use TOML::XS;
+use Types::Common qw( ArrayRef Bool ConsumerOf HashRef InstanceOf Maybe );
 
-# RECOMMEND PREREQ: Type::Tiny::XS
+# RECOMMEND PREREQ: CHI 0.40
 # RECOMMEND PREREQ: Ref::Util::XS
+# RECOMMEND PREREQ: TOML::XS 0.06
+# RECOMMEND PREREQ: Type::Tiny::XS
+
+use experimental qw( lexical_subs signatures );
 
 use namespace::autoclean;
 
-our $VERSION = 'v0.2.10';
+our $VERSION = 'v0.3.0';
+
+=begin :prelude
+
+=for stopwords CIDR TOML
+
+=end :prelude
 
 =head1 SYNOPSIS
 
@@ -27,296 +44,443 @@ our $VERSION = 'v0.2.10';
 
   ...
 
-  if ( $rs->validate( $ip, \%opts ) ) { ...  }
+  if ( my $res = $rs->validate( $ip, $user_agent ) ) {
+     ...
+  }
 
 =head1 DESCRIPTION
 
+This module allows one to validate a robot user-agent string against the IP addresses.
 
-=attrib C<resolver>
+=attr C<resolver>
 
-This is the L<Net::DNS::Resolver> used for DNS lookups.
+This is the L<Net::DNS::Resolver> object used for DNS lookups.
+
+This can only be set via the constructor.
 
 =cut
 
 has resolver => (
-    is      => 'lazy',
+    is      => 'bare',
     isa     => InstanceOf ['Net::DNS::Resolver'],
     builder => 1,
+    handles => {
+        _dns_query  => 'query',
+        _dns_search => 'search',
+    },
 );
 
-sub _build_resolver {
+sub _build_resolver($self) {
     return Net::DNS::Resolver->new;
 }
 
-=attrib C<robots>
+=attr networks
 
-This is an array reference of rules with information about
-robots. Each item is a hash reference with the following keys:
+This is a L<Net::Patricia> object used for matching networks.
+
+This can only be set via the constructor.
+
+Note that internally IPv4 addresses are converted to IPv6 addresses.
+
+=cut
+
+has networks => (
+    is      => 'bare',
+    isa     => InstanceOf ['Net::Patricia'],
+    builder => 1,
+    handles => {
+        _add_string   => 'add_string',
+        _match_string => 'match_string',
+    },
+);
+
+sub _build_networks($self) {
+    return Net::Patricia->new(AF_INET6);
+}
+
+has _validators => (
+    is       => 'ro',
+    isa      => HashRef,
+    init_arg => undef,
+    builder  => sub($self) { return {} },
+);
+
+has _agents => (
+    is       => 'lazy',
+    isa      => InstanceOf ['Algorithm::AhoCorasick::XS'],
+    init_arg => undef,
+    builder  => \&_build_agents,
+);
+
+sub _build_agents($self) {
+    # We need to ensure the validators are initialised with the rules
+    $self->_init_validators_from_config;
+    return Algorithm::AhoCorasick::XS->new( [ keys $self->_validators->%* ] );
+}
+
+=attr config
+
+This is an array reference of rule configurations.
+Each item is a hash reference with the following keys:
 
 =over
 
-=item C<name>
+=item name
 
-The name of the robot.
+This is a short string with the rule name.
 
-=item C<agent>
+=item agents
 
-A regular expression for matching against user agent names.
+This is an array reference of short strings to match against user agent strings.
+It is required.
 
-=item C<domain>
+=item domain
 
-A regular expression for matching against the hostname.
+This is a string or array reference of short strings with the domain suffix. e.g. C<.crawl.example.com>,
+or with a regular expression C</\.crawl\.example\.com$/>.
+
+=item network
+
+This is an optional array reference of CIDR network blocks.
+
+=item match
+
+This specifies the match type.
+
+The possible values are:
+
+=over
+
+=item any
+
+An agent is verified if either the C<domain> or the C<network> match.
+This is the default when unspecified.
+
+=item all
+
+An agent is verified is both the C<domain> and the C<network> match.
 
 =back
 
+=back
+
+If the constructor is passed a hash reference, then it is coerced into an array reference of the values, sorted by keys,
+where the key is added to the C<name> if it is not already specified.  (The C<agents> and C<network> values will be
+coerced into array references.)
+
+If the constructor is passed anything else, it is assumed to be the filename of a TOML file with the configuration.
+
 =cut
 
-has robots => (
-    is  => 'const',
-    isa => ArrayRef [
-        Dict [
-            name   => Str,
-            agent  => Optional [RegexpRef],
-            domain => RegexpRef,
-        ]
-    ],
-    lazy    => 1,
-    strict  => 0,
-    builder => 1,
+has config => (
+    is     => 'lazy',
+    isa    => ArrayRef [HashRef],
+    coerce => sub($ref) {
+
+        return $ref if is_plain_arrayref($ref);
+
+        unless ( is_plain_hashref($ref) ) {
+            my $toml = read_binary("$ref");
+            $ref = TOML::XS::from_toml($toml)->get();
+        }
+
+        if ( is_plain_hashref($ref) ) {
+
+            state sub _normalise( $key, $val ) {
+                my %item = $val->%*;
+                $item{name}   //= $key;
+                for my $key (qw/ agents network /) {
+                    $item{$key} = [ $item{$key} ] unless !exists $item{$key} || is_plain_arrayref( $item{$key} );
+                }
+                return \%item;
+            }
+
+            return [ map { _normalise( $_ => $ref->{$_} ) } sort keys $ref->%* ];
+        }
+
+        return $ref;
+    },
+    builder => sub($self) {
+        return dist_file( __PACKAGE__ =~ s/::/-/gr, 'robots.toml' );
+    }
 );
 
-sub _build_robots {
-    return [
+=attr index
 
-        {
-            name   => 'Amazonbot',
-            agent  => qr/Amazonbot\b/,
-            domain => qr/\.crawl\.amazonbot\.amazon$/,
-        },
-
-        {
-            name   => 'Applebot',
-            agent  => qr/Applebot\b/,
-            domain => qr/\.applebot\.apple\.com$/,
-        },
-
-        {
-            name   => 'Arquivo.pt',
-            agent  => qr/arquivo-web-crawler/,
-            domain => qr/\.arquivo\.pt$/,
-        },
-
-        {
-            name   => 'Baidu',
-            agent  => qr/Baiduspider\b/,
-            domain => qr/\.crawl\.baidu\.com$/,
-
-        },
-
-        {
-            name   => 'Bing',
-            agent  => qr/(?:Bingbot|MSNBot|AdIdxBot|BingPreview)\b/i,
-            domain => qr/\.search\.msn\.com$/,
-
-        },
-
-        {
-            name   => 'CocCoc',
-            agent  => qr/coccocbot-web\b/,
-            domain => qr/\.coccoc\.com$/,
-        },
-
-        {
-            name   => 'DataProvider',
-            agent  => qr/Dataprovider\.com/,
-            domain => qr/\.dataproviderbot\.com$/,
-        },
-
-        {
-            name   => 'Embedly',
-            agent  => qr/Embedly\b/,
-            domain => qr/\.embed\.ly$/,
-        },
-
-        {
-            name   => 'Headline',
-            agent  => qr/ev-crawler\b/,
-            domain => qr/\.headline\.com$/,
-        },
-
-        {
-            name   => 'Exabot',
-            agent  => qr/Exabot\b/i,
-            domain => qr/\.exabot\.com$/,
-        },
-
-        {
-            name   => 'Google',
-            agent  => qr/Google(?:bot?)\b/i,
-            domain => qr/\.google(?:bot)?\.com$/,
-        },
-
-        {
-            name   => 'InfoTiger',
-            agent  => qr/InfoTigerBot\b/,
-            domain => qr/\.infotiger\.com$/,
-        },
-
-        {
-            name   => 'IONOS',
-            agent  => qr/IonCrawl\b/,
-            domain => qr/\.1and1\.org$/,
-        },
-
-        {
-            name   => 'LinkedIn',
-            agent  => qr/LinkedInBot\b/,
-            domain => qr/\.linkedin\.com$/,
-        },
-
-        {
-            name   => 'Mojeek',
-            agent  => qr/MojeekBot\b/,
-            domain => qr/\.mojeek\.com$/,
-        },
-
-        {
-            name   => 'Monsido',
-            agent  => qr{Monsidobot\b}ao,
-            domain => qr{\.monsido\.com$}ao,
-        },
-
-        {
-            name   => 'PetalBot',
-            agent  => qr/PetalBot\b/,
-            domain => qr/\.petalsearch\.com$/,
-        },
-
-        {
-            name   => 'Pinterest',
-            agent  => qr/Pinterest\b/,
-            domain => qr/\.pinterest\.com$/,
-        },
-
-        {
-            name   => 'Qwant',
-            agent  => qr/Qwantify\b/,
-            domain => qr/\.qwant\.com$/,
-        },
-
-        {
-            name   => 'SeznamBot',
-            agent  => qr/Seznam\b/,
-            domain => qr/\.seznam\.cz$/,
-        },
-
-        {
-            name   => 'Sogou',
-            agent  => qr/Sogou\b/,
-            domain => qr/\.sogou\.com$/,
-        },
-
-        {
-            name   => 'Yahoo',
-            agent  => qr/Slurp/,
-            domain => qr/\.crawl\.yahoo\.net$/,
-
-        },
-
-        {
-            name   => "Yandex",
-            agent  => qr/Yandex/,
-            domain => qr/\.yandex\.(?:com|ru|net)$/,
-        },
-
-        {
-            name   => 'Yeti',
-            agent  => qr/naver\.me\b/,
-            domain => qr/\.naver\.com$/,
-        },
-
-    ];
-}
-
-=attrib C<die_on_error>
-
-When true, L</validate> will die on a L</resolver> failure.
-
-By default it is false.
+This is a hash reference where the keys are rule names and the values are the rules from L</config>.
 
 =cut
 
-has die_on_error => (
-    is      => 'lazy',
-    isa     => Bool,
-    default => 0,
+has index => (
+    is       => 'ro',
+    isa      => HashRef,
+    init_arg => undef,
+    builder  => sub($self) { return {} },
+);
+
+
+=attr locked
+
+This is a boolean to indicate that internal data structures for matching agents have been built, and the rules are locked.
+
+=cut
+
+has locked => (
+    is       => 'rwp',
+    isa      => Bool,
+    init_arg => undef,
+);
+
+=head2 cache
+
+This is an optional L<CHI> cache used for matching IP addresses and user agent strings.
+
+=head2 has_cache
+
+This indicates that there is a L</cache>.
+
+=cut
+
+has cache => (
+    is        => 'ro',
+    isa       => ConsumerOf ['CHI::Driver::Role::Universal'],
+    predicate => 1,
+);
+
+=head2 cache_options
+
+This is an optional hash reference of L</cache> options to pass to L<CHI/compute>, e.g.
+
+    { expires_in => '8 hours' }
+
+Plain strings are assumed to be C<expires_in> values.
+
+=cut
+
+has cache_options => (
+    is     => 'ro',
+    isa    => Maybe [HashRef],
+    coerce => sub($val) {
+        return $val if is_plain_hashref($val);
+        return { expires_in => "$val" } if defined $val;
+        return undef;
+    }
 );
 
 =method C<validate>
 
-  my $result = $rv->validate( $ip, \%opts );
+  my $result = $rv->validate( $ip, $agent, \%opts );
 
-This method attempts to validate that an IP address belongs to a known
+Alternatively, you can pass in a L<Plack> environment:
+
+  my $result = $rv->validate($env);
+
+This method attempts to validate that an IP address C<$ip> is associated with a known robot identified by the C<$agent>.
+
+If C<$ip> is in a known list of network blocks, then it succeeds.
+Otherwise it attempts to validate that an IP address belongs to a known
 robot by first looking up the hostname that corresponds to the IP address,
 and then validating that the hostname resolves to that IP address.
-
-If this succeeds, it then checks if the hostname is associated with a
+It then checks if the hostname is associated with a
 known web robot.
 
-If that succeeds, it returns a copy of the matched rule from L</robots>.
+If that succeeds, it returns an array reference containing the C<name> and the matching agent string.
+
+The rule can be looked up from the L</index> attribute.
 
 You can specify the following C<%opts>:
 
 =over
 
-=item C<agent>
+=item no_cache
 
-This is the user-agent string. If it does not match, then the DNS lookups
-will not be performed.
+Do not check the L</cache>.
 
-It is optional.
+=item agent
+
+Specify the C<$agent>, for backwards-compatibility with versions before v0.3.0.
+
+This is deprecated and will be removed from a future version.
 
 =back
 
-Alternatively, you can pass in a Plack environment:
-
-  my $result = $rv->validate($env);
-
 =cut
 
-sub validate {
-    my ( $self, $ip, $args ) = @_;
+sub validate( $self, $ip, $agent = undef, $opts = undef ) {
 
-    if (is_plain_hashref($ip) && !$args) {
-        $args = { agent => $ip->{HTTP_USER_AGENT} };
-        $ip   = $ip->{REMOTE_ADDR};
+    if ( is_plain_hashref($agent) && !$opts ) {
+        ( $agent, $opts ) = ( $opts, $agent );
+        $agent //= $opts->{agent}; # DEPRECATED
     }
 
-    my $res = $self->resolver;
+    if ( is_plain_hashref($ip) && !$agent ) {
+        $agent = $ip->{HTTP_USER_AGENT};
+        $ip   =  $ip->{REMOTE_ADDR};
+    }
 
-    # Reverse DNS
+    $opts //= { };
+
+    if ( !$opts->{no_cache} && $self->has_cache ) {
+        return $self->cache->compute(
+            join( $;, $ip, $agent ),
+            $self->cache_options,
+            sub { return $self->_revalidate( $ip, $agent // "" ) }
+        );
+    }
+
+    return $self->_revalidate( $ip, $agent // "" );
+}
+
+sub _revalidate( $self, $ip, $agent ) {
+
+    if ( $agent ne "" ) {
+        if ( my $str = $self->_agents->first_match($agent) ) {
+            my $res = $self->_validators->{$str}->($ip);
+            return $res && [ $res => $str ];
+        }
+    }
+    else {
+        my $res = $self->_match_ip($ip);
+        return $res && [ $res => undef ];
+    }
+
+    return undef;
+}
+
+sub _add_rule( $self, $rule ) {
+
+    die "The rules are locked" if $self->locked;
+
+    my $name = $rule->{name};
+    die "A rule name is required" unless defined $name;
+
+    my $domain  = $rule->{domain};
+    my $network = $rule->{network};
+    my $type    = $rule->{match} // "any";
+
+    my @fns;
+
+    if ($network) {
+
+        $self->_add_network( $_, $name ) for ( $network->@* );
+
+        push @fns, set_subname "_check_ip_${name}", sub($ip) { $self->_check_ip( $name, $ip ) };
+    }
+
+    if ($domain) {
+
+        state sub _to_regexp($domain) {
+            return $domain if is_regexpref($domain);
+            my ($re) = $domain =~ m[ \A / (.+) / \z ]x;
+            $re //= quotemeta($domain) . '\z';
+            return qr/${re}/an;
+        }
+
+        my $fn;
+
+        if ( is_plain_arrayref($domain) ) {
+            my @res = map { _to_regexp($_) } $domain->@*;
+            $fn = sub($ip) { $self->_check_dns( $name => \@res, $ip ) };
+        }
+        else {
+            my $re = _to_regexp($domain);
+            $fn = sub($ip) { $self->_check_dns( $name => $re, $ip ) };
+        }
+
+        push @fns, set_subname "_check_dns_${name}", $fn;
+    }
+
+    if (@fns) {
+
+        # TODO: add option for partial matching where false returns undef, i.e. "yes or unknown"
+
+        my $fn = set_subname "_verify_${name}", (
+
+            ( @fns == 1 )
+            ? sub($ip) { $fns[0]->($ip) and $name }
+            : (
+
+                $type eq "any"
+                ? sub($ip) {
+                    any { $_->($ip) } @fns and $name;
+                  }
+                : sub($ip) {
+                    all { $_->($ip) } @fns and $name;
+                }
+            )
+        );
+
+        my $validators = $self->_validators;
+
+        if ( my $agents = $rule->{agents} ) {
+            for my $str ( $agents->@* ) {
+                die "string ${str} already exists in the rules" if exists $validators->{$str};
+                $validators->{$str} = $fn;
+            }
+        }
+        else {
+            # TODO add support for matching on IP
+            die "an agent substring is required";
+        }
+
+        $self->index->{$name} = $rule;
+
+    }
+    else {
+
+        die "no rules found for ${name}";
+
+    }
+
+}
+
+sub _add_network( $self, $cidr, $name ) {
+    my ( $prefix, $len ) = ip_splitprefix($cidr);
+    $prefix //= $cidr;
+
+    if ( ip_is_ipv4($prefix) ) {
+        $len //= 32;
+        $cidr = sprintf( '::ffff:%s/%u', ip_expand_address( $prefix, 4 ), $len + 96 );
+    }
+
+    try {
+        $self->_add_string( $cidr, $name );
+    }
+    catch ($e) {
+        die "add_string failed for '$cidr' with '$name': $e";
+    };
+}
+
+sub _match_ip( $self, $ip ) {
+    return ip_is_ipv4($ip) ? $self->_match_string("::ffff:$ip") : $self->_match_string($ip);
+}
+
+sub _check_ip( $self, $name, $ip ) {
+    my $check = $self->_match_ip($ip);
+    return $name if $check && $check eq $name;
+    return undef;
+}
+
+sub _check_dns( $self, $name, $domain, $ip ) {
 
     my $hostname;
 
-    if ( my $reply = $res->query($ip, 'PTR') ) {
-        ($hostname) = map { $_->ptrdname } $reply->answer;
+    if ( my $reply = $self->_dns_query( $ip, 'PTR' ) ) {
+        ($hostname) = grep { !!$_ } map { $_->can("ptrdname") && $_->ptrdname } $reply->answer;
+    }
+
+    return undef unless $hostname;
+
+    if ( is_plain_arrayref($domain) ) {
+        return undef unless any { $hostname =~ $_ } $domain->@*;
     }
     else {
-        die $res->errorstring if $self->die_on_error;
+        return undef unless $hostname =~ $domain;
     }
 
-    return unless $hostname;
+    my $reply = $self->_dns_search( $hostname, "A" );
 
-    $args //= {};
-
-    my $agent = $args->{agent};
-    my @matches =
-      grep { !$agent || $agent =~ $_->{agent} } @{ $self->robots };
-
-    my $reply = $res->search( $hostname, "A" )
-      or $self->die_on_error && die $res->errorstring;
-
-    return unless $reply;
+    return undef unless $reply;
 
     if (
         none { $_ eq $ip } (
@@ -325,54 +489,51 @@ sub validate {
         )
       )
     {
-        return;
+        return undef;
     }
 
-    if ( my $match = first { $hostname =~ $_->{domain} } @matches ) {
+    return $name;
+}
 
-        return {
-            %$match,
-            hostname   => $hostname,
-            ip_address => $ip,
-        };
-
+sub _init_validators_from_config($self) {
+    for my $rule ( $self->config->@* ) {
+        $self->_add_rule( { $rule->%* } );
     }
-
-    return;
+    $self->_set_locked(1);
 }
 
 =head1 KNOWN ISSUES
 
-=head2 Undocumented Rules
+Many of these rules are not documented, but have been guessed from web traffic.
 
-Many of these rules are not documented, but have been guessed from web
-traffic.
+The networks used by some robots do not consistently support reverse DNS lookups, and may randomly fail.
 
-=head2 Limitations
+=head1 SECURITY CONSIDERATIONS
 
-The current module can only be used for systems that consistently
-support reverse DNS lookups. This means that it cannot be used to
-validate some robots from
-L<Facebook|https://developers.facebook.com/docs/sharing/webmasters/crawler>
-or Twitter.
+When using the L</cache>, ensure that it is configured to expire the data and digest the keys by setting
+L<CHI/max_key_length> to 0.  This is to keep the cache from growing too large, and to reduce the likelihood of cache
+backend vulnerabilities being exploited through user-agent strings.
 
-=head1 SUPPORT FOR OLDER PERL VERSIONS
+=head1 prepend:SUPPORT
 
-This module requires Perl v5.14 or later.
+Only the latest version of this module will be supported.
 
-Future releases may only support Perl versions released in the last ten years.
+This module requires Perl v5.24 or later, based on the minimum Perl supported by L<Dist::Zilla>.
+
+=head2 Reporting Bugs and Submitting Feature Requests
+
+=head1 append:SUPPORT
+
+If the bug you are reporting has security implications which make it inappropriate to send to a public issue tracker,
+then see F<SECURITY.md> for instructions how to report security vulnerabilities.
+
+=head1 append:AUTHOR
+
+Some of the development of this module was sponsored by Science Photo Library L<https://www.sciencephoto.com>.
 
 =head1 SEE ALSO
 
-=over
-
-=item L<Verifying Bingbot|https://www.bing.com/webmaster/help/how-to-verify-bingbot-3905dc26>
-
-=item L<Verifying Googlebot|https://support.google.com/webmasters/answer/80553>
-
-=item L<How to check that a robot belongs to Yandex|https://yandex.com/support/webmaster/robot-workings/check-yandex-robots.html>
-
-=back
+The file F<robots.toml> included with this distribution contains links to documented rules.
 
 =cut
 

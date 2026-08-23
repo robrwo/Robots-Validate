@@ -4,26 +4,29 @@ Revision history for {{ $dist->name }}:
 
 v0.2.9    2024-01-06 13:48:11+00:00 Europe/London
   [Incompatible Changes]
-  - Bumped minimum Perl version to v5.14.
+  - This is a complete rewrite, and the interface is not compatible.
+
+  - Bumped minimum Perl version to v5.24;
 
   [Enhancements]
-  - Improved the regex for Slurp to work with Inktomi slurp, not just Yahoo slurp.
+  - This uses the Aho-Corasick algorithm to match multiple user-agent strings efficiently.
 
-  - Added rule for DataProviderBot.
+  - The robot rules are in a configuration file, allowing the user to easily update their own rules.
 
-  - Added rule for MonsidoBot.
-
-  - Added rule for Headline ev-crawler.
-
-  - Removed the starting wordbreak from the regexes, which should improve performance.
-
-  [Other]
-  - Removed Neevabot rule, since the bot seems to have shut down.
+  [Tests]
+  - Updated the tests to use Test2.
 
   [Documentation]
-  - Fixed a typo.
+  - Updated the author email address.
 
-  - Updated copyright year.
+  - Updated the copyright year.
+
+  - Added a security policy.
+
+  [Toolchain]
+  - Use SigStore instead of Module::Signature to sign releases.
+
+  - Added Automation Policy and DOAP metadata.
 
 v0.2.8    2023-12-13 09:12:44+00:00 Europe/London
   [Enhancements]
