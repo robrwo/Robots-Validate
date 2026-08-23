@@ -16,6 +16,7 @@ MYMETA.*
 inc/*
 
 Robots-Validate-v*/*
+Robots-Validate-v*.sigstore.json
 
 .build/
 
