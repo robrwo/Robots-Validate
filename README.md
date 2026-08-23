@@ -24,6 +24,8 @@ This module allows one to validate a robot user-agent string against the IP addr
 
 Changes for version v0.3.2 (2026-08-23)
 
+- Security
+    - Added missing initial dot to the domain suffixes for petalbot and visionheight, which allowed an imposter domain such as fakepetalsearch.com.
 - Documentation
     - Removed duplicate CONTRIBUTOR.
 

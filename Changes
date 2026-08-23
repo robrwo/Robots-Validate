@@ -1,6 +1,10 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+  [Security]
+  - Added missing initial dot to the domain suffixes for petalbot and visionheight,
+    which allowed an imposter domain such as fakepetalsearch.com.
+
   [Documentation]
   - Removed duplicate CONTRIBUTOR.
 
