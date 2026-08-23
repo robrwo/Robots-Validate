@@ -32,7 +32,7 @@ our $VERSION = 'v0.3.2';
 
 =begin :prelude
 
-=for stopwords CIDR TOML
+=for stopwords CIDR TOML dotless
 
 =end :prelude
 
@@ -245,6 +245,8 @@ has locked => (
 =head2 cache
 
 This is an optional L<CHI> cache used for matching IP addresses and user agent strings.
+
+See the L</SECURITY CONSIDERATIONS> section for improving the safety of the cache.
 
 =head2 has_cache
 
@@ -521,9 +523,20 @@ The networks used by some robots do not consistently support reverse DNS lookups
 
 =head1 SECURITY CONSIDERATIONS
 
-When using the L</cache>, ensure that it is configured to expire the data and digest the keys by setting
-L<CHI/max_key_length> to 0.  This is to keep the cache from growing too large, and to reduce the likelihood of cache
-backend vulnerabilities being exploited through user-agent strings.
+When using the L</cache>, ensure that it is configured to expire the
+data by setting L<CHI/expires_in> and digest the keys by setting
+L<CHI/max_key_length> to 0.  This is to keep the cache from growing
+too large, and to reduce the likelihood of cache backend
+vulnerabilities being exploited through user-agent strings.
+
+When specifying a C<domain> for verification rules, ensure that there
+is an initial dot in the suffix, or that the regular expression
+matches the entire domain name.  Otherwise imposter domains with the
+same suffix will be validated.
+
+When the C<network> list contains cloud addresses, it is important to
+regularly update the addresses from the documented information, as an
+imposter can use abandoned cloud IP addresses.
 
 =head1 prepend:SUPPORT
 

@@ -29,6 +29,7 @@ Changes for version v0.3.2 (2026-08-23)
 - Documentation
     - Removed duplicate CONTRIBUTOR.
     - Documented why the initial dot for the domain suffix is important.
+    - Improved the SECURITY CONSIDERATIONS section.
 
 See the `Changes` file for more details.
 
@@ -90,9 +91,20 @@ For more information, see [How to install CPAN modules](https://www.cpan.org/mod
 
 # SECURITY CONSIDERATIONS
 
-When using the ["cache"](#cache), ensure that it is configured to expire the data and digest the keys by setting
-["max\_key\_length" in CHI](https://metacpan.org/pod/CHI#max_key_length) to 0.  This is to keep the cache from growing too large, and to reduce the likelihood of cache
-backend vulnerabilities being exploited through user-agent strings.
+When using the ["cache"](#cache), ensure that it is configured to expire the
+data by setting ["expires\_in" in CHI](https://metacpan.org/pod/CHI#expires_in) and digest the keys by setting
+["max\_key\_length" in CHI](https://metacpan.org/pod/CHI#max_key_length) to 0.  This is to keep the cache from growing
+too large, and to reduce the likelihood of cache backend
+vulnerabilities being exploited through user-agent strings.
+
+When specifying a `domain` for verification rules, ensure that there
+is an initial dot in the suffix, or that the regular expression
+matches the entire domain name.  Otherwise imposter domains with the
+same suffix will be validated.
+
+When the `network` list contains cloud addresses, it is important to
+regularly update the addresses from the documented information, as an
+imposter can use abandoned cloud IP addresses.
 
 # SUPPORT
 

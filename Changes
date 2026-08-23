@@ -10,6 +10,8 @@ Revision history for {{ $dist->name }}:
 
   - Documented why the initial dot for the domain suffix is important.
 
+  - Improved the SECURITY CONSIDERATIONS section.
+
 v0.3.1    2026-08-23 01:44:55+01:00 Europe/London (TRIAL RELEASE)
   [Documentation]
   - Fixed error in Changes.
