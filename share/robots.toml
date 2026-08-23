@@ -1956,8 +1956,8 @@ network = [
 ## Network: https://bot.seekport.com/seekportbot_ips.txt
 
 [seranking]
-agents = "SERankingBacklinksBot"
-domain = ".seranking.com"
+agents = [ "SERankingBacklinksBot", "BLEXBot" ]
+domain = [ ".seopowersuite.com", ".seranking.com", ".webmeup.com" ]
 network = [
     "95.217.114.159", "95.217.114.179", "37.27.55.74", "37.27.55.110",
     "135.181.166.38", "135.181.166.58", "65.109.100.155",

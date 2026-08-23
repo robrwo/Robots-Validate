@@ -1,6 +1,8 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+  [Enhancements]
+  - Updated seranking information.
 
 v0.3.2    2026-08-23 22:11:38+01:00 Europe/London (TRIAL RELEASE)
   [Security]
