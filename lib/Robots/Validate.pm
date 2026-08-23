@@ -11,7 +11,7 @@ use File::ShareDir qw( dist_file );
 use File::Slurper  qw( read_binary );
 use List::Util     qw( all any none );
 use Net::DNS::Resolver;
-use Net::IP qw( ip_expand_address ip_is_ipv4 ip_splitprefix );
+use Net::IP qw( ip_expand_address ip_is_ipv4 ip_is_ipv6 ip_splitprefix );
 use Net::Patricia;
 use Ref::Util qw( is_plain_arrayref is_plain_hashref is_regexpref );
 use Sub::Util 1.40 qw( set_subname );
@@ -453,7 +453,7 @@ sub _add_network( $self, $cidr, $name ) {
 
     if ( ip_is_ipv4($prefix) ) {
         $len //= 32;
-        $cidr = sprintf( '::ffff:%s/%u', ip_expand_address( $prefix, 4 ), $len + 96 );
+        $cidr = _normalise_ip($prefix) . '/' . ( $len + 96 );
     }
 
     try {
@@ -465,7 +465,7 @@ sub _add_network( $self, $cidr, $name ) {
 }
 
 sub _match_ip( $self, $ip ) {
-    return ip_is_ipv4($ip) ? $self->_match_string("::ffff:$ip") : $self->_match_string($ip);
+    return $self->_match_string( _normalise_ip($ip) );
 }
 
 sub _check_ip( $self, $name, $ip ) {
@@ -474,38 +474,72 @@ sub _check_ip( $self, $name, $ip ) {
     return undef;
 }
 
+# The canonical form used to compare addresses: everything is mapped into the
+# ::ffff: IPv6 space already used for Net::Patricia (see _match_ip), then fully
+# expanded.  Net::DNS renders an AAAA address as "2001:db8:0:0:0:0:0:7", which
+# never string-equals the "2001:db8::7" a web server puts in REMOTE_ADDR, so
+# comparing the two textually is not meaningful without this.
+sub _normalise_ip($ip) {
+    return undef unless defined $ip && length $ip;
+    $ip = "::ffff:" . ip_expand_address( $ip, 4 ) if ip_is_ipv4($ip);
+    return undef unless ip_is_ipv6($ip);      # ip_expand_address does not validate
+    return ip_expand_address( $ip, 6 );
+}
+
+# Build the reverse-lookup name here rather than passing an address literal to
+# the resolver and relying on it to special-case one.  Net::DNS::Question does
+# convert a literal, but Net::DNS::Resolver::Mock -- the resolver the tests use
+# -- only does so for IPv4, so relying on that behaviour makes the IPv6 path
+# untestable.  Being explicit also stops a hostname that merely looks like an
+# address from being silently reinterpreted.
+sub _arpa($norm) {
+    ( my $nibbles = $norm ) =~ s/://g;
+    if ( $nibbles =~ /\A0{20}ffff([[:xdigit:]]{8})\z/a ) {    # IPv4-mapped
+        return join( ".", reverse map { hex } $1 =~ /(..)/g ) . ".in-addr.arpa";
+    }
+    return join( ".", reverse split //, $nibbles ) . ".ip6.arpa";
+}
+
 sub _check_dns( $self, $name, $domain, $ip ) {
 
-    my $hostname;
+    my $wanted = _normalise_ip($ip) // return undef;
 
-    if ( my $reply = $self->_dns_query( $ip, 'PTR' ) ) {
-        ($hostname) = grep { !!$_ } map { $_->can("ptrdname") && $_->ptrdname } $reply->answer;
-    }
+    my $reply = $self->_dns_query( _arpa($wanted), "PTR" ) or return undef;
 
-    return undef unless $hostname;
+    my @hostnames = grep { !!$_ }
+      map { $_->can("ptrdname") && $_->ptrdname } $reply->answer;
+
 
     if ( is_plain_arrayref($domain) ) {
-        return undef unless any { $hostname =~ $_ } $domain->@*;
-    }
-    else {
-        return undef unless $hostname =~ $domain;
-    }
-
-    my $reply = $self->_dns_search( $hostname, "A" );
-
-    return undef unless $reply;
-
-    if (
-        none { $_ eq $ip } (
-            map  { $_->address }
-            grep { $_->can('address') } $reply->answer
-        )
-      )
-    {
-        return undef;
+        my @domains = $domain->@*;
+        if ( @domains == 1 ) {
+            $domain = $domains[0];
+        }
+        else {
+            my $re = "(" . join( "|",  @domains ) . ")";
+            $domain = qr/$re/n;
+        }
     }
 
-    return $name;
+    my @matched = grep { $_ =~ $domain } @hostnames;
+
+    return undef unless @matched;
+
+    # Only a record of the client's own family can confirm it, so ask for one
+    # type rather than both: an IPv4 client normalises into ::ffff:/96.
+    my $type = $wanted =~ /\A0000:0000:0000:0000:0000:ffff:/ ? "A" : "AAAA";
+
+    for my $hostname (@matched) {
+
+        my $forward = $self->_dns_query( $hostname, $type ) or next;
+
+        return $name
+          if any { ( _normalise_ip($_) // "" ) eq $wanted }
+          map    { $_->address }
+          grep   { $_->can("address") } $forward->answer;
+    }
+
+    return undef;
 }
 
 sub _init_validators_from_config($self) {
