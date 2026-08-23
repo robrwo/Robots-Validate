@@ -593,6 +593,8 @@ Some of the development of this module was sponsored by Science Photo Library L<
 
 The file F<robots.toml> included with this distribution contains links to documented rules.
 
+The TOML specification can be found at L<https://toml.io>.
+
 =cut
 
 1;

@@ -33,6 +33,7 @@ Changes for version v0.3.2 (2026-08-23)
     - Documented why the initial dot for the domain suffix is important.
     - Improved the SECURITY CONSIDERATIONS section.
     - Updated automation policy to be "human supervised".
+    - Added link to TOML specification in SEE ALSO.
 
 See the `Changes` file for more details.
 
@@ -151,3 +152,5 @@ The Artistic License 2.0 (GPL Compatible)
 # SEE ALSO
 
 The file `robots.toml` included with this distribution contains links to documented rules.
+
+The TOML specification can be found at [https://toml.io](https://toml.io).

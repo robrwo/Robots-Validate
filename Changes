@@ -17,6 +17,8 @@ Revision history for {{ $dist->name }}:
 
   - Updated automation policy to be "human supervised".
 
+  - Added link to TOML specification in SEE ALSO.
+
 v0.3.1    2026-08-23 01:44:55+01:00 Europe/London (TRIAL RELEASE)
   [Documentation]
   - Fixed error in Changes.
