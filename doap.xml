@@ -18,12 +18,6 @@
       <foaf:mbox rdf:resource="mailto:perl@rhizomnic.com" />
     </foaf:Person>
   </developer>
-  <helper>
-    <foaf:Person>
-      <foaf:name>Robert Rothenberg</foaf:name>
-      <foaf:mbox rdf:resource="mailto:rrwo@cpan.org" />
-    </foaf:Person>
-  </helper>
   <license rdf:resource="http://www.perlfoundation.org/artistic_license_2_0" />
   <bug-database rdf:resource="https://github.com/robrwo/Robots-Validate/issues" />
   <repository>

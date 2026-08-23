@@ -22,10 +22,10 @@ This module allows one to validate a robot user-agent string against the IP addr
 
 # RECENT CHANGES
 
-Changes for version v0.3.1 (2026-08-23)
+Changes for version v0.3.2 (2026-08-23)
 
 - Documentation
-    - Fixed error in Changes.
+    - Removed duplicate CONTRIBUTOR.
 
 See the `Changes` file for more details.
 
@@ -119,10 +119,6 @@ and may be cloned from [https://github.com/robrwo/Robots-Validate.git](https://g
 Robert Rothenberg <perl@rhizomnic.com>
 
 Some of the development of this module was sponsored by Science Photo Library [https://www.sciencephoto.com](https://www.sciencephoto.com).
-
-# CONTRIBUTOR
-
-Robert Rothenberg <rrwo@cpan.org>
 
 # COPYRIGHT AND LICENSE
 
