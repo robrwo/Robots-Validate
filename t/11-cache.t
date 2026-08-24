@@ -54,7 +54,38 @@ is
   [ "google" => "Googlebot" ],
   '_revalidate';
 
-ok !%store, 'empty cache';
+ok !%store || !$store{Default}->%*, 'empty cache';
+
+is
+  $rv->validate(
+    '1.2.3.4',
+"Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.7871.186 Mobile Safari/537.36"
+  ),
+  undef,
+  'unknown UA';
+
+ok !%store || !$store{Default}->%*, 'empty cache';
+
+is
+  $rv->validate(
+    '1.2.3.4',
+"Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.7871.186 Mobile Safari/537.36 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+  ),
+  "",
+  'identify a fake bot';
+
+
+ok !!%store && scalar($store{Default}->%*) == 1, 'non-empty cache';
+
+is
+  $rv->validate(
+    '1.2.3.4',
+"Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.7871.186 Mobile Safari/537.36"
+  ),
+  undef,
+  'unknown UA (same address as fake but not cached result)';
+
+ok !!%store && scalar($store{Default}->%*) == 1, 'non-empty cache';
 
 is
   $rv->validate(
@@ -64,7 +95,7 @@ is
   [ "google" => "Googlebot" ],
   'validate';
 
-ok !!%store, 'non-empty cache';
+ok !!%store && scalar($store{Default}->%*) == 2, 'non-empty cache';
 
 is
   $rv->validate(
@@ -73,5 +104,7 @@ is
   ),
   [ "google" => "Googlebot" ],
   'validate';
+
+ok !!%store && scalar($store{Default}->%*) == 2, 'non-empty cache';
 
 done_testing;
