@@ -181,6 +181,15 @@ coerced into array references.)
 If the constructor is passed anything else, it is assumed to be the filename of a TOML file with the configuration.
 The file will be parsed with L<TOML::XS> if it is available, or L<TOML::Tiny> otherwise.
 
+There is a utility in the distribution F<devel/rebuild-robots-config> that will normalise the file and update
+network information about robots.
+
+Users are encouraged to copy the F<share/robots.toml> file from the
+distribution and maintain a separate file with rules that are suited
+to their application.
+
+Users are also encouraged to submit new and updated rules back to the maintainers. See L</SOURCE>.
+
 =cut
 
 has config => (
