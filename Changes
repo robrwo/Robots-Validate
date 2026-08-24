@@ -8,6 +8,9 @@ Revision history for {{ $dist->name }}:
 
   - Switched the configuration parser to use TOML::Tiny by default, but TOML::XS if it is available.
 
+  [Documentation]
+  - Improved documentation.
+
   [Tests]
   - Added a missing prerequsite.
 

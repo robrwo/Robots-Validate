@@ -260,7 +260,7 @@ has cache => (
     predicate => 1,
 );
 
-=head2 cache_options
+=attr cache_options
 
 This is an optional hash reference of L</cache> options to pass to L<CHI/compute>, e.g.
 
@@ -280,7 +280,7 @@ has cache_options => (
     }
 );
 
-=method C<validate>
+=method validate
 
   my $result = $rv->validate( $ip, $agent, \%opts );
 
@@ -290,14 +290,21 @@ Alternatively, you can pass in a L<Plack> environment:
 
 This method attempts to validate that an IP address C<$ip> is associated with a known robot identified by the C<$agent>.
 
-If C<$ip> is in a known list of network blocks, then it succeeds.
+If C<$ip> is in a known list of network addresses, then it succeeds.
+
 Otherwise it attempts to validate that an IP address belongs to a known
 robot by first looking up the hostname that corresponds to the IP address,
 and then validating that the hostname resolves to that IP address.
 It then checks if the hostname is associated with a
 known web robot.
 
-If that succeeds, it returns an array reference containing the C<name> and the matching agent string.
+A fake robot (one where the user agent claims to be something that
+does not match the IP address or resolved hostname) returns a defined
+but false value.
+
+An unknown user agent returns C<undef>.
+
+Successful checks return an array reference containing the C<name> and the matching agent string.
 
 The rule can be looked up from the L</index> attribute.
 
