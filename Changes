@@ -1,6 +1,8 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+
+v0.3.3    2026-08-24 19:40:03+01:00 Europe/London (TRIAL RELEASE)
   [Enhancements]
   - Updated robot data.
 
