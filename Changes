@@ -6,6 +6,8 @@ Revision history for {{ $dist->name }}:
 
   - Added devel/rebuild-robots-config utility to rebuild the data.
 
+  - Switched from TOML::XS to TOML::Tiny.
+
   [Tests]
   - Added a missing prerequsite.
 

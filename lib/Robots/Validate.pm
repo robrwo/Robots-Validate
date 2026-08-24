@@ -16,12 +16,12 @@ use Net::Patricia;
 use Ref::Util qw( is_plain_arrayref is_plain_hashref is_regexpref );
 use Sub::Util 1.40 qw( set_subname );
 use Syntax::Keyword::Try qw( try );
-use TOML::XS;
+use TOML::Tiny qw( from_toml );
 use Types::Common qw( ArrayRef Bool ConsumerOf HashRef InstanceOf Maybe );
 
 # RECOMMEND PREREQ: CHI 0.40
 # RECOMMEND PREREQ: Ref::Util::XS
-# RECOMMEND PREREQ: TOML::XS 0.06
+# RECOMMEND PREREQ: TOML::Tiny 0.20
 # RECOMMEND PREREQ: Type::Tiny::XS
 
 use experimental qw( lexical_subs signatures );
@@ -192,7 +192,7 @@ has config => (
 
         unless ( is_plain_hashref($ref) ) {
             my $toml = read_binary("$ref");
-            $ref = TOML::XS::from_toml($toml)->get();
+            $ref = from_toml($toml);
         }
 
         if ( is_plain_hashref($ref) ) {

@@ -12,14 +12,14 @@ requires "Net::Patricia" => "0";
 requires "Ref::Util" => "0";
 requires "Sub::Util" => "1.40";
 requires "Syntax::Keyword::Try" => "0";
-requires "TOML::XS" => "0";
+requires "TOML::Tiny" => "0";
 requires "Types::Common" => "0";
 requires "experimental" => "0";
 requires "namespace::autoclean" => "0";
 requires "perl" => "v5.24.0";
 recommends "CHI" => "0.40";
 recommends "Ref::Util::XS" => "0";
-recommends "TOML::XS" => "0.06";
+recommends "TOML::Tiny" => "0.20";
 recommends "Type::Tiny::XS" => "0";
 
 on 'build' => sub {

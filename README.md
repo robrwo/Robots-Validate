@@ -27,6 +27,7 @@ Changes for version v0.3.3 (2026-08-24)
 - Enhancements
     - Updated robot data.
     - Added devel/rebuild-robots-config utility to rebuild the data.
+    - Switched from TOML::XS to TOML::Tiny.
 - Tests
     - Added a missing prerequsite.
 
@@ -47,7 +48,7 @@ This module lists the following modules as runtime dependencies:
 - [Ref::Util](https://metacpan.org/pod/Ref%3A%3AUtil)
 - [Sub::Util](https://metacpan.org/pod/Sub%3A%3AUtil) version 1.40 or later
 - [Syntax::Keyword::Try](https://metacpan.org/pod/Syntax%3A%3AKeyword%3A%3ATry)
-- [TOML::XS](https://metacpan.org/pod/TOML%3A%3AXS)
+- [TOML::Tiny](https://metacpan.org/pod/TOML%3A%3ATiny)
 - [Types::Common](https://metacpan.org/pod/Types%3A%3ACommon)
 - [experimental](https://metacpan.org/pod/experimental)
 - [namespace::autoclean](https://metacpan.org/pod/namespace%3A%3Aautoclean)
