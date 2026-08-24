@@ -64,9 +64,9 @@ subtest 'domain as regexp' => sub {
 
     ok !$rv->validate('192.168.1.2'), 'failed validation';
 
-    ok !$rv->validate( '192.168.2.3', 'Morkzilla/5.0 examplebot/1.0' ), 'failed validation';
+    is $rv->validate( '192.168.2.3', 'Morkzilla/5.0 examplebot/1.0' ), "", 'failed validation';
 
-    ok !$rv->validate( '192.168.1.1', { agent => 'Googlebot' } ), 'failed validtion with UA';
+    is $rv->validate( '192.168.7.6', 'Morkzilla/5.0 Chromezilla/1.2.3' ), undef, 'unknown UA';
 
 };
 

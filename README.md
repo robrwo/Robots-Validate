@@ -32,6 +32,7 @@ Changes for version v0.3.3 (2026-08-24)
     - Improved documentation.
 - Tests
     - Added a missing prerequsite.
+    - Improved tests.
 
 See the `Changes` file for more details.
 
