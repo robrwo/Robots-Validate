@@ -35,6 +35,7 @@ on 'test' => sub {
   requires "IPC::Open3" => "0";
   requires "Module::Metadata" => "0";
   requires "Net::DNS::Resolver::Mock" => "0";
+  requires "Path::Tiny" => "0";
   requires "Test2::V0" => "0";
   requires "Test::File::ShareDir" => "0";
   requires "Test::More" => "0";

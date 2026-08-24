@@ -22,10 +22,12 @@ This module allows one to validate a robot user-agent string against the IP addr
 
 # RECENT CHANGES
 
-Changes for version v0.3.3 (2026-08-23)
+Changes for version v0.3.3 (2026-08-24)
 
 - Enhancements
     - Updated seranking information.
+- Tests
+    - Added a missing prerequsite.
 
 See the `Changes` file for more details.
 
