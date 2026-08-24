@@ -157,7 +157,7 @@ network = [
 ## Date: 2026-08-22
 ## About: https://developer.amazon.com/support/amazonbot
 ## See-Also: https://developer.amazon.com/amazonbot/ip-addresses/
-## Parse: jq -M '.prefixes[] | .ipv4Prefix'
+## Note: the ip-addresses are not accessible via bots
 
 [amazon-searchbot]
 agents = "Amzn-SearchBot"
@@ -338,7 +338,7 @@ network = [
 ## Date: 2026-08-22
 ## About: https://developer.amazon.com/support/amazonbot
 ## See-Also: https://developer.amazon.com/amazonbot/searchbot-ip-addresses/
-## Parse: jq -M '.prefixes[] | .ip_prefix'
+## Note: the ip-addresses are not accessible via bots
 
 [amazon-user]
 agents = "Amzn-User"
@@ -642,7 +642,6 @@ network = [
 ## Date: 2026-08-22
 ## About: https://developer.amazon.com/support/amazonbot
 ## See-Also: https://developer.amazon.com/amazonbot/live-ip-addresses/
-## Parse: jq -M '.prefixes[] | .ipv4Prefix'
 
 [applebot]
 agents = "Applebot"
@@ -739,6 +738,8 @@ domain = ".bublup.com"
 [bytespider]
 agents = "Bytespider"
 domain = ".crawl.bytedance.com"
+
+## About: https://bytedance.sg.larkoffice.com/docx/K5bxdypulop3IIxrJb0lOjLVgFe
 
 [ccbot]
 agents = "CCBot"
@@ -904,7 +905,7 @@ network = [ "107.21.253.49", "54.204.20.249", "54.204.20.250", "54.221.198.105",
 ## About: https://docs.embed.ly/reference/faq
 
 [facebook]
-agents = [ "acebookexternalhit", "meta-extern" ]
+agents = [ "acebookexternalhit", "meta-webindexer", "meta-externalads", "meta-externalagent", "meta-externalfetcher" ]
 domain = [ ".fbsv.net", ".facebook.com" ]
 
 ## About: https://developers.facebook.com/docs/sharing/webmasters/web-crawlers
@@ -914,7 +915,7 @@ domain = [ ".fbsv.net", ".facebook.com" ]
 [google]
 agents = [
   "Googlebot", "GoogleOther", "Google-CloudVertexBot", "GoogleBot", "googlebot" ]
-domain = "/\\.google(bot)?\\.com$/"
+domain = [ ".google.com", ".googlebot.com" ]
 network = [
     "2001:4860:4801:10::/64", "2001:4860:4801:11::/64",
     "2001:4860:4801:12::/64", "2001:4860:4801:13::/64",
@@ -1059,7 +1060,7 @@ agents = [
   "AdsBot-Google", "Google-Safety", "FeedFetcher-Google", "Mediapartners-Google", "Google-PageRenderer",
   "Google StoreBot"
    ]
-domain = "/\\.google(bot)?\\.com$/"
+domain = [ ".google.com", ".googlebot.com" ]
 network = [
     # special-crawlers
     "2001:4860:4801:2008::/64", "2001:4860:4801:200c::/64",
@@ -1608,7 +1609,8 @@ agents = "IbouBot"
 domain = ".ibou.io"
 network = [ "217.113.196.0/24" ]
 
-## Network: See https://ibou.io/iboubot.html and https://ibou.io/iboubot-ip-ranges.json
+## About: See https://ibou.io/iboubot.html
+## Network: https://ibou.io/iboubot-ip-ranges.json
 
 [icc-crawler]
 agents = "ICC-Crawler"

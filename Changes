@@ -2,7 +2,7 @@ Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
   [Enhancements]
-  - Updated seranking information.
+  - Updated robot data.
 
   [Tests]
   - Added a missing prerequsite.
