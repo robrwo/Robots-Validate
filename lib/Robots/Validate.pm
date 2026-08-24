@@ -16,12 +16,11 @@ use Net::Patricia;
 use Ref::Util qw( is_plain_arrayref is_plain_hashref is_regexpref );
 use Sub::Util 1.40 qw( set_subname );
 use Syntax::Keyword::Try qw( try );
-use TOML::Tiny qw( from_toml );
+use TOML::Tiny 0.20 ( );
 use Types::Common qw( ArrayRef Bool ConsumerOf HashRef InstanceOf Maybe );
 
 # RECOMMEND PREREQ: CHI 0.40
 # RECOMMEND PREREQ: Ref::Util::XS
-# RECOMMEND PREREQ: TOML::Tiny 0.20
 # RECOMMEND PREREQ: Type::Tiny::XS
 
 use experimental qw( lexical_subs signatures );
@@ -180,6 +179,7 @@ where the key is added to the C<name> if it is not already specified.  (The C<ag
 coerced into array references.)
 
 If the constructor is passed anything else, it is assumed to be the filename of a TOML file with the configuration.
+The file will be parsed with L<TOML::XS> if it is available, or L<TOML::Tiny> otherwise.
 
 =cut
 
@@ -192,7 +192,7 @@ has config => (
 
         unless ( is_plain_hashref($ref) ) {
             my $toml = read_binary("$ref");
-            $ref = from_toml($toml);
+            $ref = _from_toml($toml);
         }
 
         if ( is_plain_hashref($ref) ) {
@@ -547,6 +547,17 @@ sub _init_validators_from_config($self) {
         $self->_add_rule( { $rule->%* } );
     }
     $self->_set_locked(1);
+}
+
+BEGIN {
+
+    if ( eval { require TOML::XS; } ) {
+        *_from_toml = sub($toml) { TOML::XS::from_toml($toml)->get() };
+    }
+    else {
+        *_from_toml = \&TOML::Tiny::from_toml;
+    }
+
 }
 
 =head1 KNOWN ISSUES

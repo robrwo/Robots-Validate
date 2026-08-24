@@ -6,7 +6,7 @@ Revision history for {{ $dist->name }}:
 
   - Added devel/rebuild-robots-config utility to rebuild the data.
 
-  - Switched from TOML::XS to TOML::Tiny.
+  - Switched the configuration parser to use TOML::Tiny by default, but TOML::XS if it is available.
 
   [Tests]
   - Added a missing prerequsite.
