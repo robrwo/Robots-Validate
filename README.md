@@ -26,6 +26,7 @@ Changes for version v0.3.3 (2026-08-24)
 
 - Enhancements
     - Updated robot data.
+    - Added devel/rebuild-robots-config utility to rebuild the data.
 - Tests
     - Added a missing prerequsite.
 

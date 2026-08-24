@@ -52,6 +52,13 @@ on 'configure' => sub {
   requires "File::ShareDir::Install" => "0.06";
 };
 
+on 'configure' => sub {
+  suggests "HTTP::Tiny" => "0.096";
+  suggests "JQ::Lite" => "2.49";
+  suggests "String::Util" => "1.36";
+  suggests "TOML::Tiny" => "0";
+};
+
 on 'develop' => sub {
   requires "Dist::AutomationPolicy" => "v0.2.0";
   requires "Dist::Zilla::Plugin::UsefulReadme" => "v0.4.3";
