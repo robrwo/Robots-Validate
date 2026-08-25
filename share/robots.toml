@@ -5518,7 +5518,7 @@ network=[
   "199.47.82.16/28",
 ]
 
-[winimedia]
+[wikimedia]
 ## About: https://wikitech.wikimedia.org/wiki/Citoid
 
 domain=".wikimedia.org"

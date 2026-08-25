@@ -22,20 +22,10 @@ This module allows one to validate a robot user-agent string against the IP addr
 
 # RECENT CHANGES
 
-Changes for version v0.3.5 (2026-08-25)
+Changes for version v0.3.6 (2026-08-25)
 
-- Enhancements
-    - This uses the pure-Perl Algorithm::AhoCorasick module, but will use Algorithm::AhoCorasick::XS if it is available.
-    - Added bad\_robot convenience method.
-    - cache\_failure can be set in the cache\_options as a global default.
 - Bug Fixes
-    - Fixed regression: cache\_failure overwrote the default expires\_in setting.
-- Documentation
-    - Added recommended modules to the REQUIREMENTS section of the README.
-    - Fixed POD errors.
-    - Updated SUPPORT section errors.
-- Tests
-    - Add tests for pure-Perl modules only.
+    - Fix typo in robot rules.
 
 See the `Changes` file for more details.
 
