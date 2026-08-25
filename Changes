@@ -4,6 +4,9 @@ Revision history for {{ $dist->name }}:
   [Bug Fixes]
   - Fix typo in robot rules.
 
+  [Documentation]
+  - Documented potential rule conflicts.
+
 v0.3.5    2026-08-25 17:54:33+01:00 Europe/London (TRIAL RELEASE)
   [Enhancements]
   - This uses the pure-Perl Algorithm::AhoCorasick module, but will use Algorithm::AhoCorasick::XS if it is available.

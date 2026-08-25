@@ -157,6 +157,9 @@ This is a short string with the rule name.
 This is an array reference of short strings to match against user agent strings.
 It is required.
 
+It is I<important> to use strings that are unique and not substrings or superstrings of other user agent strings.
+Otherwise robot validation may fail if there are conflicting matches with the wrong user agent.
+
 =item domain
 
 This is a string or array reference of short strings with the domain suffix. e.g. C<.crawl.example.com>,
