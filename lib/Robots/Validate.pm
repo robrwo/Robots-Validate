@@ -393,6 +393,9 @@ sub validate( $self, $ip, $agent = undef, $opts = undef ) {
     return $self->_revalidate( $ip, $agent // "" );
 }
 
+# Note: we implement our own _cache_compute method rather than use the CHI compute method so that we can modify the
+# caching options based on the value.
+
 use constant _GET_OPTS => ( qw/ expire_if busy_lock / );
 
 sub _cache_compute( $self, $ip, $agent, $opts ) {
