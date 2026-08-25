@@ -5503,6 +5503,8 @@ agents="StractBot"
 domain=".stract.com"
 
 [telegram]
+## Note: the user-agent string is "TelegramBot (like TwitterBot)" so do not use "TwitterBot" for anything else
+
 agents="TelegramBot"
 domain=".telegram.org"
 
