@@ -6,11 +6,14 @@ Revision history for {{ $dist->name }}:
 
   - This changes the behaviour of caching before v0.3.0.
 
+  [Documentation]
+  - Added missing items to Changes for v0.3.0.
+
 v0.3.3    2026-08-24 19:40:03+01:00 Europe/London (TRIAL RELEASE)
   [Enhancements]
-  - Updated robot data.
+  - Updated robot rules.
 
-  - Added devel/rebuild-robots-config utility to rebuild the data.
+  - Added devel/rebuild-robots-config utility to rebuild the robot rules.
 
   - Switched the configuration parser to use TOML::Tiny by default, but TOML::XS if it is available.
 
@@ -55,6 +58,10 @@ v0.3.0    2026-08-23 01:36:04+01:00 Europe/London (TRIAL RELEASE)
   - This uses the Aho-Corasick algorithm to match multiple user-agent strings efficiently.
 
   - The robot rules are in a configuration file, allowing the user to easily update their own rules.
+
+  - The robot rules have been expanded and updated.
+
+  - Support for caching the results has been added, GH#3.
 
   [Tests]
   - Updated the tests to use Test2.

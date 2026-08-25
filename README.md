@@ -27,6 +27,8 @@ Changes for version v0.3.4 (2026-08-25)
 - Enhancements
     - Added the cache\_failure option to invalidate.
     - This changes the behaviour of caching before v0.3.0.
+- Documentation
+    - Added missing items to Changes for v0.3.0.
 
 See the `Changes` file for more details.
 
