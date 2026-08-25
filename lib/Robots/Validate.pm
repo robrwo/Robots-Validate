@@ -408,7 +408,8 @@ sub _cache_compute( $self, $ip, $agent, $opts ) {
 
         $value = $self->_revalidate( $ip, $agent // "" );
         if ( $value || $opts->{cache_failure} ) {
-            $set_opts{expires_in} = $opts->{cache_failure} if $opts->{cache_failure} && $opts->{cache_failure} ne "1";
+            $set_opts{expires_in} = $opts->{cache_failure}
+              if !$value && $opts->{cache_failure} && $opts->{cache_failure} ne "1";
             $cache->set( $key, $value, \%set_opts );
         }
 

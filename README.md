@@ -27,6 +27,8 @@ Changes for version v0.3.5 (2026-08-25)
 - Enhancements
     - This uses the pure-Perl Algorithm::AhoCorasick module, but will use Algorithm::AhoCorasick::XS if it is available.
     - Added bad\_robot convenience method.
+- Bug Fixes
+    - Fixed regression: cache\_failure overwrote the default expires\_in setting.
 - Documentation
     - Added recommended modules to the REQUIREMENTS section of the README.
     - Fixed POD error.

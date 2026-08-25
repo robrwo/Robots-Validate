@@ -6,6 +6,9 @@ Revision history for {{ $dist->name }}:
 
   - Added bad_robot convenience method.
 
+  [Bug Fixes]
+  - Fixed regression: cache_failure overwrote the default expires_in setting.
+
   [Documentation]
   - Added recommended modules to the REQUIREMENTS section of the README.
 
