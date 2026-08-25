@@ -9,6 +9,8 @@ Revision history for {{ $dist->name }}:
   [Documentation]
   - Added recommended modules to the REQUIREMENTS section of the README.
 
+  - Fixed POD error.
+
   [Tests]
   - Add tests for pure-Perl modules only.
 

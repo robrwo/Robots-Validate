@@ -52,7 +52,7 @@ our $VERSION = 'v0.3.5';
 
 This module allows one to validate a robot user-agent string against the IP addresses.
 
-=attr C<resolver>
+=attr resolver
 
 This is the L<Net::DNS::Resolver> object used for DNS lookups.
 

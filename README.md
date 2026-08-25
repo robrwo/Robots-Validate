@@ -29,6 +29,7 @@ Changes for version v0.3.5 (2026-08-25)
     - Added bad\_robot convenience method.
 - Documentation
     - Added recommended modules to the REQUIREMENTS section of the README.
+    - Fixed POD error.
 - Tests
     - Add tests for pure-Perl modules only.
 
