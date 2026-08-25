@@ -6,7 +6,7 @@ use v5.24;
 
 use Moo 1;
 
-use Algorithm::AhoCorasick::XS;
+use Algorithm::AhoCorasick::SearchMachine;
 use File::ShareDir qw( dist_file );
 use File::Slurper  qw( read_binary );
 use List::Util     qw( all any none );
@@ -107,7 +107,7 @@ has _validators => (
 
 has _agents => (
     is       => 'lazy',
-    isa      => InstanceOf ['Algorithm::AhoCorasick::XS'],
+    isa      => InstanceOf [qw/ Algorithm::AhoCorasick::SearchMachine Algorithm::AhoCorasick::XS /],
     init_arg => undef,
     builder  => \&_build_agents,
 );
@@ -115,7 +115,30 @@ has _agents => (
 sub _build_agents($self) {
     # We need to ensure the validators are initialised with the rules
     $self->_init_validators_from_config;
-    return Algorithm::AhoCorasick::XS->new( [ keys $self->_validators->%* ] );
+
+    my @names = keys $self->_validators->%*;
+
+    if ( eval { require Algorithm::AhoCorasick::XS; } ) {
+
+        *_first_match = set_subname "_first_match", sub( $self, $str ) {
+            return $self->_agents->first_match($str)
+        };
+
+        return Algorithm::AhoCorasick::XS->new(\@names);
+
+    }
+    else {
+
+        *_first_match = set_subname "_first_match", sub( $self, $str ) {
+            my $match;
+            $self->_agents->feed($str, sub( $, $name ) { $match = $name }  );
+            return $match;
+        };
+
+        return Algorithm::AhoCorasick::SearchMachine->new(@names);
+
+    }
+
 }
 
 =attr config
@@ -397,7 +420,10 @@ sub _cache_compute( $self, $ip, $agent, $opts ) {
 sub _revalidate( $self, $ip, $agent ) {
 
     if ( $agent ne "" ) {
-        if ( my $str = $self->_agents->first_match($agent) ) {
+
+        $self->_agents; # ensure agents are instantiated
+
+        if ( my $str = $self->_first_match($agent) ) {
             my $res = $self->_validators->{$str}->($ip);
             return $res && [ $res => $str ];
         }

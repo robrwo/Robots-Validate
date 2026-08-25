@@ -22,15 +22,10 @@ This module allows one to validate a robot user-agent string against the IP addr
 
 # RECENT CHANGES
 
-Changes for version v0.3.4 (2026-08-25)
+Changes for version v0.3.5 (2026-08-25)
 
 - Enhancements
-    - Added the cache\_failure option to invalidate.
-    - This changes the behaviour of caching before v0.3.0.
-    - Added more bots: Cotoyogi, MJ12Bot and SofyaBot.
-- Documentation
-    - Added missing items to Changes for v0.3.0.
-    - Updated KNOWN ISSUES.
+    - This uses the pure-Perl Algorithm::AhoCorasick module, but will use Algorithm::AhoCorasick::XS if it is available.
 
 See the `Changes` file for more details.
 
@@ -38,7 +33,7 @@ See the `Changes` file for more details.
 
 This module lists the following modules as runtime dependencies:
 
-- [Algorithm::AhoCorasick::XS](https://metacpan.org/pod/Algorithm%3A%3AAhoCorasick%3A%3AXS)
+- [Algorithm::AhoCorasick::SearchMachine](https://metacpan.org/pod/Algorithm%3A%3AAhoCorasick%3A%3ASearchMachine)
 - [File::ShareDir](https://metacpan.org/pod/File%3A%3AShareDir)
 - [File::Slurper](https://metacpan.org/pod/File%3A%3ASlurper)
 - [List::Util](https://metacpan.org/pod/List%3A%3AUtil)

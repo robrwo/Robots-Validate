@@ -1,6 +1,8 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+  [Enhancements]
+  - This uses the pure-Perl Algorithm::AhoCorasick module, but will use Algorithm::AhoCorasick::XS if it is available.
 
 v0.3.4    2026-08-25 14:18:32+01:00 Europe/London (TRIAL RELEASE)
   [Enhancements]
