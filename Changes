@@ -6,6 +6,8 @@ Revision history for {{ $dist->name }}:
 
   - Added bad_robot convenience method.
 
+  - cache_failure can be set in the cache_options as a global default.
+
   [Bug Fixes]
   - Fixed regression: cache_failure overwrote the default expires_in setting.
 

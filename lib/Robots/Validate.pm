@@ -362,6 +362,7 @@ See L</SECURITY CONSIDERATIONS> before enabling this feature.
 This has no meaning if there is no cache or the C<no_cache> option is set.
 
 This was added in version v0.3.4.
+This can also be specified in the L</cache_options> as of v0.3.5.
 
 =item agent
 
@@ -402,6 +403,8 @@ sub _cache_compute( $self, $ip, $agent, $opts ) {
 
     my %set_opts = $self->cache_options->%*;
     my %get_opts = map { maybe $_ => delete $set_opts{$_} // undef } _GET_OPTS;
+
+    $opts->{cache_failure} //= delete $set_opts{cache_failure};
 
     my $value = $cache->get( $key, %get_opts );
     unless ( defined $value ) {
