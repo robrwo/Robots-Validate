@@ -9,6 +9,9 @@ Revision history for {{ $dist->name }}:
   [Documentation]
   - Added recommended modules to the REQUIREMENTS section of the README.
 
+  [Tests]
+  - Add tests for pure-Perl modules only.
+
 v0.3.4    2026-08-25 14:18:32+01:00 Europe/London (TRIAL RELEASE)
   [Enhancements]
   - Added the cache_failure option to invalidate.
