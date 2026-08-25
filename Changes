@@ -16,6 +16,8 @@ Revision history for {{ $dist->name }}:
 
   - Fixed POD errors.
 
+  - Updated SUPPORT section errors.
+
   [Tests]
   - Add tests for pure-Perl modules only.
 

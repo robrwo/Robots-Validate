@@ -33,6 +33,7 @@ Changes for version v0.3.5 (2026-08-25)
 - Documentation
     - Added recommended modules to the REQUIREMENTS section of the README.
     - Fixed POD errors.
+    - Updated SUPPORT section errors.
 - Tests
     - Add tests for pure-Perl modules only.
 
@@ -121,9 +122,10 @@ imposter can use abandoned cloud IP addresses.
 
 # SUPPORT
 
-Only the latest version of this module will be supported.
+Only the latest release of this module will be supported.
 
-This module requires Perl v5.24 or later, based on the minimum Perl supported by [Dist::Zilla](https://metacpan.org/pod/Dist%3A%3AZilla).
+This module requires Perl v5.24 or later.
+Future releases may only support Perl versions released in the last ten (10) years.
 
 ## Reporting Bugs and Submitting Feature Requests
 

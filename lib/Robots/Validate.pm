@@ -685,9 +685,10 @@ imposter can use abandoned cloud IP addresses.
 
 =head1 prepend:SUPPORT
 
-Only the latest version of this module will be supported.
+Only the latest release of this module will be supported.
 
-This module requires Perl v5.24 or later, based on the minimum Perl supported by L<Dist::Zilla>.
+This module requires Perl v5.24 or later.
+Future releases may only support Perl versions released in the last ten (10) years.
 
 =head2 Reporting Bugs and Submitting Feature Requests
 
