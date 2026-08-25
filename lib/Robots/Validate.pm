@@ -13,6 +13,7 @@ use List::Util     qw( all any none );
 use Net::DNS::Resolver;
 use Net::IP qw( ip_expand_address ip_is_ipv4 ip_is_ipv6 ip_splitprefix );
 use Net::Patricia;
+use PerlX::Maybe qw( maybe );
 use Ref::Util qw( is_plain_arrayref is_plain_hashref is_regexpref );
 use Sub::Util 1.40 qw( set_subname );
 use Syntax::Keyword::Try qw( try );
@@ -325,6 +326,20 @@ You can specify the following C<%opts>:
 
 Do not check the L</cache>.
 
+=item cache_failure
+
+By default, failures are not cached.
+
+When this is set to true, failures are cached.
+
+Any value other than "1" is assumed to be an L<CHI/expires_in> option for setting the cache.
+
+See L</SECURITY CONSIDERATIONS> before enabling this feature.
+
+This has no meaning if there is no cache or the C<no_cache> option is set.
+
+This was added in version v0.3.4.
+
 =item agent
 
 Specify the C<$agent>, for backwards-compatibility with versions before v0.3.0.
@@ -347,17 +362,36 @@ sub validate( $self, $ip, $agent = undef, $opts = undef ) {
         $ip   =  $ip->{REMOTE_ADDR};
     }
 
-    $opts //= { };
-
     if ( !$opts->{no_cache} && $self->has_cache ) {
-        return $self->cache->compute(
-            join( $;, $ip, $agent ),
-            $self->cache_options,
-            sub { return $self->_revalidate( $ip, $agent // "" ) }
-        );
+        return $self->_cache_compute( $ip, $agent, $opts // { } );
     }
 
     return $self->_revalidate( $ip, $agent // "" );
+}
+
+use constant _GET_OPTS => ( qw/ expire_if busy_lock / );
+
+sub _cache_compute( $self, $ip, $agent, $opts ) {
+
+    my $key = join( $;, $ip, $agent // '' );
+
+    my $cache = $self->cache;
+
+    my %set_opts = $self->cache_options->%*;
+    my %get_opts = map { maybe $_ => delete $set_opts{$_} // undef } _GET_OPTS;
+
+    my $value = $cache->get( $key, %get_opts );
+    unless ( defined $value ) {
+
+        $value = $self->_revalidate( $ip, $agent // "" );
+        if ( $value || $opts->{cache_failure} ) {
+            $set_opts{expires_in} = $opts->{cache_failure} if $opts->{cache_failure} && $opts->{cache_failure} ne "1";
+            $cache->set( $key, $value, \%set_opts );
+        }
+
+    }
+
+    return $value;
 }
 
 sub _revalidate( $self, $ip, $agent ) {
@@ -589,6 +623,8 @@ data by setting L<CHI/expires_in> and digest the keys by setting
 L<CHI/max_key_length> to 0.  This is to keep the cache from growing
 too large, and to reduce the likelihood of cache backend
 vulnerabilities being exploited through user-agent strings.
+
+When setting the C<cache_failure> option, be aware that cached failures may need a shorter expiration time.
 
 When specifying a C<domain> for verification rules, ensure that there
 is an initial dot in the suffix, or that the regular expression

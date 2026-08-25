@@ -22,17 +22,11 @@ This module allows one to validate a robot user-agent string against the IP addr
 
 # RECENT CHANGES
 
-Changes for version v0.3.3 (2026-08-24)
+Changes for version v0.3.4 (2026-08-25)
 
 - Enhancements
-    - Updated robot data.
-    - Added devel/rebuild-robots-config utility to rebuild the data.
-    - Switched the configuration parser to use TOML::Tiny by default, but TOML::XS if it is available.
-- Documentation
-    - Improved documentation.
-- Tests
-    - Added a missing prerequsite.
-    - Improved tests.
+    - Added the cache\_failure option to invalidate.
+    - This changes the behaviour of caching before v0.3.0.
 
 See the `Changes` file for more details.
 
@@ -48,11 +42,13 @@ This module lists the following modules as runtime dependencies:
 - [Net::DNS::Resolver](https://metacpan.org/pod/Net%3A%3ADNS%3A%3AResolver)
 - [Net::IP](https://metacpan.org/pod/Net%3A%3AIP)
 - [Net::Patricia](https://metacpan.org/pod/Net%3A%3APatricia)
+- [PerlX::Maybe](https://metacpan.org/pod/PerlX%3A%3AMaybe)
 - [Ref::Util](https://metacpan.org/pod/Ref%3A%3AUtil)
 - [Sub::Util](https://metacpan.org/pod/Sub%3A%3AUtil) version 1.40 or later
 - [Syntax::Keyword::Try](https://metacpan.org/pod/Syntax%3A%3AKeyword%3A%3ATry)
 - [TOML::Tiny](https://metacpan.org/pod/TOML%3A%3ATiny) version 0.20 or later
 - [Types::Common](https://metacpan.org/pod/Types%3A%3ACommon)
+- [constant](https://metacpan.org/pod/constant)
 - [experimental](https://metacpan.org/pod/experimental)
 - [namespace::autoclean](https://metacpan.org/pod/namespace%3A%3Aautoclean)
 - [perl](https://metacpan.org/pod/perl) version v5.24.0 or later
@@ -99,6 +95,8 @@ data by setting ["expires\_in" in CHI](https://metacpan.org/pod/CHI#expires_in) 
 ["max\_key\_length" in CHI](https://metacpan.org/pod/CHI#max_key_length) to 0.  This is to keep the cache from growing
 too large, and to reduce the likelihood of cache backend
 vulnerabilities being exploited through user-agent strings.
+
+When setting the `cache_failure` option, be aware that cached failures may need a shorter expiration time.
 
 When specifying a `domain` for verification rules, ensure that there
 is an initial dot in the suffix, or that the regular expression

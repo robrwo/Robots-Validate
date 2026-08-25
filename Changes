@@ -1,6 +1,10 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+  [Enhancements]
+  - Added the cache_failure option to invalidate.
+
+  - This changes the behaviour of caching before v0.3.0.
 
 v0.3.3    2026-08-24 19:40:03+01:00 Europe/London (TRIAL RELEASE)
   [Enhancements]

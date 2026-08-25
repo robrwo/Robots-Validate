@@ -66,10 +66,19 @@ is
 
 ok !%store || !$store{Default}->%*, 'empty cache';
 
-is
-  $rv->validate(
+is $rv->validate(
     '1.2.3.4',
-"Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.7871.186 Mobile Safari/537.36 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+"Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.7871.186 Mobile Safari/537.36 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
+  ),
+  "",
+  'identify a fake bot';
+
+ok !%store || !$store{Default}->%*, 'empty cache (failure not cached)';
+
+is $rv->validate(
+    '1.2.3.4',
+"Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.7871.186 Mobile Safari/537.36 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
+    { cache_failure => 1 },
   ),
   "",
   'identify a fake bot';
