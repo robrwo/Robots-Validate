@@ -32,7 +32,7 @@ Changes for version v0.3.5 (2026-08-25)
     - Fixed regression: cache\_failure overwrote the default expires\_in setting.
 - Documentation
     - Added recommended modules to the REQUIREMENTS section of the README.
-    - Fixed POD error.
+    - Fixed POD errors.
 - Tests
     - Add tests for pure-Perl modules only.
 

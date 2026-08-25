@@ -275,13 +275,13 @@ has locked => (
     init_arg => undef,
 );
 
-=head2 cache
+=attr cache
 
 This is an optional L<CHI> cache used for matching IP addresses and user agent strings.
 
 See the L</SECURITY CONSIDERATIONS> section for improving the safety of the cache.
 
-=head2 has_cache
+=attr has_cache
 
 This indicates that there is a L</cache>.
 
