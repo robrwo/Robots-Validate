@@ -29,6 +29,7 @@ Changes for version v0.3.4 (2026-08-25)
     - This changes the behaviour of caching before v0.3.0.
 - Documentation
     - Added missing items to Changes for v0.3.0.
+    - Updated KNOWN ISSUES.
 
 See the `Changes` file for more details.
 

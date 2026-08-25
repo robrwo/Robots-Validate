@@ -9,6 +9,8 @@ Revision history for {{ $dist->name }}:
   [Documentation]
   - Added missing items to Changes for v0.3.0.
 
+  - Updated KNOWN ISSUES.
+
 v0.3.3    2026-08-24 19:40:03+01:00 Europe/London (TRIAL RELEASE)
   [Enhancements]
   - Updated robot rules.

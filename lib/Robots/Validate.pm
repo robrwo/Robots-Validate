@@ -614,6 +614,8 @@ BEGIN {
 
 Many of these rules are not documented, but have been guessed from web traffic.
 
+Bots that use cloud services without documenting what hosts they use are not added here.
+
 The networks used by some robots do not consistently support reverse DNS lookups, and may randomly fail.
 
 =head1 SECURITY CONSIDERATIONS
