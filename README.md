@@ -26,6 +26,8 @@ Changes for version v0.3.5 (2026-08-25)
 
 - Enhancements
     - This uses the pure-Perl Algorithm::AhoCorasick module, but will use Algorithm::AhoCorasick::XS if it is available.
+- Documentation
+    - Added recommended modules to the REQUIREMENTS section of the README.
 
 See the `Changes` file for more details.
 
@@ -53,6 +55,10 @@ This module lists the following modules as runtime dependencies:
 - [perl](https://metacpan.org/pod/perl) version v5.24.0 or later
 
 See the `cpanfile` file for the full list of prerequisites.
+
+[CHI](https://metacpan.org/pod/CHI) is required to use the caching features.
+
+[Algorithm::AhoCorasick::XS](https://metacpan.org/pod/Algorithm%3A%3AAhoCorasick%3A%3AXS) and [TOML::XS](https://metacpan.org/pod/TOML%3A%3AXS) will be used if they are available.
 
 # INSTALLATION
 

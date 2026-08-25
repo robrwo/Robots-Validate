@@ -686,6 +686,16 @@ The file F<robots.toml> included with this distribution contains links to docume
 
 The TOML specification can be found at L<https://toml.io>.
 
+=begin :readme
+
+=head1 append:REQUIREMENTS
+
+L<CHI> is required to use the caching features.
+
+L<Algorithm::AhoCorasick::XS> and L<TOML::XS> will be used if they are available.
+
+=end :readme
+
 =cut
 
 1;
