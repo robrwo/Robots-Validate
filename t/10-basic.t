@@ -62,9 +62,19 @@ subtest 'domain as regexp' => sub {
       ),
       'validate with UA string';
 
+    ok $rv->bad_robot(
+        {
+            REMOTE_ADDR     => '192.168.2.3',
+            HTTP_USER_AGENT => 'Morkzilla/5.0 examplebot/1.0',
+        }
+      ),
+      'bad_robot';
+
     ok !$rv->validate('192.168.1.2'), 'failed validation';
 
     is $rv->validate( '192.168.2.3', 'Morkzilla/5.0 examplebot/1.0' ), "", 'failed validation';
+
+    ok $rv->bad_robot( '192.168.2.3', 'Morkzilla/5.0 examplebot/1.0' ), 'bad_robot';
 
     is $rv->validate( '192.168.7.6', 'Morkzilla/5.0 Chromezilla/1.2.3' ), undef, 'unknown UA';
 

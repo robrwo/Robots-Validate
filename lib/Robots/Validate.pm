@@ -436,6 +436,19 @@ sub _revalidate( $self, $ip, $agent ) {
     return undef;
 }
 
+=method bad_robot
+
+    $rv->bad_robot( $env, \%opts ) and ...
+
+This is a wrapper around L</validate> that returns true for imposter robots.
+
+=cut
+
+sub bad_robot( $self, $ip, $agent = undef, $opts = undef ) {
+    my $value = $self->validate( $ip, $agent, $opts );
+    return !$value && defined($value);
+}
+
 sub _add_rule( $self, $rule ) {
 
     die "The rules are locked" if $self->locked;
