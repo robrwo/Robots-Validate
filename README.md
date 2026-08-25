@@ -25,7 +25,7 @@ This module allows one to validate a robot user-agent string against the IP addr
 Changes for version v0.3.6 (2026-08-25)
 
 - Bug Fixes
-    - Fix typo in robot rules.
+    - Fixed typo in robot rules.
 - Documentation
     - Documented potential rule conflicts.
 

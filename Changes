@@ -2,7 +2,7 @@ Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
   [Bug Fixes]
-  - Fix typo in robot rules.
+  - Fixed typo in robot rules.
 
   [Documentation]
   - Documented potential rule conflicts.
