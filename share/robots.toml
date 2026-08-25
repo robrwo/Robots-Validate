@@ -2601,6 +2601,11 @@ network=[
   "2604:a940:302:118:0:0:0:0/64",
 ]
 
+[cotoyogi]
+## About: https://ds.rois.ac.jp/en_center8/en_crawler/
+agents="Cotoyogi"
+network=[ "157.1.136.4/30", "157.1.136.8/30" ]
+
 [dataprovider]
 agents="Dataprovider.com"
 domain=".dataproviderbot.com"
@@ -4458,6 +4463,11 @@ network=[
 agents="MistralAI-Training"
 network=[]
 
+[mj12bot]
+## About: https://mj12bot.com/
+agents="MJ12bot"
+domain=".mj12bot.com"
+
 [mojeek]
 ## Date: 2026-08-24
 ## About: https://www.mojeek.com/bot.html
@@ -5477,6 +5487,12 @@ network=[
   "52.64.209.168",
   "52.199.41.160",
 ]
+
+[sofyabot]
+## About: https://sofya.co/bot
+agents="SofyaBot"
+domain=".sofya.co"
+network=[ "159.195.72.86" ]
 
 [sogou]
 agents="Sogou"

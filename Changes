@@ -6,6 +6,8 @@ Revision history for {{ $dist->name }}:
 
   - This changes the behaviour of caching before v0.3.0.
 
+  - Added more bots: Cotoyogi, MJ12Bot and SofyaBot.
+
   [Documentation]
   - Added missing items to Changes for v0.3.0.
 
