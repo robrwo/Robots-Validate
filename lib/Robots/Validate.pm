@@ -32,7 +32,7 @@ our $VERSION = 'v0.3.6';
 
 =begin :prelude
 
-=for stopwords CIDR TOML dotless
+=for stopwords CIDR GoogleBot TOML dotless googlebot superstrings
 
 =end :prelude
 
