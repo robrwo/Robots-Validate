@@ -1,6 +1,8 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+
+v0.3.6    2026-08-26 14:18:13+01:00 Europe/London (TRIAL RELEASE)
   [Enhancements]
   - User-agents are not matched against in a case-insensitive manner.
 

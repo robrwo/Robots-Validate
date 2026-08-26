@@ -28,7 +28,7 @@ use experimental qw( lexical_subs signatures );
 
 use namespace::autoclean;
 
-our $VERSION = 'v0.3.6';
+our $VERSION = 'v0.3.7';
 
 =begin :prelude
 
