@@ -3730,14 +3730,18 @@ domain=[
 
 [google]
 ## Date: 2026-08-24
+## About: https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers
 ## Network: https://developers.google.com/static/crawling/ipranges/common-crawlers.json
 ##
 ## Note: Ideally we would just match "Google" but clients running Google search apps on their devices have that in their UA
 
 agents=[
-  "Googlebot",
-  "GoogleOther",
   "Google-CloudVertexBot",
+  "Google-Extended",
+  "Google-InspectionTool",
+  "GoogleOther",
+  "Googlebot",
+  "Storebot-Google"
 ]
 domain=[
   ".google.com",
@@ -4071,16 +4075,22 @@ network=[
 ## Note: Ideally we would just match "Google" but clients running Google search apps on their devices have that in their UA
 
 agents=[
-  "GoogleImageProxy",
-  "Google-Read-Aloud",
-  "Google-AMPHTML",
-  "Google-InspectionTool",
+  "APIs-Google",
   "AdsBot-Google",
-  "Google-Safety",
   "FeedFetcher-Google",
-  "Mediapartners-Google",
+  "Google-AMPHTML",
+  "Google-Agent",
+  "Google-CWS",
+  "Google-NotebookLM",
   "Google-PageRenderer",
-  "Google StoreBot",
+  "Google-Pinpoint",
+  "Google-Read-Aloud",
+  "Google-Safety",
+  "Google-Site-Verification",
+  "GoogleImageProxy",
+  "GoogleMessages",
+  "GoogleProducer",
+  "Mediapartners-Google",
 ]
 domain=[
   ".google.com",
@@ -6775,4 +6785,3 @@ domain=".search.you.com"
 network=[
   "68.67.112.0/24",
 ]
-
