@@ -5510,6 +5510,10 @@ network=[
   "51.77.32.93/32"
 ]
 
+[lohisoft]
+agents="LohiSoftBot"
+domain=".bot.lohisoft.com"
+
 [mail-ru]
 agents="Mail.RU_Bot"
 domain=".mail.ru"
