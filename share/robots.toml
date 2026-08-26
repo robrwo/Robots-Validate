@@ -5157,6 +5157,24 @@ network=[
   "212.47.251.165",
 ]
 
+[semrush]
+## Date: 2026-08-26
+## About: https://www.semrush.com/bot/
+## About: https://bot.ryte.com/
+agents=[ "RyteBot", "SemrushBot", "SiteAuditBot" ]
+domain=".bot.semrush.com"
+network=[
+  "85.208.209.0/24",
+  "85.208.96.0/24",
+  "85.208.85.0/24",
+  "85.208.86.0/23",
+  "85.209.149.0/24",
+  "85.209.150.0/23",
+  "85.208.98.0/24",
+  "185.170.167.0/24",
+  "185.191.171.0/24"
+]
+
 [seranking]
 ## Date: 2026-08-24
 ## About: https://help.seranking.com/hc/en-us/articles/23020353159964-SERankingBacklinksBot-Crawler

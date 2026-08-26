@@ -1,6 +1,9 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+  [Enhancements]
+  - Updated robot rules.
+
   [Bug Fixes]
   - Fixed typo in robot rules.
 
