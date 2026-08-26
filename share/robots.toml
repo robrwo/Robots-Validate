@@ -5496,6 +5496,20 @@ network=[
 agents="LinkUpBot"
 network="24.144.65.32/32"
 
+[loaded]
+## Date: 2026-08-26
+## About: https://www.loaded.ai/bot
+## Network: https://www.loaded.ai/bot/ips.json
+agents="LoadedBot"
+network=[
+  "51.81.68.135/32",
+  "51.81.68.133/32",
+  "51.161.52.180/32",
+  "51.68.10.57/32",
+  "51.195.3.55/32",
+  "51.77.32.93/32"
+]
+
 [mail-ru]
 agents="Mail.RU_Bot"
 domain=".mail.ru"
