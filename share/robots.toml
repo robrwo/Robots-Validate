@@ -4066,37 +4066,21 @@ network=[
 ]
 
 [google-special]
-## Date: 2026-08-24
-# special-crawlers
-# user-triggered-fetchers
+## Date: 2026-08-26
+## https://developers.google.com/crawling/docs/crawlers-fetchers/google-special-case-crawlers
 ## Network: https://developers.google.com/static/crawling/ipranges/special-crawlers.json
-## Network: https://developers.google.com/static/crawling/ipranges/user-triggered-fetchers.json
-##
-## Note: Ideally we would just match "Google" but clients running Google search apps on their devices have that in their UA
-
 agents=[
   "APIs-Google",
   "AdsBot-Google",
-  "FeedFetcher-Google",
   "Google-AMPHTML",
-  "Google-Agent",
-  "Google-CWS",
-  "Google-NotebookLM",
-  "Google-PageRenderer",
-  "Google-Pinpoint",
-  "Google-Read-Aloud",
   "Google-Safety",
-  "Google-Site-Verification",
-  "GoogleImageProxy",
-  "GoogleMessages",
-  "GoogleProducer",
   "Mediapartners-Google",
 ]
 domain=[
   ".google.com",
   ".googlebot.com",
 ]
-network=[
+network = [
   "2001:4860:4801:2008::/64",
   "2001:4860:4801:200c::/64",
   "2001:4860:4801:200d::/64",
@@ -4367,6 +4351,36 @@ network=[
   "74.125.219.32/27",
   "74.125.219.64/27",
   "74.125.219.96/27",
+]
+
+[google-user]
+## Date: 2026-08-26
+## About: https://developers.google.com/crawling/docs/crawlers-fetchers/google-user-triggered-fetchers
+## Network: https://developers.google.com/static/crawling/ipranges/user-triggered-fetchers.json
+## Network: https://developers.google.com/static/crawling/ipranges/user-triggered-fetchers-google.json
+##
+## Note: Google-NotebookLM and google-speakr are no longer used, but kept to help identify imposters.
+
+agents=[
+  "FeedFetcher-Google",
+  "Google-Agent",
+  "Google-CWS",
+  "Google-GeminiNotebook",
+  "Google-NotebookLM",
+  "Google-PageRenderer",
+  "Google-Pinpoint",
+  "Google-Read-Aloud",
+  "Google-Site-Verification",
+  "GoogleImageProxy",
+  "GoogleMessages",
+  "GoogleProducer",
+  "google-speakr",
+]
+domain=[
+  ".google.com",
+  ".googlebot.com",
+]
+network=[
   "2404:f340:10:4000::/64",
   "2404:f340:10:4001::/64",
   "2404:f340:10:4002::/64",

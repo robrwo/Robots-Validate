@@ -40,7 +40,7 @@ subtest google => sub {
         {
             args =>
               [ '64.233.172.133', "Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)" ],
-            res => [ 'google-special', 'googleimageproxy' ],
+            res => [ 'google-user', 'googleimageproxy' ],
         },
 
         {
@@ -48,7 +48,7 @@ subtest google => sub {
                 '66.102.6.1',
 "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36 (compatible; Google-Read-Aloud; +https://support.google.com/webmasters/answer/1061943)"
             ],
-            res => [ 'google-special', 'google-read-aloud' ],
+            res => [ 'google-user', 'google-read-aloud' ],
 
         },
 
