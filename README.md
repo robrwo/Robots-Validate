@@ -31,6 +31,7 @@ Changes for version v0.3.6 (2026-08-26)
     - Fixed typo in robot rules.
 - Documentation
     - Documented potential rule conflicts.
+    - Improved documentation.
 
 See the `Changes` file for more details.
 

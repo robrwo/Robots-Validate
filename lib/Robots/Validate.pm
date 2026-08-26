@@ -180,7 +180,7 @@ Also note that the TOML format will require slashes to be escaped, e.g.
 
 =item network
 
-This is an optional array reference of CIDR network blocks.
+This is an array reference of CIDR network blocks.
 
 =item match
 
@@ -200,6 +200,8 @@ This is the default when unspecified.
 An agent is verified is both the C<domain> and the C<network> match.
 
 =back
+
+Note that either C<domain> or C<network> can be omitted.
 
 =back
 
