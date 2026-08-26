@@ -467,7 +467,7 @@ sub _add_rule( $self, $rule ) {
 
     die "The rules are locked" if $self->locked;
 
-    my $name = $rule->{name};
+    my $name = lc $rule->{name};
     die "A rule name is required" unless defined $name;
 
     my $domain  = $rule->{domain};
