@@ -4,6 +4,9 @@ Revision history for {{ $dist->name }}:
   [Enhancements]
   - Updated robot rules.
 
+  [Tests]
+  - Add a "live" test with Google DNS.
+
 v0.3.7    2026-08-26 17:39:55+01:00 Europe/London (TRIAL RELEASE)
   [Enhancements]
   - Switch to Try::Tiny over Syntax::Keyword::Try.

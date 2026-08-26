@@ -41,6 +41,7 @@ on 'test' => sub {
   requires "Module::Metadata" => "0";
   requires "Net::DNS::Resolver::Mock" => "0";
   requires "Path::Tiny" => "0";
+  requires "Test2::Require::Internet" => "0";
   requires "Test2::Tools::Exception" => "0";
   requires "Test2::V0" => "0";
   requires "Test::File::ShareDir" => "0";

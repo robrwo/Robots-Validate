@@ -26,6 +26,8 @@ Changes for version v0.3.8 (2026-08-26)
 
 - Enhancements
     - Updated robot rules.
+- Tests
+    - Add a "live" test with Google DNS.
 
 See the `Changes` file for more details.
 
