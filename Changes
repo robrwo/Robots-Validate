@@ -2,6 +2,8 @@ Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
   [Enhancements]
+  - User-agents are not matched against in a case-insensitive manner.
+
   - Updated robot rules.
 
   [Bug Fixes]

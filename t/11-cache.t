@@ -51,7 +51,7 @@ is
     '66.249.66.67',
 "Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.7871.186 Mobile Safari/537.36 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
   ),
-  [ "google" => "Googlebot" ],
+  [ "google" => "googlebot" ],
   '_revalidate';
 
 ok !%store || !$store{Default}->%*, 'empty cache';
@@ -101,7 +101,7 @@ is
     '66.249.66.67',
 "Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.7871.186 Mobile Safari/537.36 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
   ),
-  [ "google" => "Googlebot" ],
+  [ "google" => "googlebot" ],
   'validate';
 
 ok !!%store && scalar($store{Default}->%*) == 2, 'non-empty cache';
@@ -111,7 +111,7 @@ is
     '66.249.66.67',
 "Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.7871.186 Mobile Safari/537.36 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
   ),
-  [ "google" => "Googlebot" ],
+  [ "google" => "googlebot" ],
   'validate';
 
 ok !!%store && scalar($store{Default}->%*) == 2, 'non-empty cache';

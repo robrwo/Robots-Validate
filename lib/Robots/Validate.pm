@@ -157,6 +157,8 @@ This is a short string with the rule name.
 This is an array reference of short strings to match against user agent strings.
 It is required.
 
+Case will be ignored, so "GoogleBot" and "googlebot" are the same.
+
 It is I<important> to use strings that are unique and not substrings or superstrings of other user agent strings.
 Otherwise robot validation may fail if there are conflicting matches with the wrong user agent.
 
@@ -433,7 +435,7 @@ sub _revalidate( $self, $ip, $agent ) {
 
         $self->_agents; # ensure agents are instantiated
 
-        if ( my $str = $self->_first_match($agent) ) {
+        if ( my $str = $self->_first_match( lc $agent ) ) {
             my $res = $self->_validators->{$str}->($ip);
             return $res && [ $res => $str ];
         }
@@ -525,7 +527,7 @@ sub _add_rule( $self, $rule ) {
         my $validators = $self->_validators;
 
         if ( my $agents = $rule->{agents} ) {
-            for my $str ( $agents->@* ) {
+            for my $str ( map { lc $_ } $agents->@* ) {
                 die "string ${str} already exists in the rules" if exists $validators->{$str};
                 $validators->{$str} = $fn;
             }

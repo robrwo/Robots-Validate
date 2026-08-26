@@ -2653,8 +2653,6 @@ agents=[
   "Googlebot",
   "GoogleOther",
   "Google-CloudVertexBot",
-  "GoogleBot",
-  "googlebot",
 ]
 domain=[
   ".google.com",
