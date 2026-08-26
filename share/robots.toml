@@ -6701,15 +6701,46 @@ network=[
 ]
 
 [yandex]
-domain="/\\.yandex\\.(com|net|ru)$/"
+## Date: 2026-08-26
+## About: https://yandex.com/support/webmaster/en/robot-workings/check-yandex-robots
+## See-Also: https://yandex.com/support/webmaster/en/indexing-options/ip-check
+
 agents=[
+  "YaDirectFetcher",
+  "YandexAccessibilityBot",
+  "YandexAdNet",
+  "YandexAdditionalBot",
+  "YandexBlogs",
   "YandexBot",
-  "YandexImages",
+  "YandexCalendar",
+  "YandexCheckBot",
+  "YandexComBot",
+  "YandexDirect",
+  "YandexFavicons",
+  "YandexFeed",
+  "YandexFetcher",
+  "YandexImage",
+  "YandexMarket",
   "YandexMedia",
-  "YandexVideo",
+  "YandexMetrika",
+  "YandexMobileScreenShotBot",
+  "YandexOntoDBAPI",
+  "YandexPagechecker",
+  "YandexPartner",
+  "YandexRCA",
   "YandexRenderResourcesBot",
+  "YandexScreenshotBot",
+  "YandexSearchShop",
+  "YandexSitelinks",
+  "YandexSpravBot",
+  "YandexTracker",
+  "YandexUserproxy",
+  "YandexVertis",
+  "YandexVideo",
+  "YandexWebmaster",
   "yandex.com/bots",
 ]
+domain=[ ".yandex.ru", ".yandex.com", ".yandex.net" ]
 
 [yeti]
 agents="Yeti"
