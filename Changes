@@ -1,6 +1,8 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+  [Enhancements]
+  - Switch to Try::Tiny over Syntax::Keyword::Try.
 
 v0.3.6    2026-08-26 14:18:13+01:00 Europe/London (TRIAL RELEASE)
   [Enhancements]

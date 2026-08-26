@@ -16,8 +16,8 @@ use Net::Patricia;
 use PerlX::Maybe qw( maybe );
 use Ref::Util qw( is_plain_arrayref is_plain_hashref is_regexpref );
 use Sub::Util 1.40 qw( set_subname );
-use Syntax::Keyword::Try qw( try );
 use TOML::Tiny 0.20 ( );
+use Try::Tiny;
 use Types::Common qw( ArrayRef Bool ConsumerOf HashRef InstanceOf Maybe );
 
 # RECOMMEND PREREQ: CHI 0.40
@@ -565,8 +565,8 @@ sub _add_network( $self, $cidr, $name ) {
     try {
         $self->_add_string( $cidr, $name );
     }
-    catch ($e) {
-        die "add_string failed for '$cidr' with '$name': $e";
+    catch {
+        die "add_string failed for '$cidr' with '$name': $_";
     };
 }
 

@@ -22,16 +22,10 @@ This module allows one to validate a robot user-agent string against the IP addr
 
 # RECENT CHANGES
 
-Changes for version v0.3.6 (2026-08-26)
+Changes for version v0.3.7 (2026-08-26)
 
 - Enhancements
-    - User-agents are not matched against in a case-insensitive manner.
-    - Updated robot rules.
-- Bug Fixes
-    - Fixed typo in robot rules.
-- Documentation
-    - Documented potential rule conflicts.
-    - Improved documentation.
+    - Switch to Try::Tiny over Syntax::Keyword::Try.
 
 See the `Changes` file for more details.
 
@@ -50,8 +44,8 @@ This module lists the following modules as runtime dependencies:
 - [PerlX::Maybe](https://metacpan.org/pod/PerlX%3A%3AMaybe)
 - [Ref::Util](https://metacpan.org/pod/Ref%3A%3AUtil)
 - [Sub::Util](https://metacpan.org/pod/Sub%3A%3AUtil) version 1.40 or later
-- [Syntax::Keyword::Try](https://metacpan.org/pod/Syntax%3A%3AKeyword%3A%3ATry)
 - [TOML::Tiny](https://metacpan.org/pod/TOML%3A%3ATiny) version 0.20 or later
+- [Try::Tiny](https://metacpan.org/pod/Try%3A%3ATiny)
 - [Types::Common](https://metacpan.org/pod/Types%3A%3ACommon)
 - [constant](https://metacpan.org/pod/constant)
 - [experimental](https://metacpan.org/pod/experimental)
