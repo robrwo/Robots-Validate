@@ -2239,6 +2239,19 @@ agents="Arquivo-web-crawler"
 domain=".archivo.pt"
 network="194.210.235.0/24"
 
+[awario]
+## About: https://awario.com/bots.html
+
+agents=[
+  "AwarioBot",
+  "AwarioRssBot",
+  "AwarioSmartBot",
+]
+domain=[
+  ".awario.com",
+  ".awar.io"
+]
+
 [baidu]
 agents="Baiduspider"
 domain=".crawl.baidu.com"
