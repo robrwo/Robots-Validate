@@ -6606,6 +6606,11 @@ domain=".crawl.sogou.com"
 agents="StractBot"
 domain=".stract.com"
 
+[taktikal]
+## About: https://taktikal.fasttvltd.com/bot
+agents="Taktikal-Scanner"
+domain=".scanner.fasttvltd.com"
+
 [telegram]
 ## Note: the user-agent string is "TelegramBot (like TwitterBot)" so do not use "TwitterBot" for anything else
 
