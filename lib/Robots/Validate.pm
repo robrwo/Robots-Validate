@@ -459,11 +459,13 @@ sub _revalidate( $self, $ip, $agent ) {
 
 This is a wrapper around L</validate> that returns true for imposter robots.
 
+It will return undef when the result is unknown.
+
 =cut
 
 sub bad_robot( $self, $ip, $agent = undef, $opts = undef ) {
     my $value = $self->validate( $ip, $agent, $opts );
-    return !$value && defined($value);
+    return defined($value) ? !$value : undef;
 }
 
 sub _add_rule( $self, $rule ) {

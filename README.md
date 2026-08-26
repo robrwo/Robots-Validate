@@ -26,6 +26,8 @@ Changes for version v0.3.7 (2026-08-26)
 
 - Enhancements
     - Switch to Try::Tiny over Syntax::Keyword::Try.
+- Bug Fixes
+    - bad\_robot now returns undef for unknown results, like validate does.
 
 See the `Changes` file for more details.
 

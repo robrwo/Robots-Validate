@@ -4,6 +4,9 @@ Revision history for {{ $dist->name }}:
   [Enhancements]
   - Switch to Try::Tiny over Syntax::Keyword::Try.
 
+  [Bug Fixes]
+  - bad_robot now returns undef for unknown results, like validate does.
+
 v0.3.6    2026-08-26 14:18:13+01:00 Europe/London (TRIAL RELEASE)
   [Enhancements]
   - User-agents are not matched against in a case-insensitive manner.
