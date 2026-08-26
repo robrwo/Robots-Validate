@@ -151,6 +151,9 @@ Each item is a hash reference with the following keys:
 =item name
 
 This is a short string with the rule name.
+It is required.
+
+This name will be transformed into lowercase.
 
 =item agents
 
