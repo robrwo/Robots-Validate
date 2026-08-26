@@ -125,4 +125,29 @@ subtest 'domain as array of strings' => sub {
 
 };
 
+subtest "no user agent" => sub {
+
+    my @robots = (
+        {
+            name    => 'example',
+            agents  => [qw( examplebot hoohabot )],
+            domain  => '/\.crawl\.example\.local$/',
+            network => [ '192.168.1.1' ],
+        },
+    );
+
+    isa_ok my $rv = Robots::Validate->new(
+        resolver     => $res,
+        config       => \@robots,
+      ),
+      'Robots::Validate';
+
+    is $rv->validate('192.168.1.2')  => undef, "unknown IP";
+    is $rv->bad_robot('192.168.1.2') => undef, "unknown IP";
+
+    is $rv->validate( '192.168.1.2', undef ) => undef, "unknown IP";
+    is $rv->validate( '192.168.1.2', '' )    => undef, "unknown IP";
+
+};
+
 done_testing;

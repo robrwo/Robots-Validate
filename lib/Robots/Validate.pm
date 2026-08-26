@@ -447,7 +447,10 @@ sub _revalidate( $self, $ip, $agent ) {
     }
     else {
         my $res = $self->_match_ip($ip);
-        return $res && [ $res => undef ];
+        if ($res) {
+            return [ $res => undef ];
+        }
+        return $res;
     }
 
     return undef;

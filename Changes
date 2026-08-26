@@ -7,6 +7,8 @@ Revision history for {{ $dist->name }}:
   [Bug Fixes]
   - bad_robot now returns undef for unknown results, like validate does.
 
+  - validate returns undef for unknown IPs without user agents.
+
 v0.3.6    2026-08-26 14:18:13+01:00 Europe/London (TRIAL RELEASE)
   [Enhancements]
   - User-agents are not matched against in a case-insensitive manner.
