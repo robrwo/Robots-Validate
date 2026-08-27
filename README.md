@@ -30,6 +30,9 @@ Changes for version v0.3.9 (2026-08-27)
     - Updated robot rules.
 - Documentation
     - Fix POD errors.
+- Tests
+    - Skip caching tests if CHI is not installed.
+    - Remove CHI from the test requirements.
 
 See the `Changes` file for more details.
 

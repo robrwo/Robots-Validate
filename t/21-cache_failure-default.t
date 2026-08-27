@@ -1,6 +1,7 @@
 #!perl
 
 use Test2::V0;
+use Test2::Require::Module 'CHI';
 
 use Test::File::ShareDir -share => {
     -dist => {
@@ -8,11 +9,13 @@ use Test::File::ShareDir -share => {
     }
 };
 
-use CHI;
 use List::Util ();
+use Module::Load qw( autoload );
 use Net::DNS::Resolver::Mock;
 
 use Robots::Validate;
+
+autoload "CHI";
 
 my $res = Net::DNS::Resolver::Mock->new;
 $res->zonefile_parse(
