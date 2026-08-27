@@ -6043,17 +6043,17 @@ network=[
 agents="facebookexternalhit/1.1 Facebot Twitterbot"
 ignore=true
 
-[ionos]
-## About: https://www.ionos.de/terms-gtc/faq-crawler-en/
-
-agents="IonCrawl"
-domain=".1and1.org"
-
 [infotiger]
 ## About: https://infotiger.com/bot.html
 
 agents="InfoTigerBot"
 domain=".infotiger.com"
+
+[ionos]
+## About: https://www.ionos.de/terms-gtc/faq-crawler-en/
+
+agents="IonCrawl"
+domain=".1and1.org"
 
 [kagibot]
 ## About: https://kagi.com/bot
