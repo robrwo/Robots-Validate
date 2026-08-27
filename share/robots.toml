@@ -3746,6 +3746,23 @@ domain=[
   ".facebook.com",
 ]
 
+[fyndbot]
+# Date: 2026-08-27
+# Note: the network information is from email correspondence with is from email feedback@fynd.bot
+agents="fyndbot"
+network=[
+  "13.216.0.0/13",
+  "3.64.0.0/12",
+  "13.214.0.0/15",
+  "64.176.0.0/19",
+  "169.197.183.0/24",
+  "2600:1f18::/35",
+  "2001:19f0:c800::/38",
+  "2a05:d014:1c00::/38",
+  "2406:da18:800::/38",
+  "2605:9f80:8000::/35"
+]
+
 [google]
 ## Date: 2026-08-26
 ## About: https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers
