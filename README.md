@@ -22,17 +22,10 @@ This module allows one to validate a robot user-agent string against the IP addr
 
 # RECENT CHANGES
 
-Changes for version v0.3.8 (2026-08-27)
+Changes for version v0.3.9 (2026-08-27)
 
 - Enhancements
-    - Reverted back to using XS modules. There is no point using pure-Perl alternatives if this already uses Net::Patricia.
     - Updated robot rules.
-- Bug Fixes
-    - Fixed \_check\_dns so that it correctly returns false instead of undef if there is no match.
-- Documentation
-    - Updated KNOWN ISSUES.
-- Tests
-    - Add a "live" test with Google DNS.
 
 See the `Changes` file for more details.
 
