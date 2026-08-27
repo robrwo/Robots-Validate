@@ -29,6 +29,8 @@ Changes for version v0.3.8 (2026-08-27)
     - Updated robot rules.
 - Bug Fixes
     - Fixed \_check\_dns so that it correctly returns false instead of undef if there is no match.
+- Documentation
+    - Updated KNOWN ISSUES.
 - Tests
     - Add a "live" test with Google DNS.
 

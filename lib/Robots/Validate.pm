@@ -649,7 +649,16 @@ Many of these rules are not documented, but have been guessed from web traffic.
 
 Bots that use cloud services without documenting what hosts they use are not added here.
 
+Decentralised bots such as yacybot cannot be verified.
+
 The networks used by some robots do not consistently support reverse DNS lookups, and may randomly fail.
+
+Some applications like iMessage include fake bots in their user-agent strings, e.g.
+
+     facebookexternalhit/1.1 Facebot Twitterbot/1.0
+
+They do this so that servers will respond with metadata that they may not server to  web browsers.
+These will show up as bad bots.
 
 =head1 SECURITY CONSIDERATIONS
 
