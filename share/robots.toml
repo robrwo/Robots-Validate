@@ -3731,6 +3731,7 @@ network=[
 ## About: https://developers.facebook.com/docs/sharing/webmasters/web-crawlers
 ##
 ## Note: We ignore the initial "f" to catch a fake bot that uses "acebookexternalhit"
+##       "Facebot" is no longer used but added to catch imposters.
 
 agents=[
   "acebookexternalhit",
@@ -3738,6 +3739,7 @@ agents=[
   "meta-externalads",
   "meta-externalagent",
   "meta-externalfetcher",
+  "Facebot",
 ]
 domain=[
   ".fbsv.net",
