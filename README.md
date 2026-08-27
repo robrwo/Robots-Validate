@@ -27,6 +27,8 @@ Changes for version v0.3.8 (2026-08-27)
 - Enhancements
     - Reverted back to using XS modules. There is no point using pure-Perl alternatives if this already uses Net::Patricia.
     - Updated robot rules.
+- Bug Fixes
+    - Fixed \_check\_dns so that it correctly returns false instead of undef if there is no match.
 - Tests
     - Add a "live" test with Google DNS.
 

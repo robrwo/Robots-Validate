@@ -613,7 +613,7 @@ sub _check_dns( $self, $name, $domain, $ip ) {
 
     my @matched = grep { $_ =~ $domain } @hostnames;
 
-    return undef unless @matched;
+    return "" unless @matched;
 
     # Only a record of the client's own family can confirm it, so ask for one
     # type rather than both: an IPv4 client normalises into ::ffff:/96.
@@ -629,7 +629,7 @@ sub _check_dns( $self, $name, $domain, $ip ) {
           grep   { $_->can("address") } $forward->answer;
     }
 
-    return undef;
+    return "";
 }
 
 sub _init_validators_from_config($self) {
