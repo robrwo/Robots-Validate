@@ -142,9 +142,6 @@ It is required.
 
 Case will be ignored, so "GoogleBot" and "googlebot" are the same.
 
-It is I<important> to use strings that are unique and not substrings or superstrings of other user agent strings.
-Otherwise robot validation may fail if there are conflicting matches with the wrong user agent.
-
 =item domain
 
 This is a string or array reference of short strings with the domain suffix. e.g. C<.crawl.example.com>,
@@ -184,9 +181,22 @@ An agent is verified is both the C<domain> and the C<network> match.
 
 =back
 
-Note that either C<domain> or C<network> can be omitted.
+=item ignore
+
+If this is set to a true value, then no validation will be done and the user agent will treated as unknown.
+
+Use this to flag user agent strings that get matched as a bot and then fail, e.g.
+applications like iMessage include fake bots in their user-agent strings, e.g.
+
+     facebookexternalhit/1.1 Facebot Twitterbot/1.0
+
+They do this so that servers will respond with metadata that they may not server to  web browsers.
+These will show up as bad bots without this feature.
 
 =back
+
+Note that either C<domain> or C<network> can be omitted.
+
 
 If the constructor is passed a hash reference, then it is coerced into an array reference of the values, sorted by keys,
 where the key is added to the C<name> if it is not already specified.  (The C<agents> and C<network> values will be
@@ -419,10 +429,18 @@ sub _revalidate( $self, $ip, $agent ) {
 
         $self->_agents; # ensure agents are instantiated
 
-        if ( my $str = $self->_first_match( lc $agent ) ) {
-            my $res = $self->_validators->{$str}->($ip);
+        my @matches = $self->_agents->matches( lc $agent );
+        for my $str (@matches) {
+            my $res = $self->_validators->{$str}->($ip) or next;
+            my $rule = $res && $self->index->{$res};
+            if ( $rule && $rule->{ignore} ) {
+                return undef;
+            }
             return $res && [ $res => $str ];
         }
+
+        return "" if @matches;
+
     }
     else {
         my $res = $self->_match_ip($ip);
@@ -457,43 +475,51 @@ sub _add_rule( $self, $rule ) {
     my $name = lc $rule->{name};
     die "A rule name is required" unless defined $name;
 
-    my $domain  = $rule->{domain};
-    my $network = $rule->{network};
-    my $type    = $rule->{match} // "any";
-
     my @fns;
 
-    if ($network) {
+    if ( $rule->{ignore} ) {
 
-        $self->_add_network( $_, $name ) for ( $network->@* );
+        push @fns, set_subname "_ignore_${name}", sub($) { 1 };
 
-        push @fns, set_subname "_check_ip_${name}", sub($ip) { $self->_check_ip( $name, $ip ) };
     }
+    else {
 
-    if ($domain) {
+        my $domain  = $rule->{domain};
+        my $network = $rule->{network};
 
-        state sub _to_regexp($domain) {
-            return $domain if is_regexpref($domain);
-            my ($re) = $domain =~ m[ \A / (.+) / \z ]x;
-            $re //= quotemeta($domain) . '\z';
-            return qr/${re}/an;
+        if ($network) {
+
+            $self->_add_network( $_, $name ) for ( $network->@* );
+
+            push @fns, set_subname "_check_ip_${name}", sub($ip) { $self->_check_ip( $name, $ip ) };
         }
 
-        my $fn;
+        if ($domain) {
 
-        if ( is_plain_arrayref($domain) ) {
-            my @res = map { _to_regexp($_) } $domain->@*;
-            $fn = sub($ip) { $self->_check_dns( $name => \@res, $ip ) };
-        }
-        else {
-            my $re = _to_regexp($domain);
-            $fn = sub($ip) { $self->_check_dns( $name => $re, $ip ) };
-        }
+            state sub _to_regexp($domain) {
+                return $domain if is_regexpref($domain);
+                my ($re) = $domain =~ m[ \A / (.+) / \z ]x;
+                $re //= quotemeta($domain) . '\z';
+                return qr/${re}/an;
+            }
 
-        push @fns, set_subname "_check_dns_${name}", $fn;
+            my $fn;
+
+            if ( is_plain_arrayref($domain) ) {
+                my @res = map { _to_regexp($_) } $domain->@*;
+                $fn = sub($ip) { $self->_check_dns( $name => \@res, $ip ) };
+            }
+            else {
+                my $re = _to_regexp($domain);
+                $fn = sub($ip) { $self->_check_dns( $name => $re, $ip ) };
+            }
+
+            push @fns, set_subname "_check_dns_${name}", $fn;
+        }
     }
 
     if (@fns) {
+        my $type = $rule->{match} // "any";
 
         # TODO: add option for partial matching where false returns undef, i.e. "yes or unknown"
 
@@ -652,13 +678,6 @@ Bots that use cloud services without documenting what hosts they use are not add
 Decentralised bots such as yacybot cannot be verified.
 
 The networks used by some robots do not consistently support reverse DNS lookups, and may randomly fail.
-
-Some applications like iMessage include fake bots in their user-agent strings, e.g.
-
-     facebookexternalhit/1.1 Facebot Twitterbot/1.0
-
-They do this so that servers will respond with metadata that they may not server to  web browsers.
-These will show up as bad bots.
 
 =head1 SECURITY CONSIDERATIONS
 

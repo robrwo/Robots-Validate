@@ -2,7 +2,14 @@ Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
   [Enhancements]
+  - Added the "ignore" feature. (GH#10)
+
+  - The behaviour was changed to check all potential user-agent substring matches.
+
   - Updated robot rules.
+
+  [Documentation]
+  - Fix POD errors.
 
 v0.3.8    2026-08-27 12:20:45+01:00 Europe/London (TRIAL RELEASE)
   [Enhancements]

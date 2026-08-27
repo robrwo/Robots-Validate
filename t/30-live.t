@@ -120,13 +120,12 @@ subtest 'imessage' => sub {
         [
 
             {
-                # Check that iMessage fails
                 line => __LINE__,
                 args => [
                     '194.83.69.99',
 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) AppleWebKit/601.2.4 (KHTML, like Gecko) Version/9.0.1 Safari/601.2.4 facebookexternalhit/1.1 Facebot Twitterbot/1.0"
                 ],
-                res => "",
+                res => undef,
             },
 
         ]

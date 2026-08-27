@@ -25,7 +25,11 @@ This module allows one to validate a robot user-agent string against the IP addr
 Changes for version v0.3.9 (2026-08-27)
 
 - Enhancements
+    - Added the "ignore" feature. (GH#10)
+    - The behaviour was changed to check all potential user-agent substring matches.
     - Updated robot rules.
+- Documentation
+    - Fix POD errors.
 
 See the `Changes` file for more details.
 

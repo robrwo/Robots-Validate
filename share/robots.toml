@@ -6039,6 +6039,10 @@ network=[
   "74.80.208.0/24",
 ]
 
+[imessage]
+agents="facebookexternalhit/1.1 Facebot Twitterbot"
+ignore=true
+
 [ionos]
 ## About: https://www.ionos.de/terms-gtc/faq-crawler-en/
 
