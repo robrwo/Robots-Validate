@@ -6,7 +6,7 @@ use v5.24;
 
 use Moo 1;
 
-use Algorithm::AhoCorasick::SearchMachine;
+use Algorithm::AhoCorasick::XS;
 use File::ShareDir qw( dist_file );
 use File::Slurper  qw( read_binary );
 use List::Util     qw( all any none );
@@ -16,7 +16,7 @@ use Net::Patricia;
 use PerlX::Maybe qw( maybe );
 use Ref::Util qw( is_plain_arrayref is_plain_hashref is_regexpref );
 use Sub::Util 1.40 qw( set_subname );
-use TOML::Tiny 0.20 ( );
+use TOML::XS;
 use Try::Tiny;
 use Types::Common qw( ArrayRef Bool ConsumerOf HashRef InstanceOf Maybe );
 
@@ -107,9 +107,10 @@ has _validators => (
 
 has _agents => (
     is       => 'lazy',
-    isa      => InstanceOf [qw/ Algorithm::AhoCorasick::SearchMachine Algorithm::AhoCorasick::XS /],
+    isa      => InstanceOf [qw/ Algorithm::AhoCorasick::XS /],
     init_arg => undef,
     builder  => \&_build_agents,
+    handles  => { _first_match => 'first_match' },
 );
 
 sub _build_agents($self) {
@@ -117,28 +118,7 @@ sub _build_agents($self) {
     $self->_init_validators_from_config;
 
     my @names = keys $self->_validators->%*;
-
-    if ( eval { require Algorithm::AhoCorasick::XS; } ) {
-
-        *_first_match = set_subname "_first_match", sub( $self, $str ) {
-            return $self->_agents->first_match($str)
-        };
-
-        return Algorithm::AhoCorasick::XS->new(\@names);
-
-    }
-    else {
-
-        *_first_match = set_subname "_first_match", sub( $self, $str ) {
-            my $match;
-            $self->_agents->feed($str, sub( $, $name ) { $match = $name }  );
-            return $match;
-        };
-
-        return Algorithm::AhoCorasick::SearchMachine->new(@names);
-
-    }
-
+    return Algorithm::AhoCorasick::XS->new(\@names);
 }
 
 =attr config
@@ -213,7 +193,6 @@ where the key is added to the C<name> if it is not already specified.  (The C<ag
 coerced into array references.)
 
 If the constructor is passed anything else, it is assumed to be the filename of a TOML file with the configuration.
-The file will be parsed with L<TOML::XS> if it is available, or L<TOML::Tiny> otherwise.
 
 There is a utility in the distribution F<devel/rebuild-robots-config> that will normalise the file and update
 network information about robots.
@@ -660,15 +639,8 @@ sub _init_validators_from_config($self) {
     $self->_set_locked(1);
 }
 
-BEGIN {
-
-    if ( eval { require TOML::XS; } ) {
-        *_from_toml = sub($toml) { TOML::XS::from_toml($toml)->get() };
-    }
-    else {
-        *_from_toml = \&TOML::Tiny::from_toml;
-    }
-
+sub _from_toml($toml) {
+    return TOML::XS::from_toml($toml)->get();
 }
 
 =head1 KNOWN ISSUES
@@ -727,8 +699,6 @@ The TOML specification can be found at L<https://toml.io>.
 =head1 append:REQUIREMENTS
 
 L<CHI> is required to use the caching features.
-
-L<Algorithm::AhoCorasick::XS> and L<TOML::XS> will be used if they are available.
 
 =end :readme
 

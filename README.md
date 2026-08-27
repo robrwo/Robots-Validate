@@ -22,9 +22,10 @@ This module allows one to validate a robot user-agent string against the IP addr
 
 # RECENT CHANGES
 
-Changes for version v0.3.8 (2026-08-26)
+Changes for version v0.3.8 (2026-08-27)
 
 - Enhancements
+    - Reverted back to using XS modules. There is no point using pure-Perl alternatives if this already uses Net::Patricia.
     - Updated robot rules.
 - Tests
     - Add a "live" test with Google DNS.
@@ -35,7 +36,7 @@ See the `Changes` file for more details.
 
 This module lists the following modules as runtime dependencies:
 
-- [Algorithm::AhoCorasick::SearchMachine](https://metacpan.org/pod/Algorithm%3A%3AAhoCorasick%3A%3ASearchMachine)
+- [Algorithm::AhoCorasick::XS](https://metacpan.org/pod/Algorithm%3A%3AAhoCorasick%3A%3AXS)
 - [File::ShareDir](https://metacpan.org/pod/File%3A%3AShareDir)
 - [File::Slurper](https://metacpan.org/pod/File%3A%3ASlurper)
 - [List::Util](https://metacpan.org/pod/List%3A%3AUtil)
@@ -46,7 +47,7 @@ This module lists the following modules as runtime dependencies:
 - [PerlX::Maybe](https://metacpan.org/pod/PerlX%3A%3AMaybe)
 - [Ref::Util](https://metacpan.org/pod/Ref%3A%3AUtil)
 - [Sub::Util](https://metacpan.org/pod/Sub%3A%3AUtil) version 1.40 or later
-- [TOML::Tiny](https://metacpan.org/pod/TOML%3A%3ATiny) version 0.20 or later
+- [TOML::XS](https://metacpan.org/pod/TOML%3A%3AXS)
 - [Try::Tiny](https://metacpan.org/pod/Try%3A%3ATiny)
 - [Types::Common](https://metacpan.org/pod/Types%3A%3ACommon)
 - [constant](https://metacpan.org/pod/constant)
@@ -57,8 +58,6 @@ This module lists the following modules as runtime dependencies:
 See the `cpanfile` file for the full list of prerequisites.
 
 [CHI](https://metacpan.org/pod/CHI) is required to use the caching features.
-
-[Algorithm::AhoCorasick::XS](https://metacpan.org/pod/Algorithm%3A%3AAhoCorasick%3A%3AXS) and [TOML::XS](https://metacpan.org/pod/TOML%3A%3AXS) will be used if they are available.
 
 # INSTALLATION
 
