@@ -6034,6 +6034,17 @@ domain=".1and1.org"
 agents="InfoTigerBot"
 domain=".infotiger.com"
 
+[kagibot]
+## About: https://kagi.com/bot
+agents="Kagibot"
+domain=".kagibot.org"
+network=[
+  "216.18.205.234",
+  "35.212.27.76",
+  "104.254.65.50",
+  "209.151.156.194"
+]
+
 [linkedin]
 agents="LinkedInBot"
 domain=".linkedin.com"
