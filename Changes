@@ -1,6 +1,8 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+
+v0.3.8    2026-08-27 12:20:45+01:00 Europe/London (TRIAL RELEASE)
   [Enhancements]
   - Reverted back to using XS modules. There is no point using pure-Perl alternatives if this already uses Net::Patricia.
 
