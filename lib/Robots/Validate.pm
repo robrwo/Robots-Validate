@@ -74,6 +74,26 @@ sub _build_resolver($self) {
     return Net::DNS::Resolver->new;
 }
 
+=attr max_forward_lookups
+
+The maximum number of hostnames from the reverse-DNS answer that will be forward-confirmed in a single L</validate> call.
+The defaults is C<4>.
+
+An external party controls the reverse zone for its own address, and how many names the C<PTR> lookup returns.
+Without a limit, validation costs one forward lookup per name, each for a distinct name and so each a cache miss resolved against the authoritative servers for the domain the rule names.
+
+Raise this only if a robot you match legitimately publishes more than four C<PTR> records for one address.
+
+This was added in version v0.3.11.
+
+=cut
+
+has max_forward_lookups => (
+    is      => 'ro',
+    isa     => PositiveInt,
+    default => 4,
+);
+
 =attr networks
 
 This is a L<Net::Patricia> object used for matching networks.
@@ -713,6 +733,8 @@ sub _check_dns( $self, $name, $domain, $ip ) {
     my @matched = grep { $_ =~ $domain } @hostnames;
 
     return "" unless @matched;
+
+    splice @matched, $self->max_forward_lookups;
 
     # Only a record of the client's own family can confirm it, so ask for one
     # type rather than both: an IPv4 client normalises into ::ffff:/96.

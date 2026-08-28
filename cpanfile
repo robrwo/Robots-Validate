@@ -43,6 +43,7 @@ on 'test' => sub {
   requires "Test2::V0" => "0";
   requires "Test::File::ShareDir" => "0";
   requires "Test::More" => "0";
+  requires "parent" => "0";
   requires "strict" => "0";
   requires "warnings" => "0";
 };

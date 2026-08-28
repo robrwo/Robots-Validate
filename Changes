@@ -4,6 +4,8 @@ Revision history for {{ $dist->name }}:
   [Security]
   - Add a max_matches attribute to limit the number of matches checked when using greedy matching.
 
+  - Add a max_forward_lookups attribute to limit the number of reverse DNS lookups. (CVE-2026-82309)
+
   [Documentation]
   - Added missing minimum version for greedy attribute.
 
