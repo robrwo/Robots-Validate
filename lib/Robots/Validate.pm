@@ -9,7 +9,7 @@ use Moo 1;
 use Algorithm::AhoCorasick::XS;
 use File::ShareDir qw( dist_file );
 use File::Slurper  qw( read_binary );
-use List::Util     qw( all any none );
+use List::Util     qw( all any none uniqstr );
 use Net::DNS::Resolver;
 use Net::IP qw( ip_expand_address ip_is_ipv4 ip_is_ipv6 ip_splitprefix );
 use Net::Patricia;
@@ -18,7 +18,7 @@ use Ref::Util qw( is_plain_arrayref is_plain_hashref is_regexpref );
 use Sub::Util 1.40 qw( set_subname );
 use TOML::XS;
 use Try::Tiny;
-use Types::Common qw( ArrayRef Bool ConsumerOf HashRef InstanceOf Maybe );
+use Types::Common qw( ArrayRef Bool ConsumerOf HashRef InstanceOf Maybe PositiveInt );
 
 # RECOMMEND PREREQ: CHI 0.40
 # RECOMMEND PREREQ: Ref::Util::XS
@@ -334,6 +334,25 @@ has greedy => (
     default => 1,
 );
 
+=attr max_matches
+
+The maximum number of matches to check, when L</greedy> is true.
+
+When matches are checked using reverse-DNS, then each request match may add an additional lookup.
+Without this limit, an attacker can force many DNS lookups by inserting multiple matching agent names.
+
+The default is C<4>.
+
+This was added in version v0.3.11.
+
+=cut
+
+has max_matches => (
+    is      => 'ro',
+    isa     => PositiveInt,
+    default => 4,
+);
+
 =method validate
 
   my $result = $rv->validate( $ip, $agent, \%opts );
@@ -482,7 +501,8 @@ sub _greedy_revalidate( $self, $ip, $agent ) {
 
         $self->_agents; # ensure agents are instantiated
 
-        my @matches = $self->_agents->matches( lc $agent );
+        my @matches = uniqstr $self->_agents->matches( lc $agent );
+        splice @matches, $self->max_matches;
         for my $str (@matches) {
             my $res = $self->_validators->{$str}->($ip) or next;
             my $rule = $res && $self->index->{$res};

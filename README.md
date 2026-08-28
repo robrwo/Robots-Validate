@@ -24,6 +24,8 @@ This module allows one to validate a robot user-agent string against the IP addr
 
 Changes for version v0.3.11 (2026-08-28)
 
+- Security
+    - Add a max\_matches attribute to limit the number of matches checked when using greedy matching.
 - Documentation
     - Added missing minimum version for greedy attribute.
 - Tests

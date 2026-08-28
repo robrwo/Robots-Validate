@@ -1,6 +1,9 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+  [Security]
+  - Add a max_matches attribute to limit the number of matches checked when using greedy matching.
+
   [Documentation]
   - Added missing minimum version for greedy attribute.
 
