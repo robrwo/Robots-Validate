@@ -1,6 +1,8 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+  [Enhancements]
+  - Updated robot rules.
 
 v0.3.11   2026-08-28 17:27:56+01:00 Europe/London (TRIAL RELEASE)
   [Security]

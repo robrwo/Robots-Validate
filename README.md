@@ -22,21 +22,10 @@ This module allows one to validate a robot user-agent string against the IP addr
 
 # RECENT CHANGES
 
-Changes for version v0.3.11 (2026-08-28)
+Changes for version v0.3.12 (2026-08-28)
 
-- Security
-    - Add a max\_matches attribute to limit the number of matches checked when using greedy matching.
-    - Add a max\_forward\_lookups attribute to limit the number of reverse DNS lookups. (CVE-2026-82309)
-- Bug Fixes
-    - Fixed use of cache failed when cache\_options was not specified.
-    - Fixed false imposter failures from greedy evaluation.
-    - Fixed handling of empty domains list in the configuration.
-- Documentation
-    - Added missing minimum version for greedy attribute.
-    - Added AI\_POLICY.md.
-- Tests
-    - Added more tests.
-    - Moved live DNS tests to the xt directory.
+- Enhancements
+    - Updated robot rules.
 
 See the `Changes` file for more details.
 

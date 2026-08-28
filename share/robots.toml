@@ -6102,6 +6102,15 @@ network=[
 agents="LohiSoftBot"
 domain=".bot.lohisoft.com"
 
+[lyonlbot]
+## Date: 2026-08-28
+## About: https://lyonl.com/bot.html
+## Network: https://lyonl.com/crawler/ips.json
+
+agents="LyonlBot"
+domain=".lyonl.com"
+network=[ "34.170.6.187" ]
+
 [lyrenth]
 ## Date: 2026-08-27
 ## About: https://www.lyrenth.com/bot
