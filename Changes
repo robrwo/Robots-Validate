@@ -11,6 +11,8 @@ Revision history for {{ $dist->name }}:
 
   - Fixed false imposter failures from greedy evaluation.
 
+  - Fixed handling of empty domains list in the configuration.
+
   [Documentation]
   - Added missing minimum version for greedy attribute.
 

@@ -31,6 +31,7 @@ on 'build' => sub {
 };
 
 on 'test' => sub {
+  requires "CHI" => "0";
   requires "File::Spec" => "0";
   requires "File::Temp" => "0";
   requires "IO::Handle" => "0";

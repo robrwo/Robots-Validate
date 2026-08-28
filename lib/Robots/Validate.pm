@@ -731,7 +731,8 @@ sub _check_dns( $self, $name, $domain, $ip ) {
 
 
     if ( is_plain_arrayref($domain) ) {
-        my @domains = $domain->@*;
+        my @domains = $domain->@* or return undef;
+
         if ( @domains == 1 ) {
             $domain = $domains[0];
         }
