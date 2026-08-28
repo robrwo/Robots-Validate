@@ -193,6 +193,8 @@ applications like iMessage include fake bots in their user-agent strings, e.g.
 They do this so that servers will respond with metadata that they may not server to  web browsers.
 These will show up as bad bots without this feature.
 
+This feature may not work when L</greedy> is set to false.
+
 =back
 
 Note that either C<domain> or C<network> can be omitted.
@@ -312,6 +314,24 @@ has cache_options => (
     }
 );
 
+=attr greedy
+
+When true (default), the substring matching algorithm will look at all
+possible matches in the user-agent string and test if any of them are
+valid.
+
+This feature is useful for handling crawlers that sometimes include the names of other crawlers in their user-agent strings.
+
+Setting this to false is faster but renders the ability to handling overlapping user-agent strings.
+
+=cut
+
+has greedy => (
+    is      => 'ro',
+    isa     => Bool,
+    default => 1,
+);
+
 =method validate
 
   my $result = $rv->validate( $ip, $agent, \%opts );
@@ -423,7 +443,38 @@ sub _cache_compute( $self, $ip, $agent, $opts ) {
     return $value;
 }
 
-sub _revalidate( $self, $ip, $agent ) {
+sub _revalidate( $self, @args ) {
+    return $self->greedy ? $self->_greedy_revalidate(@args) : $self->_first_revalidate(@args);
+}
+
+sub _first_revalidate( $self, $ip, $agent ) {
+
+    if ( $agent ne "" ) {
+
+        $self->_agents; # ensure agents are instantiated
+
+        if ( my $str = $self->_agents->first_match( lc $agent ) ) {
+            my $res = $self->_validators->{$str}->($ip);
+            my $rule = $res && $self->index->{$res};
+            if ( $rule && $rule->{ignore} ) {
+                return undef;
+            }
+            return $res && [ $res => $str ];
+        }
+
+    }
+    else {
+        my $res = $self->_match_ip($ip);
+        if ($res) {
+            return [ $res => undef ];
+        }
+        return $res;
+    }
+
+    return undef;
+}
+
+sub _greedy_revalidate( $self, $ip, $agent ) {
 
     if ( $agent ne "" ) {
 

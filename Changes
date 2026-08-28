@@ -1,6 +1,9 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+  [Enhancements]
+  - Added the greedy attribute to switch off checks for all user-agent substrings.
+
   [Documentation]
   - Added copyright and license to the robot rules file.
 
