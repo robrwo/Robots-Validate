@@ -27,6 +27,8 @@ Changes for version v0.3.11 (2026-08-28)
 - Security
     - Add a max\_matches attribute to limit the number of matches checked when using greedy matching.
     - Add a max\_forward\_lookups attribute to limit the number of reverse DNS lookups. (CVE-2026-82309)
+- Bug Fixes
+    - Fixed use of cache failed when cache\_options was not specified.
 - Documentation
     - Added missing minimum version for greedy attribute.
 - Tests

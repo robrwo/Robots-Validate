@@ -325,14 +325,19 @@ Plain strings are assumed to be C<expires_in> values.
 =cut
 
 has cache_options => (
-    is     => 'ro',
+    is     => 'lazy',
     isa    => Maybe [HashRef],
     coerce => sub($val) {
         return $val if is_plain_hashref($val);
         return { expires_in => "$val" } if defined $val;
         return undef;
-    }
+    },
+    builder => 1,
 );
+
+sub _build_cache_options($) {
+    return {};
+}
 
 =attr greedy
 

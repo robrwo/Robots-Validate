@@ -6,6 +6,9 @@ Revision history for {{ $dist->name }}:
 
   - Add a max_forward_lookups attribute to limit the number of reverse DNS lookups. (CVE-2026-82309)
 
+  [Bug Fixes]
+  - Fixed use of cache failed when cache_options was not specified.
+
   [Documentation]
   - Added missing minimum version for greedy attribute.
 
