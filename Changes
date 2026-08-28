@@ -7,6 +7,8 @@ Revision history for {{ $dist->name }}:
   [Documentation]
   - Added copyright and license to the robot rules file.
 
+  - Fixed inconsistent spelling.
+
 v0.3.9    2026-08-27 15:28:37+01:00 Europe/London (TRIAL RELEASE)
   [Enhancements]
   - Added the "ignore" feature. (GH#10)

@@ -137,7 +137,7 @@ This name will be transformed into lowercase.
 
 =item agents
 
-This is an array reference of short strings to match against user agent strings.
+This is an array reference of short strings to match against user-agent strings.
 It is required.
 
 Case will be ignored, so "GoogleBot" and "googlebot" are the same.
@@ -183,9 +183,9 @@ An agent is verified is both the C<domain> and the C<network> match.
 
 =item ignore
 
-If this is set to a true value, then no validation will be done and the user agent will treated as unknown.
+If this is set to a true value, then no validation will be done and the user-agent will treated as unknown.
 
-Use this to flag user agent strings that get matched as a bot and then fail, e.g.
+Use this to flag user-agent strings that get matched as a bot and then fail, e.g.
 applications like iMessage include fake bots in their user-agent strings, e.g.
 
      facebookexternalhit/1.1 Facebot Twitterbot/1.0
@@ -278,7 +278,7 @@ has locked => (
 
 =attr cache
 
-This is an optional L<CHI> cache used for matching IP addresses and user agent strings.
+This is an optional L<CHI> cache used for matching IP addresses and user-agent strings.
 
 See the L</SECURITY CONSIDERATIONS> section for improving the safety of the cache.
 
@@ -350,13 +350,13 @@ and then validating that the hostname resolves to that IP address.
 It then checks if the hostname is associated with a
 known web robot.
 
-A fake robot (one where the user agent claims to be something that
+A fake robot (one where the user-agent claims to be something that
 does not match the IP address or resolved hostname) returns a defined
 but false value.
 
-An unknown user agent returns C<undef>.
+An unknown user-agent returns C<undef>.
 
-Successful checks return an array reference containing the C<name> and the matching agent string.
+Successful checks return an array reference containing the C<name> and the matching substring.
 
 The rule can be looked up from the L</index> attribute.
 

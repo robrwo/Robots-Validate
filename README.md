@@ -28,6 +28,7 @@ Changes for version v0.3.10 (2026-08-28)
     - Added the greedy attribute to switch off checks for all user-agent substrings.
 - Documentation
     - Added copyright and license to the robot rules file.
+    - Fixed inconsistent spelling.
 
 See the `Changes` file for more details.
 
