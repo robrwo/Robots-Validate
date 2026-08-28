@@ -26,6 +26,7 @@ Changes for version v0.3.11 (2026-08-28)
 
 - Tests
     - Added more tests.
+    - Moved live DNS tests to the xt directory.
 
 See the `Changes` file for more details.
 
