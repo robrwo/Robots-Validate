@@ -24,6 +24,8 @@ This module allows one to validate a robot user-agent string against the IP addr
 
 Changes for version v0.3.11 (2026-08-28)
 
+- Documentation
+    - Added missing minimum version for greedy attribute.
 - Tests
     - Added more tests.
     - Moved live DNS tests to the xt directory.

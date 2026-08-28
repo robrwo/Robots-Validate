@@ -324,6 +324,8 @@ This feature is useful for handling crawlers that sometimes include the names of
 
 Setting this to false is faster but renders the ability to handling overlapping user-agent strings.
 
+This was added in version v0.3.10.
+
 =cut
 
 has greedy => (
