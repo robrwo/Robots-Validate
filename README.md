@@ -33,6 +33,7 @@ Changes for version v0.3.11 (2026-08-28)
     - Fixed handling of empty domains list in the configuration.
 - Documentation
     - Added missing minimum version for greedy attribute.
+    - Added AI\_POLICY.md.
 - Tests
     - Added more tests.
     - Moved live DNS tests to the xt directory.

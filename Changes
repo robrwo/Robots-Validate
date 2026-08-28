@@ -16,6 +16,8 @@ Revision history for {{ $dist->name }}:
   [Documentation]
   - Added missing minimum version for greedy attribute.
 
+  - Added AI_POLICY.md.
+
   [Tests]
   - Added more tests.
 
