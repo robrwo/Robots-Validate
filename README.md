@@ -22,13 +22,10 @@ This module allows one to validate a robot user-agent string against the IP addr
 
 # RECENT CHANGES
 
-Changes for version v0.3.10 (2026-08-28)
+Changes for version v0.3.11 (2026-08-28)
 
-- Enhancements
-    - Added the greedy attribute to switch off checks for all user-agent substrings.
-- Documentation
-    - Added copyright and license to the robot rules file.
-    - Fixed inconsistent spelling.
+- Tests
+    - Added more tests.
 
 See the `Changes` file for more details.
 
