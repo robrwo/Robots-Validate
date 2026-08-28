@@ -29,6 +29,7 @@ Changes for version v0.3.11 (2026-08-28)
     - Add a max\_forward\_lookups attribute to limit the number of reverse DNS lookups. (CVE-2026-82309)
 - Bug Fixes
     - Fixed use of cache failed when cache\_options was not specified.
+    - Fixed false imposter failures from greedy evaluation.
 - Documentation
     - Added missing minimum version for greedy attribute.
 - Tests

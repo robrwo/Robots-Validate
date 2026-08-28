@@ -526,10 +526,16 @@ sub _greedy_revalidate( $self, $ip, $agent ) {
 
         $self->_agents; # ensure agents are instantiated
 
+        my $fails = 0;
+
         my @matches = uniqstr $self->_agents->matches( lc $agent );
         splice @matches, $self->max_matches;
         for my $str (@matches) {
-            my $res = $self->_validators->{$str}->($ip) or next;
+            my $res = $self->_validators->{$str}->($ip);
+            unless ($res) {
+                $fails++ if defined $res;
+                next;
+            }
             my $rule = $res && $self->index->{$res};
             if ( $rule && $rule->{ignore} ) {
                 return undef;
@@ -537,7 +543,7 @@ sub _greedy_revalidate( $self, $ip, $agent ) {
             return $res && [ $res => $str ];
         }
 
-        return "" if @matches;
+        return "" if $fails;
 
     }
     else {

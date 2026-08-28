@@ -9,6 +9,8 @@ Revision history for {{ $dist->name }}:
   [Bug Fixes]
   - Fixed use of cache failed when cache_options was not specified.
 
+  - Fixed false imposter failures from greedy evaluation.
+
   [Documentation]
   - Added missing minimum version for greedy attribute.
 
