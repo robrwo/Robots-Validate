@@ -1,6 +1,8 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+
+v0.3.12   2026-08-29 09:58:02+01:00 Europe/London (TRIAL RELEASE)
   [Incompatible Changes]
   - Replaced the greedy attribute with validation_mode, which can be "first", "relaxed" or "strict".
 
