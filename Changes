@@ -1,6 +1,9 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+  [Enhancements]
+  - Updated robot rules.
+
   [Documentation]
   - Clarify how max_matches affects relaxed and strict matching modes.
 

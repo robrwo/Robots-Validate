@@ -24,6 +24,8 @@ This module allows one to validate a robot user-agent string against the IP addr
 
 Changes for version v0.3.13 (2026-08-29)
 
+- Enhancements
+    - Updated robot rules.
 - Documentation
     - Clarify how max\_matches affects relaxed and strict matching modes.
 
