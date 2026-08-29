@@ -489,6 +489,11 @@ sub _cache_compute( $self, $ip, $agent, $opts ) {
     return $value;
 }
 
+# TODO: what we really want is more than two modes:
+# - first match
+# - check all matches, accept any that validates (relaxed)
+# - check all matches, reject any that fails (strict)
+
 sub _revalidate( $self, @args ) {
     return $self->greedy ? $self->_greedy_revalidate(@args) : $self->_first_revalidate(@args);
 }
