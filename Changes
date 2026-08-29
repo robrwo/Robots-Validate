@@ -4,6 +4,9 @@ Revision history for {{ $dist->name }}:
   [Enhancements]
   - Updated robot rules.
 
+  [Documentation]
+  - Clarified the behaviour of bad_robots in greedy mode.
+
 v0.3.11   2026-08-28 17:27:56+01:00 Europe/London (TRIAL RELEASE)
   [Security]
   - Add a max_matches attribute to limit the number of matches checked when using greedy matching.

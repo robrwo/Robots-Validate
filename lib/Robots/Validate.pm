@@ -561,9 +561,17 @@ sub _greedy_revalidate( $self, $ip, $agent ) {
 
     $rv->bad_robot( $env, \%opts ) and ...
 
-This is a wrapper around L</validate> that returns true for imposter robots.
+This is a wrapper around L</validate> that returns true when it fails validation.
 
-It will return undef when the result is unknown.
+It will return C<undef> when the result is unknown.
+
+This was added in version v0.3.5.
+
+Note that L</greedy> mode means that a validated robot that impersonates another robot in their user-agent, e.g.
+
+    "TelegramBot (like TwitterBot)"
+
+will bot be classified as a bad robot.
 
 =cut
 
