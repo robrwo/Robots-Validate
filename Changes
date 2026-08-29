@@ -1,6 +1,8 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+  [Documentation]
+  - Clarify how max_matches affects relaxed and strict matching modes.
 
 v0.3.12   2026-08-29 09:58:02+01:00 Europe/London (TRIAL RELEASE)
   [Incompatible Changes]

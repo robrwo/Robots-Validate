@@ -355,13 +355,13 @@ Setting this to false is faster but removes the ability to handle overlapping us
 
 This is the default mode.
 
-The validator will look at all possible matches in the user-agent string and test that any of them are valid.
+The validator will look at the first L</max_matches> matches in the user-agent string and test that any of them are valid.
 
 This feature is useful for handling crawlers that sometimes include the names of other crawlers in their user-agent strings.
 
 =item strict
 
-The validator will look at all possible matches in the user-agent string and test that all of them are valid.
+The validator will look at the first L</max_matches> matches in the user-agent string and test that all of them are valid.
 
 This feature will reject legitimate crawlers that include the names of other crawlers in their user-agent strings.
 
