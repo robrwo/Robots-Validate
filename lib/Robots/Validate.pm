@@ -628,7 +628,7 @@ Note that a C<relaxed> L</validation_mode> mode means that a validated robot tha
 
     "TelegramBot (like TwitterBot)"
 
-will bot be classified as a bad robot.
+will not be classified as a bad robot.
 
 =cut
 
