@@ -32,7 +32,7 @@ our $VERSION = 'v0.3.12';
 
 =begin :prelude
 
-=for stopwords CIDR GoogleBot TOML dotless googlebot iMessage superstrings yacybot
+=for stopwords CIDR GoogleBot TOML dotless googlebot iMessage superstrings validator yacybot
 
 =end :prelude
 
@@ -347,7 +347,7 @@ This is the validation mode.
 
 =item first
 
-The verifier look at the first matches in the user-agent string and test only that.
+The validator will look at the first matches in the user-agent string and test only that.
 
 Setting this to false is faster but removes the ability to handle overlapping user-agent strings.
 
@@ -355,11 +355,15 @@ Setting this to false is faster but removes the ability to handle overlapping us
 
 This is the default mode.
 
-The verifier look at all possible matches in the user-agent string and test that any of them are valid.
+The validator will look at all possible matches in the user-agent string and test that any of them are valid.
 
 This feature is useful for handling crawlers that sometimes include the names of other crawlers in their user-agent strings.
 
 =item strict
+
+The validator will look at all possible matches in the user-agent string and test that all of them are valid.
+
+This feature will reject legitimate crawlers that include the names of other crawlers in their user-agent strings.
 
 =back
 
