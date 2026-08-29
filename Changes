@@ -1,6 +1,11 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+  [Incompatible Changes]
+  - Replaced the greedy attribute with validation_mode, which can be "first", "relaxed" or "strict".
+
+    This is more intuitive.
+
   [Enhancements]
   - Updated robot rules.
 

@@ -18,7 +18,7 @@ use Ref::Util qw( is_plain_arrayref is_plain_hashref is_regexpref );
 use Sub::Util 1.40 qw( set_subname );
 use TOML::XS;
 use Try::Tiny;
-use Types::Common qw( ArrayRef Bool ConsumerOf HashRef InstanceOf Maybe PositiveInt );
+use Types::Common qw( ArrayRef Bool ConsumerOf Enum HashRef InstanceOf Maybe PositiveInt );
 
 # RECOMMEND PREREQ: CHI 0.40
 # RECOMMEND PREREQ: Ref::Util::XS
@@ -213,7 +213,7 @@ applications like iMessage include fake bots in their user-agent strings, e.g.
 They do this so that servers will respond with metadata that they may not server to  web browsers.
 These will show up as bad bots without this feature.
 
-This feature may not work when L</greedy> is set to false.
+This feature may not work when the L</validation_mode> is not C<relaxed>.
 
 =back
 
@@ -339,34 +339,50 @@ sub _build_cache_options($) {
     return {};
 }
 
-=attr greedy
+=attr validation_mode
 
-When true (default), the substring matching algorithm will look at all
-possible matches in the user-agent string and test if any of them are
-valid.
+This is the validation mode.
+
+=over
+
+=item first
+
+The verifier look at the first matches in the user-agent string and test only that.
+
+Setting this to false is faster but removes the ability to handle overlapping user-agent strings.
+
+=item relaxed
+
+This is the default mode.
+
+The verifier look at all possible matches in the user-agent string and test that any of them are valid.
 
 This feature is useful for handling crawlers that sometimes include the names of other crawlers in their user-agent strings.
 
-Setting this to false is faster but renders the ability to handling overlapping user-agent strings.
+=item strict
 
-This was added in version v0.3.10.
+=back
+
+This was added in version v0.3.12.
 
 =cut
 
-has greedy => (
+has validation_mode => (
     is      => 'ro',
-    isa     => Bool,
-    default => 1,
+    isa     => Enum [qw/ first relaxed strict /],
+    default => 'relaxed',
 );
 
 =attr max_matches
 
-The maximum number of matches to check, when L</greedy> is true.
+The maximum number of matches to check.
 
 When matches are checked using reverse-DNS, then each request match may add an additional lookup.
 Without this limit, an attacker can force many DNS lookups by inserting multiple matching agent names.
 
 The default is C<4>.
+
+This is ignored when the L</validation_mode> is C<first>.
 
 This was added in version v0.3.11.
 
@@ -489,13 +505,10 @@ sub _cache_compute( $self, $ip, $agent, $opts ) {
     return $value;
 }
 
-# TODO: what we really want is more than two modes:
-# - first match
-# - check all matches, accept any that validates (relaxed)
-# - check all matches, reject any that fails (strict)
-
 sub _revalidate( $self, @args ) {
-    return $self->greedy ? $self->_greedy_revalidate(@args) : $self->_first_revalidate(@args);
+    my $mode = $self->validation_mode;
+    my $method = $self->can("_${mode}_revalidate") or die "Unsupported mode: '${mode}'";
+    return $self->$method(@args);
 }
 
 sub _first_revalidate( $self, $ip, $agent ) {
@@ -525,7 +538,7 @@ sub _first_revalidate( $self, $ip, $agent ) {
     return undef;
 }
 
-sub _greedy_revalidate( $self, $ip, $agent ) {
+sub _relaxed_revalidate( $self, $ip, $agent ) {
 
     if ( $agent ne "" ) {
 
@@ -562,6 +575,45 @@ sub _greedy_revalidate( $self, $ip, $agent ) {
     return undef;
 }
 
+sub _strict_revalidate( $self, $ip, $agent ) {
+
+    if ( $agent ne "" ) {
+
+        $self->_agents;    # ensure agents are instantiated
+
+        my @checks;
+
+        my @matches = uniqstr $self->_agents->matches( lc $agent );
+        splice @matches, $self->max_matches;
+        for my $str (@matches) {
+            my $res  = $self->_validators->{$str}->($ip);
+            next unless defined $res;
+            my $rule = $res && $self->index->{$res};
+            next if $rule && $rule->{ignore};
+            push @checks, $res && [ $res => $str ];
+        }
+
+        if (@checks) {
+            if ( all { !!$_ } @checks ) {
+                return $checks[0];
+            }
+            else {
+                return "";
+            }
+        }
+
+    }
+    else {
+        my $res = $self->_match_ip($ip);
+        if ($res) {
+            return [ $res => undef ];
+        }
+        return $res;
+    }
+
+    return undef;
+}
+
 =method bad_robot
 
     $rv->bad_robot( $env, \%opts ) and ...
@@ -572,7 +624,7 @@ It will return C<undef> when the result is unknown.
 
 This was added in version v0.3.5.
 
-Note that L</greedy> mode means that a validated robot that impersonates another robot in their user-agent, e.g.
+Note that a C<relaxed> L</validation_mode> mode means that a validated robot that impersonates another robot in their user-agent, e.g.
 
     "TelegramBot (like TwitterBot)"
 

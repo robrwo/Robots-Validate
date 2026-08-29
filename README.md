@@ -24,6 +24,9 @@ This module allows one to validate a robot user-agent string against the IP addr
 
 Changes for version v0.3.12 (2026-08-29)
 
+- Incompatible Changes
+    - Replaced the greedy attribute with validation\_mode, which can be "first", "relaxed" or "strict".
+        - This is more intuitive.
 - Enhancements
     - Updated robot rules.
 - Documentation

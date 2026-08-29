@@ -40,11 +40,11 @@ sub rv ( $resolver, %extra ) {
     return Robots::Validate->new( resolver => $resolver, config => [@RULE], %extra );
 }
 
-for my $greedy ( 1, 0 ) {
+for my $mode (qw/ first relaxed strict/) {
 
-    subtest "greedy=$greedy" => sub {
+    subtest "validation_mode=${mode}" => sub {
 
-        my $failing = rv( Failing::Resolver->new, greedy => $greedy );
+        my $failing = rv( Failing::Resolver->new, validation_mode => $mode );
 
         is $failing->validate( $IP, 'examplebot/1.0' ), undef,
           'a resolver that cannot answer leaves the client unknown';
@@ -53,7 +53,7 @@ for my $greedy ( 1, 0 ) {
           'and bad_robot does not accuse it';
 
         # The behaviour the fix must not break.
-        my $definitive = rv( $answering, greedy => $greedy );
+        my $definitive = rv( $answering, validation_mode => $mode );
 
         is $definitive->validate( $IP, 'examplebot/1.0' ), '',
           'a definitive answer that does not match is still an imposter';
@@ -61,7 +61,7 @@ for my $greedy ( 1, 0 ) {
         ok $definitive->bad_robot( $IP, 'examplebot/1.0' ),
           'and bad_robot still accuses it';
 
-        my $good = rv( $confirming, greedy => $greedy );
+        my $good = rv( $confirming, validation_mode => $mode );
 
         is $good->validate( $IP, 'examplebot/1.0' ), [ 'ex' => 'examplebot' ],
           'a confirmed robot still validates';
