@@ -21,7 +21,7 @@ my $resolver = Net::DNS::Resolver->new(
     debug       => 0,
 );
 
-my $rv = Robots::Validate->new( resolver => $resolver, greedy => 0 );
+my $rv = Robots::Validate->new( resolver => $resolver, validation_mode => 'first' );
 
 
 subtest 'imessage' => sub {
