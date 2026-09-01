@@ -6043,6 +6043,8 @@ network=[
 ]
 
 [imessage]
+## Note: this only works when validation_mode="relaxed"
+
 agents="facebookexternalhit/1.1 Facebot Twitterbot"
 ignore=true
 
