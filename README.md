@@ -26,6 +26,8 @@ Changes for version v0.4.1 (2026-09-01)
 
 - Bug Fixes
     - Specify a minimum version of List::Util.
+- Tests
+    - Fixed warnings in Perl v5.24.
 
 See the `Changes` file for more details.
 
