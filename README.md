@@ -22,28 +22,6 @@ This module allows one to validate a robot user-agent string against the IP addr
 
 # RECENT CHANGES
 
-Changes for version v0.4.0 (2026-09-01)
-
-- Incompatible Changes
-    - This is a complete rewrite, and the interface is not compatible.
-    - Bumped minimum Perl version to v5.24;
-- Enhancements
-    - This uses the Aho-Corasick algorithm to match multiple user-agent strings efficiently.
-    - The robot rules are in a configuration file, allowing the user to easily update their own rules.
-    - The robot rules have been expanded and updated.
-    - Support for caching the results has been added, GH#3.
-    - Added the validation\_mode attribute to control how multiple user-agent matches are handled.
-- Security
-    - Add a max\_forward\_lookups attribute to limit the number of reverse DNS lookups. (CVE-2026-82309)
-- Tests
-    - Updated the tests to use Test2.
-- Documentation
-    - Updated the author email address.
-    - Updated the copyright year.
-    - Added a security policy.
-    - Added AI\_POLICY.md.
-- Toolchain
-    - Use SigStore instead of Module::Signature to sign releases.
 
 See the `Changes` file for more details.
 
