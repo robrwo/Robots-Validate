@@ -27,7 +27,7 @@ Changes for version v0.4.1 (2026-09-02)
 - Enhancements
     - Added robot rule for Piperic.
 - Bug Fixes
-    - Specify a minimum version of List::Util.
+    - Specified a minimum version of List::Util.
 - Documentation
     - Updated the wording of the AI\_POLICY.
 - Tests
