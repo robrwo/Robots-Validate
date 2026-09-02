@@ -1,6 +1,9 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+  [Enhancements]
+  - Added robot rule for Piperic.
+
   [Bug Fixes]
   - Specify a minimum version of List::Util.
 

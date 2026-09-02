@@ -24,6 +24,8 @@ This module allows one to validate a robot user-agent string against the IP addr
 
 Changes for version v0.4.1 (2026-09-02)
 
+- Enhancements
+    - Added robot rule for Piperic.
 - Bug Fixes
     - Specify a minimum version of List::Util.
 - Documentation
