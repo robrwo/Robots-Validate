@@ -4,6 +4,8 @@ Revision history for {{ $dist->name }}:
   [Enhancements]
   - Removed uniqstr filter since this already skips duplicate checks.
 
+  - Switched to Net::IP::LPM.
+
   [Tests]
   - Renamed test script that referred to a renamed attribute.
 

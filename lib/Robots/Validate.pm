@@ -12,7 +12,7 @@ use File::Slurper  qw( read_binary );
 use List::Util     1.33 qw( all any none );
 use Net::DNS::Resolver;
 use Net::IP qw( ip_expand_address ip_is_ipv4 ip_is_ipv6 ip_splitprefix );
-use Net::Patricia;
+use Net::IP::LPM;
 use PerlX::Maybe qw( maybe );
 use Ref::Util qw( is_plain_arrayref is_plain_hashref is_regexpref );
 use Scalar::Util 1.18 qw( refaddr );
@@ -107,16 +107,16 @@ Note that internally IPv4 addresses are converted to IPv6 addresses.
 
 has networks => (
     is      => 'bare',
-    isa     => InstanceOf ['Net::Patricia'],
+    isa     => InstanceOf ['Net::IP::LPM'],
     builder => 1,
     handles => {
-        _add_string   => 'add_string',
-        _match_string => 'match_string',
+        _add_string   => 'add',
+        _match_string => 'lookup',
     },
 );
 
 sub _build_networks($self) {
-    return Net::Patricia->new(AF_INET6);
+    return Net::IP::LPM->new;
 }
 
 has _validators => (
@@ -744,14 +744,6 @@ sub _add_rule( $self, $rule ) {
 }
 
 sub _add_network( $self, $cidr, $name ) {
-    my ( $prefix, $len ) = ip_splitprefix($cidr);
-    $prefix //= $cidr;
-
-    if ( ip_is_ipv4($prefix) ) {
-        $len //= 32;
-        $cidr = _normalise_ip($prefix) . '/' . ( $len + 96 );
-    }
-
     try {
         $self->_add_string( $cidr, $name );
     }
@@ -761,7 +753,7 @@ sub _add_network( $self, $cidr, $name ) {
 }
 
 sub _match_ip( $self, $ip ) {
-    return $self->_match_string( _normalise_ip($ip) );
+    return $self->_match_string( $ip );
 }
 
 sub _check_ip( $self, $name, $ip ) {

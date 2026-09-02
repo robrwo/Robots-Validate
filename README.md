@@ -26,6 +26,7 @@ Changes for version v0.4.3 (2026-09-06)
 
 - Enhancements
     - Removed uniqstr filter since this already skips duplicate checks.
+    - Switched to Net::IP::LPM.
 - Tests
     - Renamed test script that referred to a renamed attribute.
 
@@ -42,7 +43,7 @@ This module lists the following modules as runtime dependencies:
 - [Moo](https://metacpan.org/pod/Moo) version 1 or later
 - [Net::DNS::Resolver](https://metacpan.org/pod/Net%3A%3ADNS%3A%3AResolver)
 - [Net::IP](https://metacpan.org/pod/Net%3A%3AIP)
-- [Net::Patricia](https://metacpan.org/pod/Net%3A%3APatricia)
+- [Net::IP::LPM](https://metacpan.org/pod/Net%3A%3AIP%3A%3ALPM)
 - [PerlX::Maybe](https://metacpan.org/pod/PerlX%3A%3AMaybe)
 - [Ref::Util](https://metacpan.org/pod/Ref%3A%3AUtil)
 - [Scalar::Util](https://metacpan.org/pod/Scalar%3A%3AUtil) version 1.18 or later
