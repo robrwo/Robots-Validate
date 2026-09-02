@@ -22,10 +22,12 @@ This module allows one to validate a robot user-agent string against the IP addr
 
 # RECENT CHANGES
 
-Changes for version v0.4.1 (2026-09-01)
+Changes for version v0.4.1 (2026-09-02)
 
 - Bug Fixes
     - Specify a minimum version of List::Util.
+- Documentation
+    - Updated the wording of the AI\_POLICY.
 - Tests
     - Fixed warnings in Perl v5.24.
 

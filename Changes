@@ -4,6 +4,9 @@ Revision history for {{ $dist->name }}:
   [Bug Fixes]
   - Specify a minimum version of List::Util.
 
+  [Documentation]
+  - Updated the wording of the AI_POLICY.
+
   [Tests]
   - Fixed warnings in Perl v5.24.
 
