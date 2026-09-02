@@ -21,6 +21,7 @@ requires "namespace::autoclean" => "0";
 requires "perl" => "v5.24.0";
 recommends "Algorithm::AhoCorasick::XS" => "0.04";
 recommends "CHI" => "0.40";
+recommends "Net::DNS" => "1.57";
 recommends "Ref::Util::XS" => "0";
 recommends "TOML::XS" => "0.06";
 recommends "Type::Tiny::XS" => "0";
