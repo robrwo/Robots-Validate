@@ -22,7 +22,7 @@ This module allows one to validate a robot user-agent string against the IP addr
 
 # RECENT CHANGES
 
-Changes for version v0.4.1 (2026-09-02)
+Changes for version v0.4.1 (2026-09-03)
 
 - Enhancements
     - Added robot rule for Piperic.
