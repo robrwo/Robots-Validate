@@ -1,6 +1,8 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+
+v0.4.1    2026-09-03 18:04:47+01:00 Europe/London
   [Enhancements]
   - Added robot rule for Piperic.
 
