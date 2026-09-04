@@ -1,6 +1,12 @@
 # SPDX-FileCopyrightText: 2026 Robert Rothenberg <perl@rhizomnic.com>
 # SPDX-License-Identifier: Artistic-2.0
 
+[2ipbot]
+## About: https://2ip.io/bot/
+
+agents="2ip bot"
+domain=".2ip.io"
+
 [ahrefs]
 ## Date: 2026-08-26
 ## About: https://ahrefs.com/robot
