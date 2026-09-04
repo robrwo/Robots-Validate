@@ -6060,6 +6060,13 @@ ignore=true
 agents="InfoTigerBot"
 domain=".infotiger.com"
 
+[intentbeam]
+## Date: 2026-09-04
+## About: https://intentbeam.com/bot
+
+agents=" IntentBeamBot"
+network=[ "91.98.156.201", "167.233.62.207" ]
+
 [ionos]
 ## About: https://www.ionos.de/terms-gtc/faq-crawler-en/
 
