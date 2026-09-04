@@ -6155,6 +6155,14 @@ network=[
 agents="Mail.RU_Bot"
 domain=".mail.ru"
 
+[metajob]
+## Date: 2026-09-04
+## About: https://www.metajob.de/the/crawler
+
+agents="MetaJobBot"
+domain=".metajobs.de"
+network=[ "157.90.179.220", "157.90.179.228", "157.90.179.241" ]
+
 [mistral-user]
 ## Date: 2026-08-26
 ## About: https://docs.mistral.ai/robots

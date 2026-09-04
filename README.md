@@ -25,7 +25,7 @@ This module allows one to validate a robot user-agent string against the IP addr
 Changes for version v0.4.2 (2026-09-04)
 
 - Enhancements
-    - Added robot rule for 2ip bot.
+    - Added robot rules for 2ip bot and MetaJobBot.
 
 See the `Changes` file for more details.
 
