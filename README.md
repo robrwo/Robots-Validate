@@ -22,12 +22,10 @@ This module allows one to validate a robot user-agent string against the IP addr
 
 # RECENT CHANGES
 
-Changes for version v0.4.2 (2026-09-05)
+Changes for version v0.4.3 (2026-09-05)
 
-- Enhancements
-    - Skip duplicate checks for relaxed and strict validation.
-    - Added robot rules for 2ip bot, IntentBeamBot and MetaJobBot.
-    - Updated configution for archive.org\_bot.
+- Tests
+    - Renamed test script that referred to a renamed attribute.
 
 See the `Changes` file for more details.
 
