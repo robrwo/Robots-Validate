@@ -2,6 +2,8 @@ Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
   [Enhancements]
+  - Skip duplicate checks for relaxed and strict validation.
+
   - Added robot rules for 2ip bot, IntentBeamBot and MetaJobBot.
 
   - Updated configution for archive.org_bot.

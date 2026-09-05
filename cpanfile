@@ -11,6 +11,7 @@ requires "Net::IP" => "0";
 requires "Net::Patricia" => "0";
 requires "PerlX::Maybe" => "0";
 requires "Ref::Util" => "0";
+requires "Scalar::Util" => "1.18";
 requires "Sub::Util" => "1.40";
 requires "TOML::XS" => "0";
 requires "Try::Tiny" => "0";
@@ -23,6 +24,7 @@ recommends "Algorithm::AhoCorasick::XS" => "0.04";
 recommends "CHI" => "0.40";
 recommends "Net::DNS" => "1.57";
 recommends "Ref::Util::XS" => "0";
+recommends "Scalar::Util" => "1.64";
 recommends "TOML::XS" => "0.06";
 recommends "Type::Tiny::XS" => "0";
 

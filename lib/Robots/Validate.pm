@@ -15,6 +15,7 @@ use Net::IP qw( ip_expand_address ip_is_ipv4 ip_is_ipv6 ip_splitprefix );
 use Net::Patricia;
 use PerlX::Maybe qw( maybe );
 use Ref::Util qw( is_plain_arrayref is_plain_hashref is_regexpref );
+use Scalar::Util 1.18 qw( refaddr );
 use Sub::Util 1.40 qw( set_subname );
 use TOML::XS;
 use Try::Tiny;
@@ -548,12 +549,15 @@ sub _relaxed_revalidate( $self, $ip, $agent ) {
 
         $self->_agents; # ensure agents are instantiated
 
+        my %seen;
         my $fails = 0;
 
         my @matches = uniqstr $self->_agents->matches( lc $agent );
         splice @matches, $self->max_matches;
         for my $str (@matches) {
-            my $res = $self->_validators->{$str}->($ip);
+            my $fn = $self->_validators->{$str};
+            next if exists $seen{ refaddr $fn };
+            my $res = $seen{ refaddr $fn } = $fn->($ip);
             unless ($res) {
                 $fails++ if defined $res;
                 next;
@@ -585,12 +589,15 @@ sub _strict_revalidate( $self, $ip, $agent ) {
 
         $self->_agents;    # ensure agents are instantiated
 
+        my %seen;
         my @checks;
 
         my @matches = uniqstr $self->_agents->matches( lc $agent );
         splice @matches, $self->max_matches;
         for my $str (@matches) {
-            my $res  = $self->_validators->{$str}->($ip);
+            my $fn = $self->_validators->{$str};
+            next if exists $seen{ refaddr $fn };
+            my $res = $seen{ refaddr $fn } = $fn->($ip);
             next unless defined $res;
             my $rule = $res && $self->index->{$res};
             next if $rule && $rule->{ignore};
