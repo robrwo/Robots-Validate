@@ -2239,9 +2239,11 @@ network=[
 ]
 
 [archive-org]
+## About: http://archive-it.org/files/site-owners.html
 domain=".archive.org"
 agents=[
   "archive.org_bot",
+  "Archive-It",
   "IAHarvester",
   "ia_archiver",
 ]
