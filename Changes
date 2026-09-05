@@ -1,6 +1,8 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+
+v0.4.2    2026-09-05 16:56:14+01:00 Europe/London
   [Enhancements]
   - Skip duplicate checks for relaxed and strict validation.
 
