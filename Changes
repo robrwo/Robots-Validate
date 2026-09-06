@@ -1,6 +1,9 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+  [Enhancements]
+  - Removed uniqstr filter since this already skips duplicate checks.
+
   [Tests]
   - Renamed test script that referred to a renamed attribute.
 

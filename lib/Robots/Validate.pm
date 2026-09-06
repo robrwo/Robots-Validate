@@ -9,7 +9,7 @@ use Moo 1;
 use Algorithm::AhoCorasick::XS;
 use File::ShareDir qw( dist_file );
 use File::Slurper  qw( read_binary );
-use List::Util     1.45 qw( all any none uniqstr );
+use List::Util     1.33 qw( all any none );
 use Net::DNS::Resolver;
 use Net::IP qw( ip_expand_address ip_is_ipv4 ip_is_ipv6 ip_splitprefix );
 use Net::Patricia;
@@ -552,7 +552,7 @@ sub _relaxed_revalidate( $self, $ip, $agent ) {
         my %seen;
         my $fails = 0;
 
-        my @matches = uniqstr $self->_agents->matches( lc $agent );
+        my @matches = $self->_agents->matches( lc $agent );
         splice @matches, $self->max_matches;
         for my $str (@matches) {
             my $fn = $self->_validators->{$str};
@@ -592,7 +592,7 @@ sub _strict_revalidate( $self, $ip, $agent ) {
         my %seen;
         my @checks;
 
-        my @matches = uniqstr $self->_agents->matches( lc $agent );
+        my @matches = $self->_agents->matches( lc $agent );
         splice @matches, $self->max_matches;
         for my $str (@matches) {
             my $fn = $self->_validators->{$str};

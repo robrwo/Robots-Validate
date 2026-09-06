@@ -22,8 +22,10 @@ This module allows one to validate a robot user-agent string against the IP addr
 
 # RECENT CHANGES
 
-Changes for version v0.4.3 (2026-09-05)
+Changes for version v0.4.3 (2026-09-06)
 
+- Enhancements
+    - Removed uniqstr filter since this already skips duplicate checks.
 - Tests
     - Renamed test script that referred to a renamed attribute.
 
@@ -36,7 +38,7 @@ This module lists the following modules as runtime dependencies:
 - [Algorithm::AhoCorasick::XS](https://metacpan.org/pod/Algorithm%3A%3AAhoCorasick%3A%3AXS)
 - [File::ShareDir](https://metacpan.org/pod/File%3A%3AShareDir)
 - [File::Slurper](https://metacpan.org/pod/File%3A%3ASlurper)
-- [List::Util](https://metacpan.org/pod/List%3A%3AUtil) version 1.45 or later
+- [List::Util](https://metacpan.org/pod/List%3A%3AUtil) version 1.33 or later
 - [Moo](https://metacpan.org/pod/Moo) version 1 or later
 - [Net::DNS::Resolver](https://metacpan.org/pod/Net%3A%3ADNS%3A%3AResolver)
 - [Net::IP](https://metacpan.org/pod/Net%3A%3AIP)
