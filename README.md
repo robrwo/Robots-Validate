@@ -28,6 +28,7 @@ Changes for version v0.4.3 (2026-09-07)
     - Removed uniqstr filter since this already skips duplicate checks.
     - Switched to Net::IP::LPM.
     - Added robot rules for WebMCPIndexBot, PoweredByBot and Speroll-AdsTxt-Crawler.
+    - Requires TOML::Tiny instead of TOML::XS, but the latter will be used if it can be loaded.
 - Tests
     - Renamed test script that referred to a renamed attribute.
 
@@ -49,7 +50,7 @@ This module lists the following modules as runtime dependencies:
 - [Ref::Util](https://metacpan.org/pod/Ref%3A%3AUtil)
 - [Scalar::Util](https://metacpan.org/pod/Scalar%3A%3AUtil) version 1.18 or later
 - [Sub::Util](https://metacpan.org/pod/Sub%3A%3AUtil) version 1.40 or later
-- [TOML::XS](https://metacpan.org/pod/TOML%3A%3AXS)
+- [TOML::Tiny](https://metacpan.org/pod/TOML%3A%3ATiny) version 0.20 or later
 - [Try::Tiny](https://metacpan.org/pod/Try%3A%3ATiny)
 - [Types::Common](https://metacpan.org/pod/Types%3A%3ACommon)
 - [constant](https://metacpan.org/pod/constant)

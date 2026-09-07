@@ -13,7 +13,7 @@ requires "PerlX::Maybe" => "0";
 requires "Ref::Util" => "0";
 requires "Scalar::Util" => "1.18";
 requires "Sub::Util" => "1.40";
-requires "TOML::XS" => "0";
+requires "TOML::Tiny" => "0.20";
 requires "Try::Tiny" => "0";
 requires "Types::Common" => "0";
 requires "constant" => "0";
@@ -36,6 +36,7 @@ on 'build' => sub {
 
 on 'test' => sub {
   requires "CHI" => "0";
+  requires "Devel::Hide" => "0";
   requires "File::Spec" => "0";
   requires "File::Temp" => "0";
   requires "IO::Handle" => "0";
@@ -45,6 +46,7 @@ on 'test' => sub {
   requires "Net::DNS::Resolver::Mock" => "0";
   requires "Path::Tiny" => "0";
   requires "Test2::Require::Module" => "0";
+  requires "Test2::Tools::Exception" => "0";
   requires "Test2::V0" => "0";
   requires "Test::File::ShareDir" => "0";
   requires "Test::More" => "0";
@@ -66,7 +68,6 @@ on 'configure' => sub {
   suggests "HTTP::Tiny" => "0.096";
   suggests "JQ::Lite" => "2.49";
   suggests "String::Util" => "1.36";
-  suggests "TOML::Tiny" => "0";
 };
 
 on 'develop' => sub {

@@ -17,7 +17,7 @@ use PerlX::Maybe qw( maybe );
 use Ref::Util qw( is_plain_arrayref is_plain_hashref is_regexpref );
 use Scalar::Util 1.18 qw( refaddr );
 use Sub::Util 1.40 qw( set_subname );
-use TOML::XS;
+use TOML::Tiny 0.20 ();
 use Try::Tiny;
 use Types::Common qw( ArrayRef Bool ConsumerOf Enum HashRef InstanceOf Maybe PositiveInt );
 
@@ -840,8 +840,14 @@ sub _init_validators_from_config($self) {
     $self->_set_locked(1);
 }
 
-sub _from_toml($toml) {
-    return TOML::XS::from_toml($toml)->get();
+BEGIN {
+
+    if ( eval { require "TOML::XS" } ) {
+        *_from_toml = sub($toml) { TOML::XS::from_toml($toml)->get() };
+    }
+    else {
+        *_from_toml = \&TOML::Tiny::from_toml;
+    }
 }
 
 =head1 KNOWN ISSUES
