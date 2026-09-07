@@ -6,7 +6,7 @@ Revision history for {{ $dist->name }}:
 
   - Switched to Net::IP::LPM.
 
-  - Added robot rules for WebMCPIndexBot and PoweredByBot.
+  - Added robot rules for WebMCPIndexBot, PoweredByBot and Speroll-AdsTxt-Crawler.
 
   [Tests]
   - Renamed test script that referred to a renamed attribute.

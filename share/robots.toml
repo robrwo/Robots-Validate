@@ -7281,6 +7281,12 @@ network=[
 agents="Sogou"
 domain=".crawl.sogou.com"
 
+[speroll]
+## About: https://crawler.speroll.com/crawler
+
+agents="Speroll-AdsTxt-Crawler"
+network=["15.204.142.87"]
+
 [stractbot]
 agents="StractBot"
 domain=".stract.com"
