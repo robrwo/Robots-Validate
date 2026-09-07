@@ -6,7 +6,7 @@ use v5.24;
 
 use Moo 1;
 
-use Algorithm::AhoCorasick::XS;
+use Algorithm::AhoCorasick::SearchMachine;
 use File::ShareDir qw( dist_file );
 use File::Slurper  qw( read_binary );
 use List::Util     1.33 qw( all any none );
@@ -128,10 +128,9 @@ has _validators => (
 
 has _agents => (
     is       => 'lazy',
-    isa      => InstanceOf [qw/ Algorithm::AhoCorasick::XS /],
+    isa      => InstanceOf [qw/ Algorithm::AhoCorasick::SearchMachine Algorithm::AhoCorasick::XS /],
     init_arg => undef,
     builder  => \&_build_agents,
-    handles  => { _first_match => 'first_match' },
 );
 
 sub _build_agents($self) {
@@ -139,7 +138,40 @@ sub _build_agents($self) {
     $self->_init_validators_from_config;
 
     my @names = keys $self->_validators->%*;
-    return Algorithm::AhoCorasick::XS->new(\@names);
+
+
+    if ( eval { require "Algorithm::AhoCorasick::XS" } ) {
+
+        *_first_match = set_subname "_first_match", sub( $self, $str ) {
+            return $self->_agents->first_match($str)
+        };
+
+        *_all_matches = set_subname "_all_matches", sub( $self, $str ) {
+            return $self->_agents->matches($str)
+        };
+
+        return Algorithm::AhoCorasick::XS->new(\@names);
+
+    }
+    else {
+
+        *_first_match = set_subname "_first_match", sub( $self, $str ) {
+            my $match;
+            $self->_agents->feed($str, sub( $, $name ) { $match //= $name }  );
+            return $match;
+        };
+
+        *_all_matches = set_subname "_all_matches", sub( $self, $str ) {
+            my @matches;
+            $self->_agents->feed($str, sub( $, $name ) { push @matches, $name; return undef } );
+            return @matches;
+        };
+
+        return Algorithm::AhoCorasick::SearchMachine->new(@names);
+
+    }
+
+
 }
 
 =attr config
@@ -522,7 +554,7 @@ sub _first_revalidate( $self, $ip, $agent ) {
 
         $self->_agents; # ensure agents are instantiated
 
-        if ( my $str = $self->_agents->first_match( lc $agent ) ) {
+        if ( my $str = $self->_first_match( lc $agent ) ) {
             my $res = $self->_validators->{$str}->($ip);
             my $rule = $res && $self->index->{$res};
             if ( $rule && $rule->{ignore} ) {
@@ -552,7 +584,7 @@ sub _relaxed_revalidate( $self, $ip, $agent ) {
         my %seen;
         my $fails = 0;
 
-        my @matches = $self->_agents->matches( lc $agent );
+        my @matches = $self->_all_matches( lc $agent );
         splice @matches, $self->max_matches;
         for my $str (@matches) {
             my $fn = $self->_validators->{$str};
@@ -592,7 +624,7 @@ sub _strict_revalidate( $self, $ip, $agent ) {
         my %seen;
         my @checks;
 
-        my @matches = $self->_agents->matches( lc $agent );
+        my @matches = $self->_all_matches( lc $agent );
         splice @matches, $self->max_matches;
         for my $str (@matches) {
             my $fn = $self->_validators->{$str};
@@ -909,7 +941,7 @@ The TOML specification can be found at L<https://toml.io>.
 
 L<CHI> is required to use the caching features.
 
-L<TOML::XS> will be used if it is available.
+L<Algorithm::AhoCorasick::XS> and L<TOML::XS> will be used if they are available.
 
 =end :readme
 

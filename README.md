@@ -29,6 +29,7 @@ Changes for version v0.4.3 (2026-09-07)
     - Switched to Net::IP::LPM.
     - Added robot rules for WebMCPIndexBot, PoweredByBot and Speroll-AdsTxt-Crawler.
     - Requires TOML::Tiny instead of TOML::XS, but the latter will be used if it can be loaded.
+    - Requires Algorithm::Corasick instead of Algorithm::Corasick::XS, but the latter will be used if it can be loaded.
 - Tests
     - Renamed test script that referred to a renamed attribute.
 
@@ -38,7 +39,7 @@ See the `Changes` file for more details.
 
 This module lists the following modules as runtime dependencies:
 
-- [Algorithm::AhoCorasick::XS](https://metacpan.org/pod/Algorithm%3A%3AAhoCorasick%3A%3AXS)
+- [Algorithm::AhoCorasick::SearchMachine](https://metacpan.org/pod/Algorithm%3A%3AAhoCorasick%3A%3ASearchMachine)
 - [File::ShareDir](https://metacpan.org/pod/File%3A%3AShareDir)
 - [File::Slurper](https://metacpan.org/pod/File%3A%3ASlurper)
 - [List::Util](https://metacpan.org/pod/List%3A%3AUtil) version 1.33 or later
@@ -62,7 +63,7 @@ See the `cpanfile` file for the full list of prerequisites.
 
 [CHI](https://metacpan.org/pod/CHI) is required to use the caching features.
 
-[TOML::XS](https://metacpan.org/pod/TOML%3A%3AXS) will be used if it is available.
+[Algorithm::AhoCorasick::XS](https://metacpan.org/pod/Algorithm%3A%3AAhoCorasick%3A%3AXS) and [TOML::XS](https://metacpan.org/pod/TOML%3A%3AXS) will be used if they are available.
 
 # INSTALLATION
 
