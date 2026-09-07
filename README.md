@@ -20,21 +20,6 @@ if ( my $res = $rs->validate( $ip, $user_agent ) ) {
 
 This module allows one to validate a robot user-agent string against the IP addresses.
 
-# RECENT CHANGES
-
-Changes for version v0.4.3 (2026-09-07)
-
-- Enhancements
-    - Removed uniqstr filter since this already skips duplicate checks.
-    - Switched to Net::IP::LPM.
-    - Added robot rules for WebMCPIndexBot, PoweredByBot and Speroll-AdsTxt-Crawler.
-    - Requires TOML::Tiny instead of TOML::XS, but the latter will be used if it can be loaded.
-    - Requires Algorithm::Corasick instead of Algorithm::Corasick::XS, but the latter will be used if it can be loaded.
-- Tests
-    - Renamed test script that referred to a renamed attribute.
-
-See the `Changes` file for more details.
-
 # REQUIREMENTS
 
 This module lists the following modules as runtime dependencies:
