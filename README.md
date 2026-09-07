@@ -62,6 +62,8 @@ See the `cpanfile` file for the full list of prerequisites.
 
 [CHI](https://metacpan.org/pod/CHI) is required to use the caching features.
 
+[TOML::XS](https://metacpan.org/pod/TOML%3A%3AXS) will be used if it is available.
+
 # INSTALLATION
 
 The latest version of this module (along with any dependencies) can be installed from [CPAN](https://www.cpan.org) with the `cpan` tool that is included with Perl:

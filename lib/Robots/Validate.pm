@@ -909,6 +909,8 @@ The TOML specification can be found at L<https://toml.io>.
 
 L<CHI> is required to use the caching features.
 
+L<TOML::XS> will be used if it is available.
+
 =end :readme
 
 =cut
