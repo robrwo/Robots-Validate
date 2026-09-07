@@ -20,6 +20,15 @@ if ( my $res = $rs->validate( $ip, $user_agent ) ) {
 
 This module allows one to validate a robot user-agent string against the IP addresses.
 
+# RECENT CHANGES
+
+Changes for version v0.4.4 (2026-09-07)
+
+- Enhancements
+    - Added robot rule for VexelSearchBot.
+
+See the `Changes` file for more details.
+
 # REQUIREMENTS
 
 This module lists the following modules as runtime dependencies:

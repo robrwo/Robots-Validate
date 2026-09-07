@@ -7331,6 +7331,13 @@ network=[
   "199.16.156.0/22",
 ]
 
+[vexel]
+## About: https://vexel.cc/bot-info
+
+agents="VexelSearchBot"
+network=["23.81.33.222"]
+domain=".vexel.cc"
+
 [visionheight]
 ## Date: 2026-08-20
 ## About: https://www.visionheight.com/scan
