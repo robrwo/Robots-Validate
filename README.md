@@ -27,7 +27,7 @@ Changes for version v0.4.3 (2026-09-07)
 - Enhancements
     - Removed uniqstr filter since this already skips duplicate checks.
     - Switched to Net::IP::LPM.
-    - Added robot rule for WebMCPIndexBot
+    - Added robot rules for WebMCPIndexBot and PoweredByBot.
 - Tests
     - Renamed test script that referred to a renamed attribute.
 

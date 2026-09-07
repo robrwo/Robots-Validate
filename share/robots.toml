@@ -6366,6 +6366,12 @@ network=[
 agents="PipericBot"
 domain=".piperic.com"
 
+[poweredbybot]
+## About: https://poweredby.keywordseverywhere.com/bot
+agents="PoweredByBot"
+domain=".poweredby.keywordseverywhere.com"
+network=["50.116.52.253","173.255.228.181","173.255.228.202"]
+
 [qualified]
 ## Date: 2026-08-14
 ## About: https://www.qualified.com/legal/qualified-crawler-user-agent
