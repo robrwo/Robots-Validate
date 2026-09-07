@@ -7357,6 +7357,11 @@ network=[
   "100.50.17.159",
 ]
 
+[webmcpindex]
+## About: https://webmcpshield.com/bot
+agents="WebMCPIndexBot"
+network=["139.162.75.45"]
+
 [wrtnbot]
 ## Date: 2026-08-26
 ## Network: https://wrtn.ai/wrtnbot.json

@@ -22,11 +22,12 @@ This module allows one to validate a robot user-agent string against the IP addr
 
 # RECENT CHANGES
 
-Changes for version v0.4.3 (2026-09-06)
+Changes for version v0.4.3 (2026-09-07)
 
 - Enhancements
     - Removed uniqstr filter since this already skips duplicate checks.
     - Switched to Net::IP::LPM.
+    - Added robot rule for WebMCPIndexBot
 - Tests
     - Renamed test script that referred to a renamed attribute.
 

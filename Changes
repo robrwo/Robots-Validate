@@ -6,6 +6,8 @@ Revision history for {{ $dist->name }}:
 
   - Switched to Net::IP::LPM.
 
+  - Added robot rule for WebMCPIndexBot
+
   [Tests]
   - Renamed test script that referred to a renamed attribute.
 
