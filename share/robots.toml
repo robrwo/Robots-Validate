@@ -3757,6 +3757,10 @@ domain=[
   ".facebook.com",
 ]
 
+[faviconhub]
+agents="FavicoHub"
+domain=".favicohub.com"
+
 [fyndbot]
 # Date: 2026-08-27
 # Note: the network information is from email correspondence with is from email feedback@fynd.bot
