@@ -7335,7 +7335,7 @@ network=[
 ## About: https://vexel.cc/bot-info
 
 agents="VexelSearchBot"
-network=["23.81.33.222"]
+network=["23.81.36.18", "23.81.33.222"]
 domain=".vexel.cc"
 
 [visionheight]
