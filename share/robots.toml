@@ -6350,6 +6350,13 @@ network=[
   "193.224.0.0/15",
 ]
 
+[pceuropa]
+## Date: 2026-09-09
+## About: https://pceuropa.net/bot
+## Network: https://pceuropa.net/bot-ips.json
+agents="pceuropa-bot"
+network=[ "45.11.61.99/32", "185.56.209.219/32" ]
+
 [perplexity]
 ## Date: 2026-08-26
 ## About: https://docs.perplexity.ai/docs/resources/perplexity-crawlers

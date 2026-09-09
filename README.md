@@ -25,7 +25,7 @@ This module allows one to validate a robot user-agent string against the IP addr
 Changes for version v0.4.4 (2026-09-09)
 
 - Enhancements
-    - Added robot rules for VexelSearchBot, FaviconHub, Marginalia Search, crawl-engine and BufferLinkPreview.
+    - Added robot rules for VexelSearchBot, FaviconHub, Marginalia Search, crawl-engine, BufferLinkPreview and pceuropa-bot.
     - Updated robot rule for Yahoo Japan.
 
 See the `Changes` file for more details.
