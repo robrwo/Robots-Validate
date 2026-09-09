@@ -2358,6 +2358,24 @@ network=[
 agents="BublupBot"
 domain=".bublup.com"
 
+[bufferlinkpreview]
+## Date: 2026-09-09
+## About: https://scraper.buffer.com/about/bots/link-preview-bot
+## Network: https://scraper.buffer.com/about/bots/link-preview-bot.json
+## Query: .ipAddresses[]
+agents="BufferLinkPreviewBot"
+network=[
+  "3.213.140.44",
+  "52.22.148.168",
+  "52.3.218.210",
+  "54.235.34.237",
+  "3.220.253.227",
+  "3.224.33.156",
+  "52.87.69.215",
+  "54.211.190.68"
+]
+
+
 [bytespider]
 ## About: https://bytedance.sg.larkoffice.com/docx/K5bxdypulop3IIxrJb0lOjLVgFe
 
