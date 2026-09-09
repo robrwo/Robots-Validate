@@ -7438,7 +7438,7 @@ domain=".crawl.yahoo.net"
 [yahoo-jp]
 ## About: https://support.yahoo-net.jp/PccSearch/s/article/H000007955
 
-agents="Y!J-WSC"
+agents=[ "Y!J-ASR", "Y!J-WSC" ]
 domain=".yahoo-net.jp"
 network=[
   "202.239.0.0/20",
