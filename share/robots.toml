@@ -2734,6 +2734,13 @@ network=[
   "157.1.136.8/30",
 ]
 
+[crawlengine]
+## Date: 2026-09-09
+## About: https://abuse.creasource.dev/abuse/
+agents="crawl-engine"
+domain=".creasource.dev"
+network="167.233.208.8"
+
 [dataprovider]
 agents="Dataprovider.com"
 domain=".dataproviderbot.com"
