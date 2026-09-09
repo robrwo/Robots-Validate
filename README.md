@@ -22,10 +22,10 @@ This module allows one to validate a robot user-agent string against the IP addr
 
 # RECENT CHANGES
 
-Changes for version v0.4.4 (2026-09-08)
+Changes for version v0.4.4 (2026-09-09)
 
 - Enhancements
-    - Added robot rules for VexelSearchBot and FaviconHub.
+    - Added robot rules for VexelSearchBot, FaviconHub and Marginalia Search.
 
 See the `Changes` file for more details.
 

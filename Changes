@@ -2,7 +2,7 @@ Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
   [Enhancements]
-  - Added robot rules for VexelSearchBot and FaviconHub.
+  - Added robot rules for VexelSearchBot, FaviconHub and Marginalia Search.
 
 v0.4.3    2026-09-07 14:17:08+01:00 Europe/London
   [Enhancements]

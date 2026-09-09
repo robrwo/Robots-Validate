@@ -6168,6 +6168,16 @@ network=[
 agents="Mail.RU_Bot"
 domain=".mail.ru"
 
+[marginalia]
+## Date: 2026-09-09
+## About: https://about.marginalia-search.com/article/crawler/
+## Network: https://marginalia-search.com/crawler-ips.txt
+
+agents="search.marginalia.nu"
+network=[
+  "81.170.128.52", "193.183.0.162/31", "193.183.0.164/30", "193.183.0.168/30", "193.183.0.172/31", "193.183.0.174/32"
+]
+
 [metajob]
 ## Date: 2026-09-04
 ## About: https://www.metajob.de/the/crawler
