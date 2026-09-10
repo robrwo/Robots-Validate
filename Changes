@@ -2,7 +2,14 @@ Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
   [Enhancements]
-  - Added robot rules for VexelSearchBot, FaviconHub, Marginalia Search, crawl-engine, BufferLinkPreview and pceuropa-bot.
+  - Added robot rules for the following:
+    - BufferLinkPreview
+    - crawl-engine
+    - domainprintbot
+    - FaviconHub
+    - Marginalia Search
+    - pceuropa-bot
+    - VexelSearchBot
 
   - Updated robot rule for Yahoo Japan.
 

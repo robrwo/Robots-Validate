@@ -2763,6 +2763,13 @@ network="167.233.208.8"
 agents="Dataprovider.com"
 domain=".dataproviderbot.com"
 
+[domainprint]
+## Date: 2026-09-10
+## About: https://www.domainprint.com/
+
+agents=" domainprintbot"
+network=[ "89.58.61.18" ]
+
 [duckduck-bot]
 ## Date: 2026-08-26
 ## About: https://duckduckgo.com/duckduckgo-help-pages/results/duckduckbot
