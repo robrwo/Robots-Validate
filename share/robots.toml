@@ -2759,6 +2759,12 @@ agents="crawl-engine"
 domain=".creasource.dev"
 network="167.233.208.8"
 
+[dataforseo]
+## About: https://dataforseo.com/dataforseo-bot
+agents="DataForSeoBot"
+domain=".dataforseo.com"
+
+
 [dataprovider]
 agents="Dataprovider.com"
 domain=".dataproviderbot.com"

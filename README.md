@@ -28,6 +28,7 @@ Changes for version v0.4.4 (2026-09-10)
     - Added robot rules for the following:
         - BufferLinkPreview
         - crawl-engine
+        - DataForSeoBot
         - domainprintbot
         - FaviconHub
         - Marginalia Search

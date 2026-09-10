@@ -5,6 +5,7 @@ Revision history for {{ $dist->name }}:
   - Added robot rules for the following:
     - BufferLinkPreview
     - crawl-engine
+    - DataForSeoBot
     - domainprintbot
     - FaviconHub
     - Marginalia Search
