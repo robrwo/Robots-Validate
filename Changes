@@ -8,6 +8,7 @@ Revision history for {{ $dist->name }}:
     - DataForSeoBot
     - domainprintbot
     - FaviconHub
+    - fluid
     - Marginalia Search
     - pceuropa-bot
     - SeobilityBot

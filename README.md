@@ -31,6 +31,7 @@ Changes for version v0.4.4 (2026-09-10)
         - DataForSeoBot
         - domainprintbot
         - FaviconHub
+        - fluid
         - Marginalia Search
         - pceuropa-bot
         - SeobilityBot
