@@ -12,6 +12,7 @@ Revision history for {{ $dist->name }}:
     - Marginalia Search
     - pceuropa-bot
     - SeobilityBot
+    - TinEye
     - VexelSearchBot
 
   - Updated robot rule for Yahoo Japan.

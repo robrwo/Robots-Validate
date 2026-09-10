@@ -7653,6 +7653,12 @@ domain=".scanner.fasttvltd.com"
 agents="TelegramBot"
 domain=".telegram.org"
 
+[tineye]
+## About: +http://www.tineye.com/cr.html
+## Note: there may be other IP addresses
+agents="TinEye"
+network=[ "184.149.21.115" ]
+
 [turnitin]
 ## Date: 2026-08-14
 ## About: https://www.turnitin.com/robot/crawlerinfo.html
