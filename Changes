@@ -13,6 +13,8 @@ Revision history for {{ $dist->name }}:
 
   - Updated robot rule for Yahoo Japan.
 
+  - Improve handling of blank entries in the rebuild-robots-config utility.
+
 v0.4.3    2026-09-07 14:17:08+01:00 Europe/London
   [Enhancements]
   - Removed uniqstr filter since this already skips duplicate checks.
