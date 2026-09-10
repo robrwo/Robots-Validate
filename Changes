@@ -10,6 +10,7 @@ Revision history for {{ $dist->name }}:
     - FaviconHub
     - Marginalia Search
     - pceuropa-bot
+    - SeobilityBot
     - VexelSearchBot
 
   - Updated robot rule for Yahoo Japan.

@@ -33,6 +33,7 @@ Changes for version v0.4.4 (2026-09-10)
         - FaviconHub
         - Marginalia Search
         - pceuropa-bot
+        - SeobilityBot
         - VexelSearchBot
     - Updated robot rule for Yahoo Japan.
     - Improve handling of blank entries in the rebuild-robots-config utility.
