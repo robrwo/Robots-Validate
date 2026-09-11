@@ -10,6 +10,7 @@ Revision history for {{ $dist->name }}:
     - FaviconHub
     - fluid
     - Marginalia Search
+    - NotHere.one Bot
     - pceuropa-bot
     - SeobilityBot
     - TinEye

@@ -6294,6 +6294,12 @@ network=[
   "35.189.0.46",
 ]
 
+[notherebot]
+## About: https://nothere.one/bot
+
+agents="NotHere.one Bot"
+network=[ "77.42.40.46" ]
+
 [observer]
 ## About: https://obsrvr.net/about
 

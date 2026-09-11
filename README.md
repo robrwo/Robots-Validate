@@ -22,7 +22,7 @@ This module allows one to validate a robot user-agent string against the IP addr
 
 # RECENT CHANGES
 
-Changes for version v0.4.4 (2026-09-10)
+Changes for version v0.4.4 (2026-09-11)
 
 - Enhancements
     - Added robot rules for the following:
@@ -33,6 +33,7 @@ Changes for version v0.4.4 (2026-09-10)
         - FaviconHub
         - fluid
         - Marginalia Search
+        - NotHere.one Bot
         - pceuropa-bot
         - SeobilityBot
         - TinEye
