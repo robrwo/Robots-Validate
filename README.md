@@ -22,7 +22,7 @@ This module allows one to validate a robot user-agent string against the IP addr
 
 # RECENT CHANGES
 
-Changes for version v0.4.4 (2026-09-11)
+Changes for version v0.4.4 (2026-09-15)
 
 - Enhancements
     - Added robot rules for the following:
@@ -40,6 +40,8 @@ Changes for version v0.4.4 (2026-09-11)
         - VexelSearchBot
     - Updated robot rule for Yahoo Japan.
     - Improve handling of blank entries in the rebuild-robots-config utility.
+- Toolchain
+    - Bump minimum recommended version of JQ::Lite.
 
 See the `Changes` file for more details.
 
