@@ -44,6 +44,8 @@ Changes for version v0.4.4 (2026-09-16)
     - Improve handling of blank entries in the rebuild-robots-config utility.
 - Toolchain
     - Bump minimum recommended version of JQ::Lite.
+- Tests
+    - Fixed t/20-basic-algorithm-ahocorasick.t to hide the correct module.
 
 See the `Changes` file for more details.
 
