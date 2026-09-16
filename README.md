@@ -32,6 +32,7 @@ Changes for version v0.4.4 (2026-09-16)
         - domainprintbot
         - FaviconHub
         - fluid
+        - ListSignalBot
         - Marginalia Search
         - NotHere.one Bot
         - pceuropa-bot

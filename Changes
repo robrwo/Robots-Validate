@@ -9,6 +9,7 @@ Revision history for {{ $dist->name }}:
     - domainprintbot
     - FaviconHub
     - fluid
+    - ListSignalBot
     - Marginalia Search
     - NotHere.one Bot
     - pceuropa-bot
