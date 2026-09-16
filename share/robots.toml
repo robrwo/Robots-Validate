@@ -6122,6 +6122,12 @@ network=[ "91.98.156.201", "167.233.62.207" ]
 agents="IonCrawl"
 domain=".1and1.org"
 
+[justsearchuk]
+## Date: 2026-09-16
+## About: https://justsearchuk.co.uk/bot.html
+agents="JustSearchUKBot"
+network=[ "185.44.253.28" ]
+
 [kagibot]
 ## About: https://kagi.com/bot
 agents="Kagibot"

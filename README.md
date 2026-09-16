@@ -22,30 +22,11 @@ This module allows one to validate a robot user-agent string against the IP addr
 
 # RECENT CHANGES
 
-Changes for version v0.4.4 (2026-09-16)
+Changes for version v0.4.5 (2026-09-16)
 
 - Enhancements
     - Added or updated the robot rules for the following:
-        - BufferLinkPreview
-        - crawl-engine
-        - DataForSeoBot
-        - domainprintbot
-        - FaviconHub
-        - fluid
-        - ListSignalBot
-        - Marginalia Search
-        - NotHere.one Bot
-        - pceuropa-bot
-        - PoweredByBot
-        - SeobilityBot
-        - TinEye
-        - VexelSearchBot
-        - Yahoo Japan
-    - Improve handling of blank entries in the rebuild-robots-config utility.
-- Toolchain
-    - Bump minimum recommended version of JQ::Lite.
-- Tests
-    - Fixed t/20-basic-algorithm-ahocorasick.t to hide the correct module.
+        - JustSearchUKBot
 
 See the `Changes` file for more details.
 
