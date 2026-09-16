@@ -2,7 +2,7 @@ Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
   [Enhancements]
-  - Added robot rules for the following:
+  - Added or updated the robot rules for the following:
     - BufferLinkPreview
     - crawl-engine
     - DataForSeoBot
@@ -12,11 +12,11 @@ Revision history for {{ $dist->name }}:
     - Marginalia Search
     - NotHere.one Bot
     - pceuropa-bot
+    - PoweredByBot
     - SeobilityBot
     - TinEye
     - VexelSearchBot
-
-  - Updated robot rule for Yahoo Japan.
+    - Yahoo Japan
 
   - Improve handling of blank entries in the rebuild-robots-config utility.
 

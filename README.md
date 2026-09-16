@@ -22,10 +22,10 @@ This module allows one to validate a robot user-agent string against the IP addr
 
 # RECENT CHANGES
 
-Changes for version v0.4.4 (2026-09-15)
+Changes for version v0.4.4 (2026-09-16)
 
 - Enhancements
-    - Added robot rules for the following:
+    - Added or updated the robot rules for the following:
         - BufferLinkPreview
         - crawl-engine
         - DataForSeoBot
@@ -35,10 +35,11 @@ Changes for version v0.4.4 (2026-09-15)
         - Marginalia Search
         - NotHere.one Bot
         - pceuropa-bot
+        - PoweredByBot
         - SeobilityBot
         - TinEye
         - VexelSearchBot
-    - Updated robot rule for Yahoo Japan.
+        - Yahoo Japan
     - Improve handling of blank entries in the rebuild-robots-config utility.
 - Toolchain
     - Bump minimum recommended version of JQ::Lite.
