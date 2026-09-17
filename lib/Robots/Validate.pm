@@ -268,6 +268,10 @@ to their application.
 
 Users are also encouraged to submit new and updated rules back to the maintainers. See L</SOURCE>.
 
+The string-matching algorithm used for identifying robots is based on the Aho-Corasick algorithm,
+which uses a state-machine for identifying matches.  Adding new rules will have a negligable effect on
+performance.
+
 =cut
 
 has config => (

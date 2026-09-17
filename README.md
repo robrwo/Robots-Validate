@@ -29,6 +29,8 @@ Changes for version v0.4.5 (2026-09-17)
         - IntentBeamBot
         - InternetMeasurement
         - JustSearchUKBot
+- Documentation
+    - Mentioned the string-matching algorithm and performance in the rules config section.
 
 See the `Changes` file for more details.
 
