@@ -6113,7 +6113,7 @@ domain=".infotiger.com"
 ## Date: 2026-09-04
 ## About: https://intentbeam.com/bot
 
-agents=" IntentBeamBot"
+agents="IntentBeamBot"
 network=[ "91.98.156.201", "167.233.62.207" ]
 
 [ionos]
