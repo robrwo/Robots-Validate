@@ -252,7 +252,6 @@ This feature may not work when the L</validation_mode> is not C<relaxed>.
 
 Note that either C<domain> or C<network> can be omitted.
 
-
 If the constructor is passed a hash reference, then it is coerced into an array reference of the values, sorted by keys,
 where the key is added to the C<name> if it is not already specified.  (The C<agents> and C<network> values will be
 coerced into array references.)
