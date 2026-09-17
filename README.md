@@ -27,6 +27,7 @@ Changes for version v0.4.5 (2026-09-17)
 - Enhancements
     - Added or updated the robot rules for the following:
         - IntentBeamBot
+        - InternetMeasurement
         - JustSearchUKBot
 
 See the `Changes` file for more details.
