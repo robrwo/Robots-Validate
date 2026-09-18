@@ -10,6 +10,9 @@ Revision history for {{ $dist->name }}:
   [Documentation]
   - Mentioned the string-matching algorithm and performance in the rules config section.
 
+  [Tests]
+  - Remove CHI from the test requirements.
+
 v0.4.4    2026-09-16 09:19:50+01:00 Europe/London
   [Enhancements]
   - Added or updated the robot rules for the following:

@@ -22,7 +22,7 @@ This module allows one to validate a robot user-agent string against the IP addr
 
 # RECENT CHANGES
 
-Changes for version v0.4.5 (2026-09-17)
+Changes for version v0.4.5 (2026-09-18)
 
 - Enhancements
     - Added or updated the robot rules for the following:
@@ -31,6 +31,8 @@ Changes for version v0.4.5 (2026-09-17)
         - JustSearchUKBot
 - Documentation
     - Mentioned the string-matching algorithm and performance in the rules config section.
+- Tests
+    - Remove CHI from the test requirements.
 
 See the `Changes` file for more details.
 
