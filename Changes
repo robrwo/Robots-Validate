@@ -6,6 +6,7 @@ Revision history for {{ $dist->name }}:
     - IntentBeamBot
     - InternetMeasurement
     - JustSearchUKBot
+    - PurityBot
 
   [Documentation]
   - Mentioned the string-matching algorithm and performance in the rules config section.

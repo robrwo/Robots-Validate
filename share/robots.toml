@@ -6523,6 +6523,11 @@ agents="PoweredByBot"
 domain=".poweredby.keywordseverywhere.com"
 network=[ "50.116.52.253", "173.255.228.181", "173.255.228.202", "172.104.20.70", "72.235.150.244" ]
 
+[puritybot]
+## About: https://puri.li/bot
+agents="PurityBot"
+network=[ "138.201.57.92" ]
+
 [qualified]
 ## Date: 2026-08-14
 ## About: https://www.qualified.com/legal/qualified-crawler-user-agent
