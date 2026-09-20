@@ -33,7 +33,7 @@ our $VERSION = 'v0.4.5';
 
 =begin :prelude
 
-=for stopwords CIDR GoogleBot TOML dotless googlebot iMessage superstrings validator yacybot
+=for stopwords Aho CIDR Corasick GoogleBot TOML dotless googlebot iMessage superstrings validator yacybot
 
 =end :prelude
 
@@ -268,7 +268,7 @@ to their application.
 Users are also encouraged to submit new and updated rules back to the maintainers. See L</SOURCE>.
 
 The string-matching algorithm used for identifying robots is based on the Aho-Corasick algorithm,
-which uses a state-machine for identifying matches.  Adding new rules will have a negligable effect on
+which uses a state-machine for identifying matches.  Adding new rules will have a negligible effect on
 performance.
 
 =cut
