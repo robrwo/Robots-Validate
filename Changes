@@ -1,6 +1,8 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+
+v0.4.5    2026-09-20 11:25:41+01:00 Europe/London
   [Enhancements]
   - Added or updated the robot rules for the following:
     - IntentBeamBot
