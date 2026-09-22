@@ -7835,6 +7835,11 @@ network=[
   "100.50.17.159",
 ]
 
+[webarchiv-cz]
+## About: http://webarchiv.cz/kontakty
+agents="webarchiv.cz"
+network=[ "195.113.134.0/25", "195.113.132.0/23" ]
+
 [webmcpindex]
 ## About: https://webmcpshield.com/bot
 agents="WebMCPIndexBot"

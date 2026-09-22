@@ -6,6 +6,7 @@ Revision history for {{ $dist->name }}:
     - BanquiseBot
     - domainprintbot
     - DomainStatsBot
+    - webarchiv.cz
 
 v0.4.5    2026-09-20 11:25:41+01:00 Europe/London
   [Enhancements]
