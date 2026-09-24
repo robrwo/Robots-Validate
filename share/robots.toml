@@ -6257,6 +6257,11 @@ network=[
 agents="LohiSoftBot"
 domain=".bot.lohisoft.com"
 
+[lycos]
+## About: https://search.lycos.fr/crawler
+agents="Lycos"
+domain=".lycos.fr"
+
 [lyonlbot]
 ## Date: 2026-08-28
 ## About: https://lyonl.com/bot.html

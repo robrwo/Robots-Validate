@@ -29,6 +29,7 @@ Changes for version v0.4.6 (2026-09-24)
         - BanquiseBot
         - domainprintbot
         - DomainStatsBot
+        - Lycos
         - UmaiBot
         - webarchiv.cz
 
