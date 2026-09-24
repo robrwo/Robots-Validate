@@ -7790,6 +7790,11 @@ network=[
   "199.16.156.0/22",
 ]
 
+[umaibot]
+## About: https://umai.entelijan.com/methodology
+agents="UmaiBot"
+domain=".entelijan.com"
+
 [vexel]
 ## About: https://vexel.cc/bot-info
 

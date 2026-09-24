@@ -22,13 +22,14 @@ This module allows one to validate a robot user-agent string against the IP addr
 
 # RECENT CHANGES
 
-Changes for version v0.4.6 (2026-09-22)
+Changes for version v0.4.6 (2026-09-24)
 
 - Enhancements
     - Added or updated the robot rules for the following:
         - BanquiseBot
         - domainprintbot
         - DomainStatsBot
+        - UmaiBot
         - webarchiv.cz
 
 See the `Changes` file for more details.
