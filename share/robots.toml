@@ -7855,6 +7855,11 @@ network=[ "195.113.134.0/25", "195.113.132.0/23" ]
 agents="WebMCPIndexBot"
 network=["139.162.75.45"]
 
+[webtelemetry]
+## About: https://webtelemetry.dev/bot
+agents="WebtelemetryBot"
+domain=".webtelemetry.dev"
+
 [wrtnbot]
 ## Date: 2026-08-26
 ## Network: https://wrtn.ai/wrtnbot.json

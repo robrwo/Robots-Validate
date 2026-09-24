@@ -32,6 +32,7 @@ Changes for version v0.4.6 (2026-09-24)
         - Lycos
         - UmaiBot
         - webarchiv.cz
+        - WebtelemetryBot
 
 See the `Changes` file for more details.
 
