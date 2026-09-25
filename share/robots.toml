@@ -6317,6 +6317,16 @@ network=[
   "81.170.128.52", "193.183.0.162/31", "193.183.0.164/30", "193.183.0.168/30", "193.183.0.172/31", "193.183.0.174/32"
 ]
 
+[medllybot]
+## Date: 2026-09-25
+## About: https://crawler.medllysupplies.org/
+## Network: https://crawler.medllysupplies.org/ips.json
+## Query: .ipv4[], .ipv6[]
+
+agents="MedllyBot"
+domain=".medllysupplies.org"
+network=[ "138.197.114.6" ]
+
 [metajob]
 ## Date: 2026-09-04
 ## About: https://www.metajob.de/the/crawler

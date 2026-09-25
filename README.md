@@ -22,7 +22,7 @@ This module allows one to validate a robot user-agent string against the IP addr
 
 # RECENT CHANGES
 
-Changes for version v0.4.6 (2026-09-24)
+Changes for version v0.4.6 (2026-09-25)
 
 - Enhancements
     - Added or updated the robot rules for the following:
@@ -30,6 +30,7 @@ Changes for version v0.4.6 (2026-09-24)
         - domainprintbot
         - DomainStatsBot
         - Lycos
+        - MedllyBot
         - UmaiBot
         - webarchiv.cz
         - WebtelemetryBot
