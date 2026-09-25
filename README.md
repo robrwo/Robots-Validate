@@ -26,14 +26,23 @@ Changes for version v0.4.6 (2026-09-25)
 
 - Enhancements
     - Added or updated the robot rules for the following:
+        - Applebot
         - BanquiseBot
         - domainprintbot
         - DomainStatsBot
+        - DuckAssistBot
+        - DuckDuckBot
+        - GPTbot
+        - GPT-User
+        - Googlebot
         - Lycos
         - MedllyBot
+        - OAI-SearchBot
+        - QwantBot
         - UmaiBot
         - webarchiv.cz
         - WebtelemetryBot
+        - Yeti
 
 See the `Changes` file for more details.
 

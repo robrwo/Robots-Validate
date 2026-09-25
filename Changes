@@ -3,14 +3,23 @@ Revision history for {{ $dist->name }}:
 {{$NEXT}}
   [Enhancements]
   - Added or updated the robot rules for the following:
+    - Applebot
     - BanquiseBot
     - domainprintbot
     - DomainStatsBot
+    - DuckAssistBot
+    - DuckDuckBot
+    - GPTbot
+    - GPT-User
+    - Googlebot
     - Lycos
     - MedllyBot
+    - OAI-SearchBot
+    - QwantBot
     - UmaiBot
     - webarchiv.cz
     - WebtelemetryBot
+    - Yeti
 
 v0.4.5    2026-09-20 11:25:41+01:00 Europe/London
   [Enhancements]
