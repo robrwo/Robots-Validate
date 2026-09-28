@@ -4,6 +4,7 @@ Revision history for {{ $dist->name }}:
   [Enhancements]
   - Added or updated the robot rules for the following:
     - BitSightBot
+    - Hydrozen
     - SiteGraphBot
     - Spletni Arhiv NUK
     - SyntoraDataBot

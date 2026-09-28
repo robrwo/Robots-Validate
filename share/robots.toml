@@ -6100,6 +6100,19 @@ network=[
 agents="ev-crawler"
 domain=".headline.com"
 
+[hydrozen]
+## Date: 2026-09-28
+## About: https://docs.hydrozen.io/overview/misc/user-agent-and-ip-list
+## Network: https://hydrozen.io/config/iplist.json
+
+agents="Hydrozen.io"
+network=[
+  "69.197.187.216/32",
+  "3.109.154.148/32",
+  "34.229.178.9/32"
+]
+
+
 [ibou]
 ## Date: 2026-09-25
 ## About: See https://ibou.io/iboubot.html
