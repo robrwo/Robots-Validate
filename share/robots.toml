@@ -2247,6 +2247,11 @@ network=[
   "204.62.248.0/23",
 ]
 
+[archive-si]
+## About: http://arhiv.nuk.uni-lj.si/kontakt
+agents="arhiv.nuk.uni-lj.si"
+domain=".nuk.uni-lj.si"
+
 [archivo-pt]
 agents="Arquivo-web-crawler"
 domain=".archivo.pt"
