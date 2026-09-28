@@ -7,6 +7,7 @@ Revision history for {{ $dist->name }}:
     - SiteGraphBot
     - Spletni Arhiv NUK
     - SyntoraDataBot
+    - UptimeBot
     - vuhuvBot
 
 v0.4.6    2026-09-25 17:00:01+01:00 Europe/London

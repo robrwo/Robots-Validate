@@ -7931,6 +7931,18 @@ network=[
 agents="UmaiBot"
 domain=".entelijan.com"
 
+[uptimebot]
+## Date: 2026-09-28
+## About: https://uptime.bot/hello/
+## Seel-Also: https://uptimebot.zendesk.com/hc/en-us/articles/360007447957-What-are-UptimeBot-IPs
+
+agents="UptimeBot"
+network=[
+  "18.233.58.241",
+  "52.47.146.163",
+  "52.77.36.31"
+]
+
 [vexel]
 ## About: https://vexel.cc/bot-info
 
