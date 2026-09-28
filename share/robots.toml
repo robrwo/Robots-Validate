@@ -7859,6 +7859,13 @@ network=[
 agents="StractBot"
 domain=".stract.com"
 
+[syntoradatabot]
+## Date: 2026-09-28
+## About: https://syntoradata.com/bot
+agents="SyntoraDataBot"
+domain=".syntoradata.com"
+network=[ "162.55.129.55" ]
+
 [taktikal]
 ## About: https://taktikal.fasttvltd.com/bot
 
