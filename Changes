@@ -3,6 +3,7 @@ Revision history for {{ $dist->name }}:
 {{$NEXT}}
   [Enhancements]
   - Added or updated the robot rules for the following:
+    - SiteGraphBot
     - Spletni Arhiv NUK
     - SyntoraDataBot
 

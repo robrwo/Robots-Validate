@@ -7779,6 +7779,11 @@ network=[
 agents="Shap-User"
 network=[]
 
+[sitegraphbot]
+## About: https://sitegraph.tech/bot
+agents="SiteGraphBot"
+domain=".anantatools.com"
+
 [siteimprove]
 ## Date: 2026-08-23
 ## About: https://help.siteimprove.com/support/solutions/articles/80000448553-what-ip-addresses-and-user-agents-are-used-by-siteimprove-

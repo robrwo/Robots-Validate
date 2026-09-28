@@ -26,6 +26,7 @@ Changes for version v0.4.7 (2026-09-28)
 
 - Enhancements
     - Added or updated the robot rules for the following:
+        - SiteGraphBot
         - Spletni Arhiv NUK
         - SyntoraDataBot
 
