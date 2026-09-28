@@ -30,6 +30,7 @@ Changes for version v0.4.7 (2026-09-28)
         - SiteGraphBot
         - Spletni Arhiv NUK
         - SyntoraDataBot
+        - vuhuvBot
 
 See the `Changes` file for more details.
 

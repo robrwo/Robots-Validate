@@ -7979,6 +7979,11 @@ network=[
   "100.50.17.159",
 ]
 
+[vuhuvbot]
+## About: https://vuhuv.com/bot.html
+agents=[ "vuhuvBot", "vuhuvRBT" ]
+domain=[ ".vuhuv.com", ".vuhuv.net" ]
+
 [webarchiv-cz]
 ## About: http://webarchiv.cz/kontakty
 
