@@ -2354,6 +2354,11 @@ network=[
   "199.91.151.0/24",
 ]
 
+[bitsightbot]
+## About: https://www.bitsight.com
+agents="BitSightBot"
+network="85.117.225.0/24"
+
 [brightbot]
 ## Date: 2026-08-14
 ## About: https://brightdata.com/brightbot
