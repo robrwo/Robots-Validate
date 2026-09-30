@@ -6100,6 +6100,12 @@ network=[
 agents="ev-crawler"
 domain=".headline.com"
 
+[hubspot]
+## See-Also: https://www.hubspot.com
+agents="HubSpot Crawler"
+domain=".hubspot.com"
+network=[ "216.157.40.0/21" ]
+
 [hydrozen]
 ## Date: 2026-09-28
 ## About: https://docs.hydrozen.io/overview/misc/user-agent-and-ip-list
