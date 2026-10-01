@@ -6267,6 +6267,17 @@ network=[
 agents="IonCrawl"
 domain=".1and1.org"
 
+[ionsearchbot]
+## Date: 2026-10-01
+## About: https://search.isonai.com/bot
+## Network: https://search.isonai.com/bot/ips.json
+
+agents="IsonSearchBot"
+network=[
+  "103.121.17.220/32",
+  "103.156.115.103/32"
+]
+
 [justsearchuk]
 ## Date: 2026-09-16
 ## About: https://justsearchuk.co.uk/bot.html
