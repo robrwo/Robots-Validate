@@ -6267,7 +6267,7 @@ network=[
 agents="IonCrawl"
 domain=".1and1.org"
 
-[ionsearchbot]
+[isonsearchbot]
 ## Date: 2026-10-01
 ## About: https://search.isonai.com/bot
 ## Network: https://search.isonai.com/bot/ips.json

@@ -29,7 +29,7 @@ Changes for version v0.4.7 (2026-10-01)
         - BitSightBot
         - HubSpot Crawler
         - Hydrozen
-        - IonSearchBot
+        - IsonSearchBot
         - SiteGraphBot
         - Spletni Arhiv NUK
         - SyntoraDataBot
