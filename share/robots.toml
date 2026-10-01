@@ -6433,6 +6433,11 @@ network=[
   "138.197.114.6",
 ]
 
+[meistackbot]
+## About: https://meiwood.com/bot/
+agents="MeistackBot"
+domain=".meiwood.com"
+
 [metajob]
 ## Date: 2026-09-04
 ## About: https://www.metajob.de/the/crawler
