@@ -2752,6 +2752,11 @@ network=[
   "18.227.226.255/32",
 ]
 
+[clueweb]
+## About: https://boston.lti.cs.cmu.edu/CMU-ClueWeb-Crawler/
+agents="ClueWeb-Crawler"
+domain=".lti.cs.cmu.edu"
+
 [coccocbot]
 ## About: https://help.coccoc.com/search-engine
 
