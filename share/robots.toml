@@ -2197,6 +2197,11 @@ network=[
   "98.87.95.44",
 ]
 
+[apocsys]
+## See-Also: https://apcosys.net
+agents="ApcosysBot"
+domain=".apcosys.cc"
+
 [applebot]
 ## Date: 2026-09-25
 ## About: https://support.apple.com/en-gb/119829
