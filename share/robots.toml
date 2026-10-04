@@ -3827,6 +3827,15 @@ network=[
   "98.70.219.37/32",
 ]
 
+[emailsherlock]
+## About: https://www.hostsherlock.com/bot
+agents=[ "EmailSherlock", "HostSherlock" ]
+domain=".emailsherlock.com"
+network=[
+  "188.34.187.171",
+  "188.245.164.12"
+]
+
 [embedly]
 ## Date: 2026-08-20
 ## About: https://docs.embed.ly/reference/faq

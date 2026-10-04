@@ -29,6 +29,7 @@ Changes for version v0.4.7 (2026-10-04)
         - ApocsysBot
         - BitSightBot
         - ClueWeb-Crawler
+        - EmailSherlock
         - HubSpot Crawler
         - Hydrozen
         - IsonSearchBot

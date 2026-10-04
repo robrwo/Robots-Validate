@@ -6,6 +6,7 @@ Revision history for {{ $dist->name }}:
     - ApocsysBot
     - BitSightBot
     - ClueWeb-Crawler
+    - EmailSherlock
     - HubSpot Crawler
     - Hydrozen
     - IsonSearchBot
