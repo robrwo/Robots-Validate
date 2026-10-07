@@ -6144,6 +6144,11 @@ network=[
 ]
 
 
+[ibaabot]
+## About: https://dl.ibaa.bj/bot
+agents=[ "IbaaaBot", "ibaaBot" ]
+domain=".ibaa.bj"
+
 [ibou]
 ## Date: 2026-09-25
 ## About: See https://ibou.io/iboubot.html
