@@ -2364,6 +2364,12 @@ network=[
 agents="BitSightBot"
 network="85.117.225.0/24"
 
+[bluk]
+## Name: British Library Web Archiving Crawler
+agents=["bl.uk_lddc_bot", "bl.uk_ldfc_bot"]
+domain=".bl.uk"
+network=["18.130.205.6", "13.42.180.60"]
+
 [brightbot]
 ## Date: 2026-08-14
 ## About: https://brightdata.com/brightbot
