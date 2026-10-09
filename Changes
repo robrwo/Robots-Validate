@@ -4,6 +4,7 @@ Revision history for {{ $dist->name }}:
   [Enhancements]
   - Added or updated the robot rules for the following:
     - bl.uk_lddc_bot
+    - deepcrawl
     - ibaaBot
 
 v0.4.7    2026-10-04 18:19:49+01:00 Europe/London
