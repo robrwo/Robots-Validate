@@ -6708,6 +6708,12 @@ network=[
   "193.224.0.0/15",
 ]
 
+[partnerx]
+## About: https://getpartnex.com/bot
+agents="PartnexRadarBot"
+domain=".getpartnex.com"
+
+
 [pceuropa]
 ## Date: 2026-09-25
 ## About: https://pceuropa.net/bot

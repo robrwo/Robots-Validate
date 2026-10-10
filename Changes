@@ -6,6 +6,7 @@ Revision history for {{ $dist->name }}:
     - bl.uk_lddc_bot
     - deepcrawl
     - ibaaBot
+    - PartnexRadarBot
 
 v0.4.7    2026-10-04 18:19:49+01:00 Europe/London
   [Enhancements]
