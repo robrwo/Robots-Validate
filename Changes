@@ -1,6 +1,8 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+
+v0.4.8    2026-10-10 13:51:19+01:00 Europe/London
   [Enhancements]
   - Added or updated the robot rules for the following:
     - bl.uk_lddc_bot
