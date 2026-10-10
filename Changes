@@ -5,6 +5,7 @@ Revision history for {{ $dist->name }}:
   - Added or updated the robot rules for the following:
     - bl.uk_lddc_bot
     - deepcrawl
+    - GreenFaceLabsCensus
     - ibaaBot
     - PartnexRadarBot
 

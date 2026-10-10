@@ -28,6 +28,7 @@ Changes for version v0.4.8 (2026-10-10)
     - Added or updated the robot rules for the following:
         - bl.uk\_lddc\_bot
         - deepcrawl
+        - GreenFaceLabsCensus
         - ibaaBot
         - PartnexRadarBot
 

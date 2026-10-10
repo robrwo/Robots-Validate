@@ -6196,6 +6196,14 @@ network=[
   "74.125.215.96/27",
 ]
 
+[greenfacelabs]
+## Date: 2026-10-10
+## About: https://green-face-labs.github.io/
+## Network: https://green-face-labs.github.io/census-ips.txt
+
+agents="GreenFaceLabsCensus"
+network=["45.76.84.221"]
+
 [headline]
 agents="ev-crawler"
 domain=".headline.com"
