@@ -5,6 +5,7 @@ Revision history for {{ $dist->name }}:
   - Added or updated the robot rules for the following:
     - InfoSifter
     - InsightBaseBot
+    - IntentRouteBot
     - PartnexRadarBot (fixed typo in rule name)
 
 v0.4.8    2026-10-10 13:51:19+01:00 Europe/London

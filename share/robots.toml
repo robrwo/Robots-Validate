@@ -6333,6 +6333,18 @@ network=[
   "167.233.62.207",
 ]
 
+[intentroutebot]
+## Date: 2026-10-12
+## About: https://intentroute.net/crawler
+## Network: https://intentroute.net/crawler/ips.json
+
+agents="IntentRouteBot"
+domain=".intentroute.net"
+network=[
+  "159.195.241.59/32",
+  "2a0a:4cc0:60:1e57:1499:bdff:fefe:60fa/128"
+]
+
 [internetmeasurement]
 ## Date: 2026-09-17
 ## About: https://internet-measurement.com/
