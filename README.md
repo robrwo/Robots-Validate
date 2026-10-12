@@ -22,10 +22,11 @@ This module allows one to validate a robot user-agent string against the IP addr
 
 # RECENT CHANGES
 
-Changes for version v0.4.9 (2026-10-11)
+Changes for version v0.4.9 (2026-10-12)
 
 - Enhancements
     - Added or updated the robot rules for the following:
+        - InfoSifter
         - PartnexRadarBot (fixed typo in rule name)
 
 See the `Changes` file for more details.

@@ -6304,6 +6304,12 @@ network=[
 agents="facebookexternalhit/1.1 Facebot Twitterbot"
 ignore=true
 
+[infosifter]
+## About: https://logicus.se/about_InfoSifter.html
+
+agents="InfoSifter"
+domain=".logicus.se"
+
 [infotiger]
 ## About: https://infotiger.com/bot.html
 
