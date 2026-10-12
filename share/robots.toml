@@ -6316,6 +6316,13 @@ domain=".logicus.se"
 agents="InfoTigerBot"
 domain=".infotiger.com"
 
+[insightbasebot]
+## Date: 2026-10-12
+## About: https://insightbase.com/bot
+
+agents="InsightBaseBot"
+network="194.26.222.226"
+
 [intentbeam]
 ## Date: 2026-09-04
 ## About: https://intentbeam.com/bot
