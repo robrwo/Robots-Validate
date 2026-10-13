@@ -26,6 +26,7 @@ Changes for version v0.4.9 (2026-10-13)
 
 - Enhancements
     - Added or updated the robot rules for the following:
+        - CrawlPolicyIndex
         - Harambis
         - InfoSifter
         - InsightBaseBot

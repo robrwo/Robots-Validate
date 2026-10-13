@@ -2814,6 +2814,13 @@ agents="crawl-engine"
 domain=".creasource.dev"
 network="167.233.208.8"
 
+[crawlpolicy]
+## Date: 2026-10-13
+## About: https://crawlpolicyindex.org/bot
+
+agents="CrawlPolicyIndex"
+network=[ "178.128.255.20" ]
+
 [dataforseo]
 ## About: https://dataforseo.com/dataforseo-bot
 
