@@ -6463,6 +6463,7 @@ network=[
 ]
 
 [keenablebot]
+## Date: 2026-10-13
 ## About: https://app.keenable.ai/bot
 ## Network: https://app.keenable.ai/bot/keenablebot.json
 agents="KeenableBot"
@@ -6500,6 +6501,7 @@ network=[
 ]
 
 [keenable-user]
+## Date: 2026-10-13
 ## About: https://app.keenable.ai/bot
 ## Network: https://app.keenable.ai/bot/keenable-user.json
 agents="Keenable-User"
