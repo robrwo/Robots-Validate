@@ -6204,6 +6204,24 @@ network=[
 agents="GreenFaceLabsCensus"
 network=["45.76.84.221"]
 
+[harambis]
+## Date: 2026-10-13
+## About: https://harambis.com/bot
+## Network: https://harambis.com/bot/ips.txt
+agents="harambis"
+network=[
+  "104.237.134.224/32",
+  "139.162.121.234/32",
+  "139.162.54.193/32",
+  "172.104.151.116/32",
+  "172.233.21.89/32",
+  "172.236.125.5/32",
+  "172.237.100.40/32",
+  "192.81.129.118/32",
+  "194.195.126.109/32",
+  "45.33.84.221/32"
+]
+
 [headline]
 agents="ev-crawler"
 domain=".headline.com"
