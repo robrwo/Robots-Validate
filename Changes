@@ -8,6 +8,7 @@ Revision history for {{ $dist->name }}:
     - InfoSifter
     - InsightBaseBot
     - IntentRouteBot
+    - KeenableBot and Keenable-User
     - PartnexRadarBot (fixed typo in rule name)
     - webXtrendBot
 

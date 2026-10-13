@@ -31,6 +31,7 @@ Changes for version v0.4.9 (2026-10-13)
         - InfoSifter
         - InsightBaseBot
         - IntentRouteBot
+        - KeenableBot and Keenable-User
         - PartnexRadarBot (fixed typo in rule name)
         - webXtrendBot
     - The rebuild-robots-config utility was changed to ignore comments in plain text IP lists.
