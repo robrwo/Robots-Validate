@@ -8086,6 +8086,11 @@ network=[
   "199.47.82.16/28",
 ]
 
+[webxtrendbot]
+## About: https://webxtrend.com/crawler
+agents="webXtrendBot"
+domain=".webxtrend.com"
+
 [wikimedia]
 ## About: https://wikitech.wikimedia.org/wiki/Citoid
 
