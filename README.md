@@ -26,6 +26,7 @@ Changes for version v0.4.10 (2026-10-15)
 
 - Enhancements
     - Added or updated the robot rules for the following:
+        - HarambisBot
         - serpstatbot
 
 See the `Changes` file for more details.

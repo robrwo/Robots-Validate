@@ -3,6 +3,7 @@ Revision history for {{ $dist->name }}:
 {{$NEXT}}
   [Enhancements]
   - Added or updated the robot rules for the following:
+    - HarambisBot
     - serpstatbot
 
 v0.4.9    2026-10-13 20:03:30+01:00 Europe/London
