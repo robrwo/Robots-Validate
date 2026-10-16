@@ -2262,6 +2262,12 @@ agents="Arquivo-web-crawler"
 domain=".archivo.pt"
 network="194.210.235.0/24"
 
+[askrobots]
+## Date: 2026-10-16
+## About: https://search.askrobots.com/bot
+agents="AskRobotsBot"
+network="162.224.53.162"
+
 [awario]
 ## About: https://awario.com/bots.html
 
