@@ -27,7 +27,7 @@ Changes for version v0.4.10 (2026-10-16)
 - Enhancements
     - Added or updated the robot rules for the following:
         - AskRobotsBot
-        - HarambisBot
+        - HarambisBot (updated agent string and network)
         - serpstatbot
 
 See the `Changes` file for more details.
