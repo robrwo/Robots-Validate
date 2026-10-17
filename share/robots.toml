@@ -8243,13 +8243,14 @@ network=[
 ]
 
 [turnitin]
-## Date: 2026-08-14
+## Date: 2026-10-17
 ## About: https://www.turnitin.com/robot/crawlerinfo.html
+## Note: The IPs all resolve to crawler.turnitin.com but that hostname does not resolve.
 
 agents="Turnitin"
 network=[
-  "199.47.80.0/24",
-  "199.47.82.16/28",
+  "199.47.87.132/30",
+  "199.47.82.0/28"
 ]
 
 [webxtrendbot]

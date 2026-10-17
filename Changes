@@ -6,6 +6,7 @@ Revision history for {{ $dist->name }}:
     - AskRobotsBot
     - HarambisBot (updated agent string and network)
     - serpstatbot
+    - Turnitin (updated network)
 
 v0.4.9    2026-10-13 20:03:30+01:00 Europe/London
   [Enhancements]

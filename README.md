@@ -22,13 +22,14 @@ This module allows one to validate a robot user-agent string against the IP addr
 
 # RECENT CHANGES
 
-Changes for version v0.4.10 (2026-10-16)
+Changes for version v0.4.10 (2026-10-17)
 
 - Enhancements
     - Added or updated the robot rules for the following:
         - AskRobotsBot
         - HarambisBot (updated agent string and network)
         - serpstatbot
+        - Turnitin (updated network)
 
 See the `Changes` file for more details.
 
