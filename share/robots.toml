@@ -6734,6 +6734,19 @@ network=[
   "35.189.0.46",
 ]
 
+[netapi]
+## Date: 2026-10-18
+## About: https://netapi.com/bot.html
+## Network: https://netapi.com/bot-ips.json
+agents="NetAPI"
+domain=".bot.netapi.com"
+network=[
+  "136.243.61.201/32",
+  "162.55.129.246/32",
+  "162.55.132.97/32",
+  "188.40.66.190/32"
+]
+
 [notherebot]
 ## About: https://nothere.one/bot
 
