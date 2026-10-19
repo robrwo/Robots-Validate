@@ -27,6 +27,7 @@ Changes for version v0.4.10 (2026-10-19)
 - Enhancements
     - Added or updated the robot rules for the following:
         - alphalens-bot
+        - AlpostBot
         - AskRobotsBot
         - CriteoBot
         - HarambisBot (updated agent string and network)

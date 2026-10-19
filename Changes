@@ -4,6 +4,7 @@ Revision history for {{ $dist->name }}:
   [Enhancements]
   - Added or updated the robot rules for the following:
     - alphalens-bot
+    - AlpostBot
     - AskRobotsBot
     - CriteoBot
     - HarambisBot (updated agent string and network)

@@ -121,6 +121,13 @@ network=[
   "69.91.184.29"
 ]
 
+[alpostbot]
+## Date: 2026-10-19
+## About: https://alpost.ch/en/bot/
+agents="AlpostBot"
+domain=".alpost.ch"
+network=[ "46.105.236.247" ]
+
 [amazonbot]
 ## Date: 2026-08-22
 ## About: https://developer.amazon.com/support/amazonbot
