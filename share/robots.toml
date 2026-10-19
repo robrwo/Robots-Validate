@@ -2804,6 +2804,7 @@ network=[
 ]
 
 [cotoyogi]
+## Date: 2026-10-19
 ## About: https://ds.rois.ac.jp/en_center8/en_crawler/
 
 agents="Cotoyogi"
