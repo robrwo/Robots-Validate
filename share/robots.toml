@@ -6546,7 +6546,24 @@ network=[
   "35.202.5.108/32",
 ]
 
+[linerbot]
+## Date: 2026-10-19
+## About: https://docs.getliner.com/docs/linerbot
+## Network: https://docs.getliner.com/linerbot.json
 
+agents="LinerBot"
+network=[
+  "35.226.131.201/32",
+  "34.29.249.74/32",
+  "35.224.198.28/32",
+  "34.121.11.68/32",
+  "34.29.23.49/32",
+  "34.134.213.56/32",
+  "34.171.199.186/32",
+  "34.16.62.88/32",
+  "34.66.1.86/32",
+  "34.29.166.174/32",
+]
 
 [linkedin]
 agents="LinkedInBot"

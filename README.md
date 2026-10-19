@@ -30,6 +30,7 @@ Changes for version v0.4.10 (2026-10-19)
         - AskRobotsBot
         - CriteoBot
         - HarambisBot (updated agent string and network)
+        - LinerBot
         - NetAPI
         - serpstatbot
         - Turnitin (updated network)
