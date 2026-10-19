@@ -6260,6 +6260,14 @@ network=[
   "97.107.142.130/32"
 ]
 
+[harkbot]
+## Date: 2026-10-19
+## About: https://app.hark.com/about/bot
+## Network: https://hark.com/agent/ipranges/harkbot.json
+
+agents="HarkBot"
+network=["161.114.88.0/22"]
+
 [headline]
 agents="ev-crawler"
 domain=".headline.com"

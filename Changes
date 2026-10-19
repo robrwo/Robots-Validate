@@ -7,6 +7,7 @@ Revision history for {{ $dist->name }}:
     - AskRobotsBot
     - CriteoBot
     - HarambisBot (updated agent string and network)
+    - HarkBot
     - LinerBot
     - NetAPI
     - serpstatbot
