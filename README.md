@@ -20,6 +20,15 @@ if ( my $res = $rs->validate( $ip, $user_agent ) ) {
 
 This module allows one to validate a robot user-agent string against the IP addresses.
 
+# RECENT CHANGES
+
+Changes for version v0.4.11 (2026-10-19)
+
+- Bug Fix
+    - Actually load the XS modules if they are available.
+
+See the `Changes` file for more details.
+
 # REQUIREMENTS
 
 This module lists the following modules as runtime dependencies:
@@ -28,6 +37,7 @@ This module lists the following modules as runtime dependencies:
 - [File::ShareDir](https://metacpan.org/pod/File%3A%3AShareDir)
 - [File::Slurper](https://metacpan.org/pod/File%3A%3ASlurper)
 - [List::Util](https://metacpan.org/pod/List%3A%3AUtil) version 1.33 or later
+- [Module::Load](https://metacpan.org/pod/Module%3A%3ALoad)
 - [Moo](https://metacpan.org/pod/Moo) version 1 or later
 - [Net::DNS::Resolver](https://metacpan.org/pod/Net%3A%3ADNS%3A%3AResolver)
 - [Net::IP](https://metacpan.org/pod/Net%3A%3AIP)

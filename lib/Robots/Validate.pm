@@ -10,6 +10,7 @@ use Algorithm::AhoCorasick::SearchMachine;
 use File::ShareDir qw( dist_file );
 use File::Slurper  qw( read_binary );
 use List::Util     1.33 qw( all any none );
+use Module::Load qw( load );
 use Net::DNS::Resolver;
 use Net::IP qw( ip_expand_address ip_is_ipv4 ip_is_ipv6 ip_splitprefix );
 use Net::IP::LPM;
@@ -140,7 +141,7 @@ sub _build_agents($self) {
     my @names = keys $self->_validators->%*;
 
 
-    if ( eval { require "Algorithm::AhoCorasick::XS" } ) {
+    if ( eval { load "Algorithm::AhoCorasick::XS" } ) {
 
         *_first_match = set_subname "_first_match", sub( $self, $str ) {
             return $self->_agents->first_match($str)
@@ -883,7 +884,7 @@ sub _init_validators_from_config($self) {
 
 BEGIN {
 
-    if ( eval { require "TOML::XS" } ) {
+    if ( eval { load "TOML::XS" } ) {
         *_from_toml = sub($toml) { TOML::XS::from_toml($toml)->get() };
     }
     else {
