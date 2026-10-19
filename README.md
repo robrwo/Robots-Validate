@@ -20,29 +20,6 @@ if ( my $res = $rs->validate( $ip, $user_agent ) ) {
 
 This module allows one to validate a robot user-agent string against the IP addresses.
 
-# RECENT CHANGES
-
-Changes for version v0.4.10 (2026-10-19)
-
-- Security
-    - The pure-Perl pattern-matcher did not reset the state between validations. (CVE-2026-112921)
-- Enhancements
-    - Added or updated the robot rules for the following:
-        - alphalens-bot
-        - AlpostBot
-        - AskRobotsBot
-        - BanquiseBot (updated network)
-        - CriteoBot
-        - HarambisBot (updated agent string and network)
-        - HarkBot
-        - LinerBot
-        - MecildiLanguageDetector
-        - NetAPI
-        - serpstatbot
-        - Turnitin (updated network)
-
-See the `Changes` file for more details.
-
 # REQUIREMENTS
 
 This module lists the following modules as runtime dependencies:
