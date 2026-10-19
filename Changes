@@ -1,6 +1,8 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+
+v0.4.11   2026-10-19 23:19:28+01:00 Europe/London
   [Bug Fix]
   - Actually load the XS modules if they are available.
 
