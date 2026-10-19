@@ -6,6 +6,7 @@ Revision history for {{ $dist->name }}:
     - alphalens-bot
     - AlpostBot
     - AskRobotsBot
+    - BanquiseBot (updated network)
     - CriteoBot
     - HarambisBot (updated agent string and network)
     - HarkBot

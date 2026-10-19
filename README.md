@@ -29,6 +29,7 @@ Changes for version v0.4.10 (2026-10-19)
         - alphalens-bot
         - AlpostBot
         - AskRobotsBot
+        - BanquiseBot (updated network)
         - CriteoBot
         - HarambisBot (updated agent string and network)
         - HarkBot

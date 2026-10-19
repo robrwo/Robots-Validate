@@ -2306,15 +2306,13 @@ agents="Baiduspider"
 domain=".crawl.baidu.com"
 
 [banquisebot]
-## Date: 2026-09-20
+## Date: 2026-10-19
 ## About: https://www.banquise.ca/bot
 
 agents="BanquiseBot"
 network=[
-  "2602:f417:1::20",
-  "23.153.132.25",
-  "2602:f417:21::20",
-  "23.153.132.79",
+  "2602:f417:30:2::135",
+  "23.153.132.71"
 ]
 
 [barkrowler]
