@@ -1,6 +1,9 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+  [Security]
+  - The pure-Perl pattern-matcher did not reset the state between validations. (CVE-2026-112921)
+
   [Enhancements]
   - Added or updated the robot rules for the following:
     - alphalens-bot

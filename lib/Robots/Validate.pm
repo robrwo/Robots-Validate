@@ -155,15 +155,21 @@ sub _build_agents($self) {
     }
     else {
 
+        *_reset_feed = set_subname "_reset_feed", sub( $self, $str, $cb ) {
+            my $machine = $self->_agents;
+            $machine->{state} = $machine->{root};
+            $machine->feed( $str, $cb );
+        };
+
         *_first_match = set_subname "_first_match", sub( $self, $str ) {
             my $match;
-            $self->_agents->feed($str, sub( $, $name ) { $match //= $name }  );
+            $self->_reset_feed( $str, sub( $, $name ) { $match //= $name } );
             return $match;
         };
 
         *_all_matches = set_subname "_all_matches", sub( $self, $str ) {
             my @matches;
-            $self->_agents->feed($str, sub( $, $name ) { push @matches, $name; return undef } );
+            $self->_reset_feed( $str, sub( $, $name ) { push @matches, $name; return undef } );
             return @matches;
         };
 

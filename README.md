@@ -24,6 +24,8 @@ This module allows one to validate a robot user-agent string against the IP addr
 
 Changes for version v0.4.10 (2026-10-19)
 
+- Security
+    - The pure-Perl pattern-matcher did not reset the state between validations. (CVE-2026-112921)
 - Enhancements
     - Added or updated the robot rules for the following:
         - alphalens-bot
