@@ -11,6 +11,7 @@ Revision history for {{ $dist->name }}:
     - HarambisBot (updated agent string and network)
     - HarkBot
     - LinerBot
+    - MecildiLanguageDetector
     - NetAPI
     - serpstatbot
     - Turnitin (updated network)

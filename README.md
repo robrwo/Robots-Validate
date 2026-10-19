@@ -34,6 +34,7 @@ Changes for version v0.4.10 (2026-10-19)
         - HarambisBot (updated agent string and network)
         - HarkBot
         - LinerBot
+        - MecildiLanguageDetector
         - NetAPI
         - serpstatbot
         - Turnitin (updated network)
