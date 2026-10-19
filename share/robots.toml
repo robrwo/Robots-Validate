@@ -108,6 +108,19 @@ network=[
   "202.94.84.112/31",
 ]
 
+[alphalens-bot]
+## Date: 2026-10-19
+## About: https://alphalensbot.com/
+## Network: https://alphalensbot.com/public-ips.json
+## Query: .
+
+agents="alphalens-bot"
+network=[
+  "151.240.201.100",
+  "23.27.32.98",
+  "69.91.184.29"
+]
+
 [amazonbot]
 ## Date: 2026-08-22
 ## About: https://developer.amazon.com/support/amazonbot
