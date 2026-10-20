@@ -3,6 +3,7 @@ Revision history for {{ $dist->name }}:
 {{$NEXT}}
   [Enhancements]
   - Added or updated the robot rules for the following:
+    - BertinaBot
     - FlipboardProxy
     - VexelSearchBot (updated network)
 

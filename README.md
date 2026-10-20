@@ -26,6 +26,7 @@ Changes for version v0.4.12 (2026-10-20)
 
 - Enhancements
     - Added or updated the robot rules for the following:
+        - BertinaBot
         - FlipboardProxy
         - VexelSearchBot (updated network)
 

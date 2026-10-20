@@ -2327,6 +2327,20 @@ network=[
   "154.54.249.0/24",
 ]
 
+[bertinabot]
+## Date: 2026-10-20
+## About: https://search.bertina.ir/bot
+
+agents=[ "BertinaBot", "BertinaAccessibilityProbe", "BertinaLanguageDetector", "BertinaFavicon" ]
+domain=".bertina.ir"
+network=[
+  "185.88.153.114",
+  "159.69.165.83",
+  "193.186.32.87",
+  "168.119.204.54",
+  "185.88.152.63"
+]
+
 [bing]
 ## Date: 2026-09-25
 ## Network: https://www.bing.com/toolbox/bingbot.json
