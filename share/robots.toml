@@ -8315,6 +8315,25 @@ network=[
 agents="StractBot"
 domain=".stract.com"
 
+[stynebot]
+## Date: 2026-10-20
+## About: https://styne.ai/bot/
+## Network: https://styne.ai/bot-ips.json
+## Network: https://styne.ai/bot-fetch-ips.json
+
+agents="StyneBot"
+network=[
+  "13.41.146.117/32",
+  "13.41.17.173/32",
+  "16.60.148.168/32",
+  "18.169.229.36/32",
+  "3.8.35.252/32",
+  "35.179.27.68/32",
+  "63.254.168.148/32",
+  "63.254.168.189/32"
+]
+
+
 [syntoradatabot]
 ## Date: 2026-09-28
 ## About: https://syntoradata.com/bot
