@@ -8382,6 +8382,7 @@ network=[
 ]
 
 [vexel]
+## Date: 2026-10-20
 ## About: https://vexel.cc/bot-info
 
 agents="VexelSearchBot"
@@ -8389,6 +8390,7 @@ domain=".vexel.cc"
 network=[
   "23.81.36.18",
   "23.81.33.222",
+  "95.111.230.224"
 ]
 
 [visionheight]
