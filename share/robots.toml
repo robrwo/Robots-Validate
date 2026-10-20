@@ -4006,6 +4006,12 @@ domain=[
 agents="FavicoHub"
 domain=".favicohub.com"
 
+[flipboardproxy]
+## About: https://about.flipboard.com/proxy-service/
+
+agents="FlipboardProxy"
+domain=".flipboard.com"
+
 [fluid]
 ## About: http://www.leak.info/bot.html
 

@@ -1,6 +1,9 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+  [Enhancements]
+  - Added or updated the robot rules for the following:
+    - FlipboardProxy
 
 v0.4.11   2026-10-19 23:19:28+01:00 Europe/London
   [Bug Fix]
