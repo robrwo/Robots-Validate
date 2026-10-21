@@ -22,11 +22,12 @@ This module allows one to validate a robot user-agent string against the IP addr
 
 # RECENT CHANGES
 
-Changes for version v0.4.12 (2026-10-20)
+Changes for version v0.4.12 (2026-10-21)
 
 - Enhancements
     - Added or updated the robot rules for the following:
         - BertinaBot
+        - Ethicrawl
         - FlipboardProxy
         - StyneBot
         - VexelSearchBot (updated network)

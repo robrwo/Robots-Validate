@@ -3997,6 +3997,13 @@ network=[
   "2600:1f18:100d:9f00::/52",
 ]
 
+[ethicrawl]
+## Date: 2026-10-21
+## About: http://ethicrawl.ai/crawler
+
+agents="ethicrawl.ai"
+network="3.217.175.180"
+
 [facebook]
 ## About: https://developers.facebook.com/docs/sharing/webmasters/web-crawlers
 ##
