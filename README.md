@@ -29,6 +29,7 @@ Changes for version v0.4.12 (2026-10-21)
         - BertinaBot
         - Ethicrawl
         - FlipboardProxy
+        - OI-Crawler
         - StyneBot
         - VexelSearchBot (updated network)
 

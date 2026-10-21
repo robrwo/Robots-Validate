@@ -6862,6 +6862,12 @@ network=[
   "95.217.57.136/32",
 ]
 
+[oi-crawler]
+## About: https://openintel.nl/webcrawl/
+
+agents="OI-Crawler/Nutch"
+network="130.89.144.160/26"
+
 [openai-adsbot]
 ## Date: 2026-09-25
 ## About: https://platform.openai.com/docs/bots

@@ -6,6 +6,7 @@ Revision history for {{ $dist->name }}:
     - BertinaBot
     - Ethicrawl
     - FlipboardProxy
+    - OI-Crawler
     - StyneBot
     - VexelSearchBot (updated network)
 
