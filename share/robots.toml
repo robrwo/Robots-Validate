@@ -8354,6 +8354,24 @@ agents="SyntoraDataBot"
 domain=".syntoradata.com"
 network=[ "162.55.129.55" ]
 
+[t2bot]
+## About: https://t2ind.com/bot
+## Network: https://t2ind.com/t2bot-ips.json
+agents="T2Bot"
+domain=".t2ind.com"
+network=[
+  "198.251.100.70/32",
+  "198.251.100.71/32",
+  "198.251.100.72/32",
+  "198.251.100.73/32",
+  "198.251.100.74/32",
+  "198.251.100.75/32",
+  "198.251.100.76/32",
+  "198.251.100.77/32",
+  "198.251.100.78/32",
+  "198.251.100.79/32",
+]
+
 [taktikal]
 ## About: https://taktikal.fasttvltd.com/bot
 
