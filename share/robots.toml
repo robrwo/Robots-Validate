@@ -8544,6 +8544,7 @@ domain=".crawl.yahoo.net"
 domain=".yahoo-net.jp"
 agents=[
   "Y!J-ASR",
+  "Y!J-DLC",
   "Y!J-WSC",
 ]
 network=[
