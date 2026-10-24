@@ -22,10 +22,11 @@ This module allows one to validate a robot user-agent string against the IP addr
 
 # RECENT CHANGES
 
-Changes for version v0.4.13 (2026-10-23)
+Changes for version v0.4.13 (2026-10-24)
 
 - Enhancements
     - Added or updated the robot rules for the following:
+        - RiverBot
         - T2Bot
         - Yahoo Japan (new agent strings)
 
