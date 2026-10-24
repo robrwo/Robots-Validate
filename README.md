@@ -26,6 +26,7 @@ Changes for version v0.4.13 (2026-10-24)
 
 - Enhancements
     - Added or updated the robot rules for the following:
+        - bnf.fr\_bot
         - RiverBot
         - T2Bot
         - Yahoo Japan (new agent strings)

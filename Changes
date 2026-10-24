@@ -3,6 +3,7 @@ Revision history for {{ $dist->name }}:
 {{$NEXT}}
   [Enhancements]
   - Added or updated the robot rules for the following:
+    - bnf.fr_bot
     - RiverBot
     - T2Bot
     - Yahoo Japan (new agent strings)
