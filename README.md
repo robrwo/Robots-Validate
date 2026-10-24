@@ -27,6 +27,7 @@ Changes for version v0.4.13 (2026-10-24)
 - Enhancements
     - Added or updated the robot rules for the following:
         - bnf.fr\_bot
+        - IsonSearchBot (updated network)
         - RiverBot
         - SocialContext-Domains
         - T2Bot

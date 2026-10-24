@@ -6507,14 +6507,14 @@ agents="IonCrawl"
 domain=".1and1.org"
 
 [isonsearchbot]
-## Date: 2026-10-01
+## Date: 2026-10-24
 ## About: https://search.isonai.com/bot
 ## Network: https://search.isonai.com/bot/ips.json
 
 agents="IsonSearchBot"
 network=[
   "103.121.17.220/32",
-  "103.156.115.103/32"
+  "103.150.197.169/32"
 ]
 
 [justsearchuk]
