@@ -8328,6 +8328,11 @@ network=[
   "52.199.41.160",
 ]
 
+[socialcontext]
+## About: https://socialcontext.ai/
+agents="SocialContext-Domains"
+domain=[ '/^socialcontextgpu[0-9]+\.colorado\.edu$/' ]
+
 [sofyabot]
 ## About: https://sofya.co/bot
 
