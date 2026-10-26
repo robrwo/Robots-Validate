@@ -6873,6 +6873,17 @@ network=[
 agents="OI-Crawler/Nutch"
 network="130.89.144.160/26"
 
+[omniscientebot]
+## Date: 2026-10-26
+## About: https://omnisciente.dev/bot
+## Network: https://omnisciente.dev/bot/ips.json
+
+agents="OmniscienteBot"
+domain=".crawler.omnisciente.dev"
+network=[
+  "62.210.192.81", "191.218.162.253"
+]
+
 [openai-adsbot]
 ## Date: 2026-09-25
 ## About: https://platform.openai.com/docs/bots

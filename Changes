@@ -5,6 +5,7 @@ Revision history for {{ $dist->name }}:
   - Added or updated the robot rules for the following:
     - bnf.fr_bot
     - IsonSearchBot (updated network)
+    - OmniscienteBot
     - RiverBot
     - SocialContext-Domains
     - T2Bot
