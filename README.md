@@ -29,6 +29,7 @@ Changes for version v0.4.13 (2026-10-26)
         - bnf.fr\_bot
         - IsonSearchBot (updated network)
         - OmniscienteBot
+        - PlytikBot
         - RiverBot
         - SocialContext-Domains
         - T2Bot

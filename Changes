@@ -6,6 +6,7 @@ Revision history for {{ $dist->name }}:
     - bnf.fr_bot
     - IsonSearchBot (updated network)
     - OmniscienteBot
+    - PlytikBot
     - RiverBot
     - SocialContext-Domains
     - T2Bot

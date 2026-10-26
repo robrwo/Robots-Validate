@@ -7022,6 +7022,12 @@ network=[
 agents="PipericBot"
 domain=".piperic.com"
 
+[plytikbot]
+## About: https://www.plytik.com/bot
+
+agents="PlytikBot"
+domain=".plytik.com"
+
 [poweredbybot]
 ## Date: 2026-09-16
 ## About: https://poweredby.keywordseverywhere.com/bot
