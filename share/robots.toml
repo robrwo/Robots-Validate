@@ -7072,6 +7072,14 @@ network=[
   "194.187.171.0/24",
 ]
 
+[ricciutibot]
+## Date: 2026-10-29
+## About: https://search.caioricciuti.com/bot
+## Network: https://search.caioricciuti.com/bot/ips.json
+
+agents="RicciutiBot"
+network="91.99.61.80/32"
+
 [riverbot]
 ## Date: 2026-10-24
 ## About: https://river.ai/bot
