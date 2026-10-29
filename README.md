@@ -20,23 +20,6 @@ if ( my $res = $rs->validate( $ip, $user_agent ) ) {
 
 This module allows one to validate a robot user-agent string against the IP addresses.
 
-# RECENT CHANGES
-
-Changes for version v0.4.13 (2026-10-29)
-
-- Enhancements
-    - Added or updated the robot rules for the following:
-        - bnf.fr\_bot
-        - IsonSearchBot (updated network)
-        - OmniscienteBot
-        - PlytikBot
-        - RiverBot
-        - SocialContext-Domains
-        - T2Bot
-        - Yahoo Japan (new agent strings)
-
-See the `Changes` file for more details.
-
 # REQUIREMENTS
 
 This module lists the following modules as runtime dependencies:

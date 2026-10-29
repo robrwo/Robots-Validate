@@ -1,6 +1,8 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+
+v0.4.13   2026-10-29 10:12:50+00:00 Europe/London
   [Enhancements]
   - Added or updated the robot rules for the following:
     - bnf.fr_bot
