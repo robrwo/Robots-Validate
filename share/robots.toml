@@ -2397,6 +2397,13 @@ network=[
   "199.91.151.0/24",
 ]
 
+[bitmoversbot]
+## Date: 2026-10-30
+## About: https://bitmovers.co.uk/crawler
+## Network: https://bitmovers.co.uk/crawler/ips.json
+agents="BitMoversBot"
+network="84.18.244.40/32"
+
 [bitsightbot]
 ## About: https://www.bitsight.com
 agents="BitSightBot"
