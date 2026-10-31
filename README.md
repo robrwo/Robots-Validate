@@ -22,11 +22,12 @@ This module allows one to validate a robot user-agent string against the IP addr
 
 # RECENT CHANGES
 
-Changes for version v0.4.14 (2026-10-30)
+Changes for version v0.4.14 (2026-10-31)
 
 - Enhancements
     - Added or updated the robot rules for the following:
         - BitMoversBot
+        - dns-crawler
         - RicciutiBot
 
 See the `Changes` file for more details.

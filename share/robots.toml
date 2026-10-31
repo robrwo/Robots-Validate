@@ -2975,6 +2975,10 @@ network=[
   "92.118.208.185/32"
 ]
 
+[dnststats]
+agents="dns-crawler"
+domain=".dns-stats.info"
+
 [domainprint]
 ## Date: 2026-09-10
 ## About: https://www.domainprint.com/
