@@ -6962,6 +6962,19 @@ network=[
   "193.224.0.0/15",
 ]
 
+[pactmeshbot]
+## Date: 2026-11-01
+## About: https://bot.pactmesh.net/
+## Network: https://bot.pactmesh.net/ips.json
+## Query: .ipv4[], .ipv6[]
+
+agents="PactMeshBot"
+domain=".bot.pactmesh.net"
+network=[
+  "152.53.51.107",
+  "2a0a:4cc0:80:12ae:74f9:34ff:fe45:7aa5"
+]
+
 [partnex]
 ## About: https://getpartnex.com/bot
 agents="PartnexRadarBot"
