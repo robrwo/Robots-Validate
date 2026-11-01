@@ -2975,7 +2975,8 @@ network=[
   "92.118.208.185/32"
 ]
 
-[dnststats]
+[dnscrawler]
+## Note: the UA string contains a link to a web server at the specific IP, e.g. https://crawler-us-ma-001.dns-stats.info/
 agents="dns-crawler"
 domain=".dns-stats.info"
 
