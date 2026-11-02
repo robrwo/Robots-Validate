@@ -31,6 +31,7 @@ Changes for version v0.4.14 (2026-11-02)
         - GetAgentsRadar
         - PactMeshBot
         - RicciutiBot
+        - YioopBot
 
 See the `Changes` file for more details.
 

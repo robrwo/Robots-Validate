@@ -8730,6 +8730,18 @@ network=[
   "211.249.46.220/32",
 ]
 
+[yioopbot]
+## Date: 2026-11-02
+## About: https://www.yioop.com/bot
+
+agents="YioopBot"
+network=[
+  "173.13.143.73/32",
+  "173.13.143.74/31",
+  "173.13.143.76/31",
+  "173.13.143.78/32"
+]
+
 [youbot]
 ## About: https://docs.you.com/youbot
 
