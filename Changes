@@ -5,6 +5,7 @@ Revision history for {{ $dist->name }}:
   - Added or updated the robot rules for the following:
     - BitMoversBot
     - dns-crawler
+    - GetAgentsRadar
     - PactMeshBot
     - RicciutiBot
 

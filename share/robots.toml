@@ -4076,6 +4076,12 @@ network=[
   "2605:9f80:8000::/35",
 ]
 
+
+[getagentsradar]
+## About: https://getagents.io
+agents="GetAgentsRadar"
+domain=".getagents.io"
+
 [google]
 ## Date: 2026-09-25
 ## About: https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers
