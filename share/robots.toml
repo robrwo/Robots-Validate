@@ -2813,6 +2813,14 @@ network=[
   "18.227.226.255/32",
 ]
 
+[cl0qcrawler]
+## Date: 2026-11-05
+## About: https://cl0q.com/bot/
+## Network: https://cl0q.com/bot/ips.json
+
+agents=[ "cl0q-crawler", "cl0q-discovery", "cl0q-favicon" ]
+network=[ "143.110.230.182" ]
+
 [clueweb]
 ## About: https://boston.lti.cs.cmu.edu/CMU-ClueWeb-Crawler/
 agents="ClueWeb-Crawler"
