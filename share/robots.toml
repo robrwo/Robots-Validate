@@ -2305,6 +2305,14 @@ domain=[
 agents="Baiduspider"
 domain=".crawl.baidu.com"
 
+[bakenbot]
+## Date: 2026-11-06
+## About: https://baken.dev/bakenbot
+
+agents="BakenBot"
+domain=".baken.dev"
+network=[ "213.239.220.146", "2a01:4f8:a0:70c4::2" ]
+
 [banquisebot]
 ## Date: 2026-10-19
 ## About: https://www.banquise.ca/bot

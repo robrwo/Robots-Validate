@@ -22,10 +22,11 @@ This module allows one to validate a robot user-agent string against the IP addr
 
 # RECENT CHANGES
 
-Changes for version v0.4.14 (2026-11-05)
+Changes for version v0.4.14 (2026-11-06)
 
 - Enhancements
     - Added or updated the robot rules for the following:
+        - BakenBot
         - BitMoversBot
         - cl0q-crawler
         - dns-crawler
