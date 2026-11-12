@@ -4154,6 +4154,16 @@ network=[
 agents="GetAgentsRadar"
 domain=".getagents.io"
 
+[glintscoutbot]
+## Date: 2026-11-12
+## About: https://glintscout.com/bot
+agents="GlintscoutBot"
+domain=".glintscout.com"
+network=[
+  "67.233.187.89",
+  "77.42.10.240"
+]
+
 [google]
 ## Date: 2026-09-25
 ## About: https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers

@@ -27,6 +27,7 @@ Changes for version v0.4.15 (2026-11-12)
 - Enhancements
     - Added or updated the robot rules for the following:
         - GenomeCrawler
+        - GlintscoutBot
         - MorsillaBot
 
 See the `Changes` file for more details.
