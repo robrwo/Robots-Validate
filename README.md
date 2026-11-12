@@ -22,11 +22,12 @@ This module allows one to validate a robot user-agent string against the IP addr
 
 # RECENT CHANGES
 
-Changes for version v0.4.15 (2026-11-09)
+Changes for version v0.4.15 (2026-11-12)
 
 - Enhancements
     - Added or updated the robot rules for the following:
         - GenomeCrawler
+        - MorsillaBot
 
 See the `Changes` file for more details.
 

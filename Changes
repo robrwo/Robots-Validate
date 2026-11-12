@@ -4,6 +4,7 @@ Revision history for {{ $dist->name }}:
   [Enhancements]
   - Added or updated the robot rules for the following:
     - GenomeCrawler
+    - MorsillaBot
 
 v0.4.14   2026-11-06 17:42:12+00:00 Europe/London
   [Enhancements]
