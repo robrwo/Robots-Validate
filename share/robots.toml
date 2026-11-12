@@ -4031,11 +4031,11 @@ network=[
 ]
 
 [ethicrawl]
-## Date: 2026-10-21
+## Date: 2026-11-12
 ## About: http://ethicrawl.ai/crawler
-
-agents="ethicrawl.ai"
-network="3.217.175.180"
+## Network: https://ethicrawl.ai/crawler-ips.json
+agents="ethicrawl"
+network="135.225.129.103/32"
 
 [facebook]
 ## About: https://developers.facebook.com/docs/sharing/webmasters/web-crawlers

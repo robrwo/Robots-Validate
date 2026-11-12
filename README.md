@@ -26,6 +26,7 @@ Changes for version v0.4.15 (2026-11-12)
 
 - Enhancements
     - Added or updated the robot rules for the following:
+        - ethicrawl (updated agents and network)
         - GenomeCrawler
         - GlintscoutBot
         - MorsillaBot
