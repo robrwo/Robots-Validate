@@ -98,7 +98,7 @@ has max_forward_lookups => (
 
 =attr networks
 
-This is a L<Net::Patricia> object used for matching networks.
+This is a L<Net::IP::LPM> object used for matching networks..
 
 This can only be set via the constructor.
 

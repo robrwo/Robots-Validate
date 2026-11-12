@@ -30,6 +30,8 @@ Changes for version v0.4.15 (2026-11-12)
         - GenomeCrawler
         - GlintscoutBot
         - MorsillaBot
+- Documentation
+    - Fixed incorrect type for the networks attribute: it has been using Net::IP::LPM since v0.4.3.
 
 See the `Changes` file for more details.
 
