@@ -1,6 +1,8 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+
+v0.4.15   2026-11-12 16:27:37+00:00 Europe/London
   [Enhancements]
   - Added or updated the robot rules for the following:
     - ethicrawl (updated agents and network)

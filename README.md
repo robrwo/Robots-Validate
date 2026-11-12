@@ -20,21 +20,6 @@ if ( my $res = $rs->validate( $ip, $user_agent ) ) {
 
 This module allows one to validate a robot user-agent string against the IP addresses.
 
-# RECENT CHANGES
-
-Changes for version v0.4.15 (2026-11-12)
-
-- Enhancements
-    - Added or updated the robot rules for the following:
-        - ethicrawl (updated agents and network)
-        - GenomeCrawler
-        - GlintscoutBot
-        - MorsillaBot
-- Documentation
-    - Fixed incorrect type for the networks attribute: it has been using Net::IP::LPM since v0.4.3.
-
-See the `Changes` file for more details.
-
 # REQUIREMENTS
 
 This module lists the following modules as runtime dependencies:
