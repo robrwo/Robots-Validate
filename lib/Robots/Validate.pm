@@ -768,7 +768,6 @@ sub _add_rule( $self, $rule ) {
             }
         }
         else {
-            # TODO add support for matching on IP
             die "an agent substring is required";
         }
 
