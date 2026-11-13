@@ -6638,6 +6638,14 @@ network=[
   "209.151.156.194",
 ]
 
+[kauper]
+## Date: 2026-11-13
+## About: https://kaupr.com/about/crawler
+## Network: https://kaupr.com/crawler-ips.json
+
+agents="Kaupr"
+network="164.90.162.35/32"
+
 [keenablebot]
 ## Date: 2026-10-13
 ## About: https://app.keenable.ai/bot
