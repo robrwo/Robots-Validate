@@ -98,11 +98,9 @@ has max_forward_lookups => (
 
 =attr networks
 
-This is a L<Net::IP::LPM> object used for matching networks..
+This is a L<Net::IP::LPM> object used for matching networks, which is agnostic about IPv4 and IPv6 addresses.
 
 This can only be set via the constructor.
-
-Note that internally IPv4 addresses are converted to IPv6 addresses.
 
 =cut
 

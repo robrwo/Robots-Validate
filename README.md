@@ -27,6 +27,8 @@ Changes for version v0.4.16 (2026-11-13)
 - Enhancements
     - Added or updated the robot rules for the following:
         - Kaupr
+- Documentation
+    - Updated networks attribute.
 
 See the `Changes` file for more details.
 
