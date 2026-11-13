@@ -4,6 +4,9 @@ Revision history for {{ $dist->name }}:
   [Enhancements]
   - Added or updated the robot rules for the following:
     - Kaupr
+
+  - Minor code improvements.
+
   [Documentation]
   - Updated networks attribute.
 

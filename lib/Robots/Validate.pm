@@ -9,7 +9,7 @@ use Moo 1;
 use Algorithm::AhoCorasick::SearchMachine;
 use File::ShareDir qw( dist_file );
 use File::Slurper  qw( read_binary );
-use List::Util     1.33 qw( all any none );
+use List::Util     1.33 qw( all any );
 use Module::Load qw( load );
 use Net::DNS::Resolver;
 use Net::IP qw( ip_expand_address ip_is_ipv4 ip_is_ipv6 ip_splitprefix );
