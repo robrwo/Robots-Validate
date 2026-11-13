@@ -30,6 +30,7 @@ Changes for version v0.4.16 (2026-11-13)
     - Minor code improvements.
 - Documentation
     - Updated networks attribute.
+    - Improved readability of Changes.
 
 See the `Changes` file for more details.
 

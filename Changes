@@ -10,6 +10,8 @@ Revision history for {{ $dist->name }}:
   [Documentation]
   - Updated networks attribute.
 
+  - Improved readability of Changes.
+
 v0.4.15   2026-11-12 16:27:37+00:00 Europe/London
   [Enhancements]
   - Added or updated the robot rules for the following:
@@ -17,6 +19,7 @@ v0.4.15   2026-11-12 16:27:37+00:00 Europe/London
     - GenomeCrawler
     - GlintscoutBot
     - MorsillaBot
+
   [Documentation]
   - Fixed incorrect type for the networks attribute: it has been using Net::IP::LPM since v0.4.3.
 
