@@ -4074,6 +4074,26 @@ network=[
   "167.253.34.3",
 ]
 
+[freeconnector]
+## Date: 2026-11-14
+## About: https://hutnia.com/bot
+## Network: https://hutnia.com/bot/ips.json
+
+agents="FreeConnector"
+network=[
+  "185.13.235.61",
+  "138.199.224.47",
+  "46.62.232.242",
+  "46.62.228.46",
+  "2.29.19.201",
+  "2.29.30.20",
+  "2a01:4f8:c17:ba90::/64",
+  "2a01:4f9:c015:5139::/64",
+  "2a01:4f9:c015:9c6f::/64",
+  "2a01:4f9:c015:8b92::/64",
+  "2a01:4f9:c015:32a0::/64"
+]
+
 [fyndbot]
 # Date: 2026-08-27
 # Note: the network information is from email correspondence with is from email feedback@fynd.bot

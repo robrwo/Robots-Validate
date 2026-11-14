@@ -22,10 +22,11 @@ This module allows one to validate a robot user-agent string against the IP addr
 
 # RECENT CHANGES
 
-Changes for version v0.4.16 (2026-11-13)
+Changes for version v0.4.16 (2026-11-14)
 
 - Enhancements
     - Added or updated the robot rules for the following:
+        - FreeConnector
         - GreenFaceLabsCensus (removed, offline)
         - Kaupr
     - Minor code improvements.
