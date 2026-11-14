@@ -26,9 +26,16 @@ Changes for version v0.4.16 (2026-11-14)
 
 - Enhancements
     - Added or updated the robot rules for the following:
+        - ChatCPT-User (updated network)
+        - Claude (updated network)
         - FreeConnector
+        - Google-User (updated network)
         - GreenFaceLabsCensus (removed, offline)
+        - IsonSearchBot (updated network)
         - Kaupr
+        - NetAPI (updated network)
+        - PerplexityBot (updated network)
+        - RiverBot (updated network)
     - Minor code improvements.
 - Documentation
     - Updated networks attribute.
