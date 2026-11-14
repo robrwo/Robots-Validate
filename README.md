@@ -33,6 +33,7 @@ Changes for version v0.4.16 (2026-11-14)
         - GreenFaceLabsCensus (removed, offline)
         - IsonSearchBot (updated network)
         - Kaupr
+        - LinerBot (removed, offline)
         - NetAPI (updated network)
         - PerplexityBot (updated network)
         - RiverBot (updated network)

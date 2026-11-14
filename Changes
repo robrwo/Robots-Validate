@@ -10,6 +10,7 @@ Revision history for {{ $dist->name }}:
     - GreenFaceLabsCensus (removed, offline)
     - IsonSearchBot (updated network)
     - Kaupr
+    - LinerBot (removed, offline)
     - NetAPI (updated network)
     - PerplexityBot (updated network)
     - RiverBot (updated network)
