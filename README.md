@@ -22,13 +22,14 @@ This module allows one to validate a robot user-agent string against the IP addr
 
 # RECENT CHANGES
 
-Changes for version v0.4.16 (2026-11-14)
+Changes for version v0.4.16 (2026-11-17)
 
 - Enhancements
     - Added or updated the robot rules for the following:
         - ChatCPT-User (updated network)
         - Claude (updated network)
         - FreeConnector
+        - GeneralRetrievalBot
         - Google-User (updated network)
         - GreenFaceLabsCensus (removed, offline)
         - IsonSearchBot (updated network)

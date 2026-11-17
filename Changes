@@ -6,6 +6,7 @@ Revision history for {{ $dist->name }}:
     - ChatCPT-User (updated network)
     - Claude (updated network)
     - FreeConnector
+    - GeneralRetrievalBot
     - Google-User (updated network)
     - GreenFaceLabsCensus (removed, offline)
     - IsonSearchBot (updated network)

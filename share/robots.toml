@@ -4157,6 +4157,25 @@ network=[
   "2605:9f80:8000::/35",
 ]
 
+[generalretrievalbot]
+## Date: 2026-11-17
+## About: https://generalretrieval.com/bot
+## Network: https://keys.generalretrieval.com/crawler-ips.json
+agents=[ "GeneralRetrievalBot", "GeneralRetrieval-Fetcher" ]
+domain=".crawl.generalretrieval.com"
+network=[
+  "35.194.95.186/32",
+  "34.48.3.229/32",
+  "34.150.212.208/32",
+  "35.245.17.195/32",
+  "34.48.176.1/32",
+  "35.245.129.92/32",
+  "8.234.175.191/32",
+  "35.221.19.6/32",
+  "34.86.180.20/32",
+]
+
+
 [genomecrawler]
 ## Date: 2026-11-09
 ## About: https://www.nokia.com/genomecrawler/
