@@ -1,6 +1,8 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+  [Tests]
+  - Disabled srand initialisation.
 
 v0.4.16   2026-11-17 16:35:53+00:00 Europe/London
   [Enhancements]
