@@ -27,6 +27,7 @@ Changes for version v0.4.17 (2026-11-19)
 - Enhancements
     - Added or updated the robot rules for the following:
         - domains-distillery
+        - LiberaiteBot
 - Tests
     - Disabled srand initialisation.
 
