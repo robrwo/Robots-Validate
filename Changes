@@ -1,6 +1,10 @@
 Revision history for {{ $dist->name }}:
 
 {{$NEXT}}
+  [Enhancements]
+  - Added or updated the robot rules for the following:
+    - domains-distillery
+
   [Tests]
   - Disabled srand initialisation.
 

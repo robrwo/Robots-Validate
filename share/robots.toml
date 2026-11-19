@@ -8856,6 +8856,12 @@ network=[
   "52.77.36.31",
 ]
 
+[valdius]
+## About: https://crawler.validus.ai/
+
+agents="domains-distillery"
+domain=".validus.ai"
+
 [vexel]
 ## Date: 2026-10-20
 ## About: https://vexel.cc/bot-info
