@@ -6,6 +6,7 @@ Revision history for {{ $dist->name }}:
     - AcademicBotRTU
     - domains-distillery
     - LiberaiteBot
+    - LibrarianBot
 
   [Tests]
   - Disabled srand initialisation.

@@ -29,6 +29,7 @@ Changes for version v0.4.17 (2026-11-23)
         - AcademicBotRTU
         - domains-distillery
         - LiberaiteBot
+        - LibrarianBot
 - Tests
     - Disabled srand initialisation.
 

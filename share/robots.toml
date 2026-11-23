@@ -6852,6 +6852,13 @@ network=[
   "52.56.241.219",
 ]
 
+[librarianbot]
+## Date: 2026-11-23
+## About: https://apps.geniofab.com/librarian/bot
+## Network: https://apps.geniofab.com/librarian/bot/addresses.txt
+agents="LibrarianBot"
+network="57.129.192.162"
+
 [linkedin]
 agents="LinkedInBot"
 domain=".linkedin.com"
