@@ -9,6 +9,11 @@
 agents="2ip bot"
 domain=".2ip.io"
 
+[academicbotrtu]
+## About: https://academicbot.rtu.lv/
+agents="AcademicBotRTU"
+network="213.175.88.0/21"
+
 [ahrefs]
 ## Date: 2026-11-14
 ## About: https://ahrefs.com/robot
