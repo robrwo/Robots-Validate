@@ -28,6 +28,7 @@ Changes for version v0.4.17 (2026-11-23)
     - Added or updated the robot rules for the following:
         - AcademicBotRTU
         - domains-distillery
+        - ElamurBot
         - LiberaiteBot
         - LibrarianBot
 - Tests

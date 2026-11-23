@@ -4048,6 +4048,16 @@ network=[
   "98.70.219.37/32",
 ]
 
+[elamurbot]
+## Date: 2026-11-23
+## About: https://bot.elamur.ai/free/en/
+
+agents="ElamurBot"
+network=[
+  "144.76.221.20",
+  "2a01:4f8:200:9429::2",
+]
+
 [emailsherlock]
 ## About: https://www.hostsherlock.com/bot
 
