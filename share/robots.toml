@@ -4180,6 +4180,11 @@ network=[
   "2605:9f80:8000::/35",
 ]
 
+[geedo]
+agents="GeedoShopProductFinder"
+domain=".geedo.com"
+network="83.99.206.0/24"
+
 [generalretrievalbot]
 ## Date: 2026-11-17
 ## About: https://generalretrieval.com/bot

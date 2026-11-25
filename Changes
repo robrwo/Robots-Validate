@@ -6,6 +6,7 @@ Revision history for {{ $dist->name }}:
     - AcademicBotRTU
     - BoehmBot
     - domains-distillery
+    - GeedoShopProductFinder
     - ElamurBot
     - LiberaiteBot
     - LibrarianBot
