@@ -27,6 +27,13 @@ Changes for version v0.4.18 (2026-11-25)
 - Enhancements
     - Added or updated the robot rules for the following:
         - AcademicBotRTU (updated network)
+        - ChatGPT-User (updated network)
+        - ethicrawl (updated network)
+        - FreeConnector (updated network)
+        - GeneralRetrievalBot (updated network)
+        - Google-User (updated network)
+        - NetAPI (updated network)
+        - PerplexityBot (updated network)
 
 See the `Changes` file for more details.
 

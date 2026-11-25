@@ -4,6 +4,13 @@ Revision history for {{ $dist->name }}:
   [Enhancements]
   - Added or updated the robot rules for the following:
     - AcademicBotRTU (updated network)
+    - ChatGPT-User (updated network)
+    - ethicrawl (updated network)
+    - FreeConnector (updated network)
+    - GeneralRetrievalBot (updated network)
+    - Google-User (updated network)
+    - NetAPI (updated network)
+    - PerplexityBot (updated network)
 
 v0.4.17   2026-11-25 19:28:33+00:00 Europe/London
   [Enhancements]
