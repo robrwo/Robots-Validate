@@ -2460,6 +2460,14 @@ network=[
 agents="bnf.fr_bot"
 domain=".bnf.fr"
 
+[boehmbot]
+## Date: 2026-11-25
+## About: https://boehm.systems/bot
+
+agents="BoehmBot"
+domain=".boehm.systems"
+network="5.196.92.3"
+
 [brightbot]
 ## Date: 2026-08-14
 ## About: https://brightdata.com/brightbot
