@@ -10,9 +10,21 @@ agents="2ip bot"
 domain=".2ip.io"
 
 [academicbotrtu]
+## Date: 2026-11-25
 ## About: https://academicbot.rtu.lv/
+## Network: https://academicbot.rtu.lv/crawler-ips.txt
 agents="AcademicBotRTU"
-network="213.175.88.0/21"
+network=[
+  "213.175.93.205",
+  "213.175.93.206",
+  "213.175.93.207",
+  "213.175.93.208",
+  "213.175.93.186",
+  "213.175.93.187",
+  "213.175.93.188",
+  "213.175.93.189",
+  "213.175.93.181"
+]
 
 [ahrefs]
 ## Date: 2026-11-14
