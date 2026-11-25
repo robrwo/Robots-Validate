@@ -22,12 +22,14 @@ This module allows one to validate a robot user-agent string against the IP addr
 
 # RECENT CHANGES
 
-Changes for version v0.4.17 (2026-11-23)
+Changes for version v0.4.17 (2026-11-25)
 
 - Enhancements
     - Added or updated the robot rules for the following:
         - AcademicBotRTU
+        - BoehmBot
         - domains-distillery
+        - GeedoShopProductFinder
         - ElamurBot
         - LiberaiteBot
         - LibrarianBot
