@@ -22,10 +22,11 @@ This module allows one to validate a robot user-agent string against the IP addr
 
 # RECENT CHANGES
 
-Changes for version v0.4.18 (2026-11-25)
+Changes for version v0.4.18 (2026-11-26)
 
 - Enhancements
     - Added or updated the robot rules for the following:
+        - 2ip bot (updated network)
         - AcademicBotRTU (updated network)
         - ChatGPT-User (updated network)
         - ethicrawl (updated network)
@@ -34,6 +35,7 @@ Changes for version v0.4.18 (2026-11-25)
         - Google-User (updated network)
         - NetAPI (updated network)
         - PerplexityBot (updated network)
+        - SocktBot
 
 See the `Changes` file for more details.
 

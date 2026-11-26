@@ -12,6 +12,7 @@ Revision history for {{ $dist->name }}:
     - Google-User (updated network)
     - NetAPI (updated network)
     - PerplexityBot (updated network)
+    - SocktBot
 
 v0.4.17   2026-11-25 19:28:33+00:00 Europe/London
   [Enhancements]

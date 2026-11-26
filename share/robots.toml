@@ -8942,6 +8942,12 @@ domain=[
   "/^socialcontextgpu[0-9]+\\.colorado\\.edu$/",
 ]
 
+[socktbot]
+## About: https://sockt.com/bot
+
+agents="SocktBot"
+domain=".sockt.com"
+
 [sofyabot]
 ## About: https://sofya.co/bot
 
