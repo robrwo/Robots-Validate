@@ -4,10 +4,14 @@
 
 
 [2ipbot]
+## Date: 2026-11-26
 ## About: https://2ip.io/bot/
 
 agents="2ip bot"
 domain=".2ip.io"
+network=[
+  "178.105.183.10",
+]
 
 [academicbotrtu]
 ## Date: 2026-11-25
