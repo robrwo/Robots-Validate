@@ -6841,7 +6841,7 @@ agents="InfoTigerBot"
 domain=".infotiger.com"
 
 [insightbasebot]
-## Date: 2026-10-12
+## Date: 2026-11-27
 ## About: https://insightbase.com/bot
 
 agents="InsightBaseBot"
