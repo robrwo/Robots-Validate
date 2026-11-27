@@ -5,6 +5,7 @@ Revision history for {{ $dist->name }}:
   - Added or updated the robot rules for the following:
     - 2ip bot (updated network)
     - AcademicBotRTU (updated network)
+    - CDMSiteBot
     - ChatGPT-User (updated network)
     - ethicrawl (updated network)
     - FreeConnector (updated network)

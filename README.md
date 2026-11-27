@@ -28,6 +28,7 @@ Changes for version v0.4.18 (2026-11-27)
     - Added or updated the robot rules for the following:
         - 2ip bot (updated network)
         - AcademicBotRTU (updated network)
+        - CDMSiteBot
         - ChatGPT-User (updated network)
         - ethicrawl (updated network)
         - FreeConnector (updated network)

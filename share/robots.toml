@@ -2539,6 +2539,13 @@ network=[
   "18.97.14.88/30",
 ]
 
+[cdmsitebot]
+## Date: 2026-11-27
+## About: https://startup-delivery.ro/bot/
+
+agents="CDMSiteBot"
+network="185.99.89.94"
+
 [censys]
 ## Date: 2026-08-23
 ## About: https://about.censys.io/
