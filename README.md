@@ -22,7 +22,7 @@ This module allows one to validate a robot user-agent string against the IP addr
 
 # RECENT CHANGES
 
-Changes for version v0.4.18 (2026-11-26)
+Changes for version v0.4.18 (2026-11-27)
 
 - Enhancements
     - Added or updated the robot rules for the following:
@@ -33,6 +33,7 @@ Changes for version v0.4.18 (2026-11-26)
         - FreeConnector (updated network)
         - GeneralRetrievalBot (updated network)
         - Google-User (updated network)
+        - KosoBot
         - NetAPI (updated network)
         - PerplexityBot (updated network)
         - SocktBot

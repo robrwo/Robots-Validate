@@ -7028,6 +7028,13 @@ network=[
   "35.202.5.108/32",
 ]
 
+[kosobot]
+## Date: 2026-11-27
+## About: https://koso.ai/bot
+agents="KosoBot"
+domain=[ ".koov.tech", ".koso.ai" ]
+network="174.129.148.39"
+
 [liberaitebot]
 ## Date: 2026-11-19
 ## About: https://liberaite.com/bot.html
