@@ -6952,6 +6952,7 @@ network=[
 ]
 
 [kagibot]
+## Date: 2026-11-27
 ## About: https://kagi.com/bot
 
 agents="Kagibot"
